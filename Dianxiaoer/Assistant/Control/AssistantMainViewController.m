@@ -83,16 +83,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if ([self needLogin]) {
-        [self toLoginVC];
-    }
-    else {
+//    if ([self needLogin]) {
+//        [self toLoginVC];
+//    }
+//    else {
         MerchantBidViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchantBidViewController"];
         if (vc == nil) {
             vc = [[MerchantBidViewController alloc] init];
         }
         [[self navigationController] pushViewController:vc animated:YES];
-    }
+//    }
 }
 
 
