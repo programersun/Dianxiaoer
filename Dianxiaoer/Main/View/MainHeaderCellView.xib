@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainHeaderCellView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lingxing" translatesAutoresizingMaskIntoConstraints="NO" id="MHu-BQ-4oI">
+                    <rect key="frame" x="279" y="14" width="42" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="8QI-4Y-qvl"/>
+                        <constraint firstAttribute="height" constant="42" id="S4T-0n-Pcq"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi2-Cq-Sui">
+                    <rect key="frame" x="292" y="19" width="16" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70i-zr-ZAz">
+                    <rect key="frame" x="292" y="35" width="16" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Mi2-Cq-Sui" secondAttribute="centerY" constant="8" id="5PC-vc-eiB"/>
+                <constraint firstAttribute="centerX" secondItem="Mi2-Cq-Sui" secondAttribute="centerX" id="Q0L-0q-L1U"/>
+                <constraint firstAttribute="centerX" secondItem="70i-zr-ZAz" secondAttribute="centerX" id="XGU-IB-DGD"/>
+                <constraint firstAttribute="centerX" secondItem="MHu-BQ-4oI" secondAttribute="centerX" id="i2W-dW-gcz"/>
+                <constraint firstAttribute="centerY" secondItem="MHu-BQ-4oI" secondAttribute="centerY" id="i3M-BX-RKn"/>
+                <constraint firstAttribute="centerY" secondItem="70i-zr-ZAz" secondAttribute="centerY" constant="-8" id="kcf-nA-AmE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="448" y="474"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lingxing" width="42" height="42"/>
+    </resources>
+</document>
