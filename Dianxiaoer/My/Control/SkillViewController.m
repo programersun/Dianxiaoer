@@ -9,6 +9,12 @@
 #import "SkillViewController.h"
 
 @interface SkillViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn1;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn2;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn3;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn4;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn5;
 
 @end
 
@@ -16,6 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_cellBtn1];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_cellBtn2];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_cellBtn3];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_cellBtn4];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_cellBtn5];
     // Do any additional setup after loading the view.
 }
 
@@ -29,18 +41,23 @@
 }
 //高级管理
 - (IBAction)BtnClick1:(id)sender {
+    
 }
 //高级服务
 - (IBAction)BtnClick2:(id)sender {
+    
 }
 //职业素养
 - (IBAction)BtnClick3:(id)sender {
+    
 }
 //仪容礼仪
 - (IBAction)BtnClick4:(id)sender {
+    
 }
 //服务理念
 - (IBAction)BtnClick5:(id)sender {
+    
 }
 
 /*

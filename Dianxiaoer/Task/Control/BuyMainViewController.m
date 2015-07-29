@@ -54,7 +54,7 @@
 #pragma mark - SubmitChooseDayDelegate
 
 - (void)submitChooseDayBtnClick {
-    SubmitSuccessViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"SubmitSuccessViewController"];
+    SubmitSuccessViewController *vc = [[UIStoryboard storyboardWithName:@"TaskBuy" bundle:nil] instantiateViewControllerWithIdentifier:@"SubmitSuccessViewController"];
     if (vc == nil) {
         vc = [[SubmitSuccessViewController alloc] init];
     }
@@ -67,6 +67,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitChooseViewDisappear)];
     [_submitChooseDay.backgroundImg addGestureRecognizer:backTouch];
     _submitChooseDay.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitChooseDay.submitBtn];
     _submitChooseDay.delegate = self;
     [self.view addSubview:_submitChooseDay];
     
@@ -108,6 +109,8 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(modifyViewDisappear)];
     [_modifyView.backgroundImg addGestureRecognizer:backTouch];
     _modifyView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_modifyView.cancelBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_modifyView.submitBtn];
     _modifyView.delegate = self;
     [self.view addSubview:_modifyView];
     
@@ -163,6 +166,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseViewDisappear)];
     [_chooseDayView.backgroundImg addGestureRecognizer:backTouch];
     _chooseDayView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_chooseDayView.cancelBtn];
     [self.view addSubview:_chooseDayView];
 
 }

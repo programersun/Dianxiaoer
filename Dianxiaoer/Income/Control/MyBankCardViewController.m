@@ -10,6 +10,8 @@
 #import "AddCardFirstViewController.h"
 
 @interface MyBankCardViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addBankBtn;
 
 @end
 
@@ -17,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_backBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_addBankBtn];
     // Do any additional setup after loading the view.
 }
 - (IBAction)backBtnClick:(id)sender {

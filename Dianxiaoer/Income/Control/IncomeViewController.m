@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bellImg;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *incomeTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *noIncomeImg;
+@property (weak, nonatomic) IBOutlet UIButton *bankCardBtn;
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableUp;
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableDown;
@@ -28,6 +30,11 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     _incomeTableView.delegate = self;
+    [self changeFrame:SCREENWIDTH/319 withObjcet:_incomeTableView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nameLabel];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bellImg];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_noIncomeImg];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bankCardBtn];
     [self setType];
     [self addSwipe];
     // Do any additional setup after loading the view.
@@ -78,10 +85,13 @@
     if (_tableUp.state == UIGestureRecognizerStateEnded) {
         if (_isUp) {
             _isUp = NO;
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
                 _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
+                
+            } completion:^(BOOL finished) {
+                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }
@@ -91,10 +101,12 @@
     if (_tableDown.state == UIGestureRecognizerStateEnded) {
         if (_isUp == NO) {
             _isUp = YES;
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
                 _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
+            }completion:^(BOOL finished) {
+                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }
@@ -104,7 +116,7 @@
 #pragma MARK: UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 156;
+    return 156 * SCREENWIDTH / 320;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -140,22 +152,25 @@
     if (_isUp) {
         if (heightChange > 0) {
             _isUp = NO;
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
                 _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
+            }completion:^(BOOL finished) {
+                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }
     else {
         if (heightChange < 0 && newcontentOffsetY < -30) {
             _isUp = YES;
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
                 _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
             } completion:^(BOOL finished) {
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
+                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MoreAddressAlert : UIView
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 @end

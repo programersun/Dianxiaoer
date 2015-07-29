@@ -15,7 +15,6 @@
 @interface SettingViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 @property (weak, nonatomic) IBOutlet UIButton *logOutBtn;
-
 @end
 
 @implementation SettingViewController

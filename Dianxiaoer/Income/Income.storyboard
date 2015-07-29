@@ -26,7 +26,7 @@
                                     <action selector="backBtnClick:" destination="Gyv-Lf-Rs3" eventType="touchUpInside" id="Jxf-J1-AMR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noIncome" id="m1q-3w-7RC">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noIncome" id="m1q-3w-7RC">
                                 <rect key="frame" x="0.0" y="412" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -54,7 +54,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pey-Jf-9nM">
                                 <rect key="frame" x="0.0" y="412" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IncomeTableViewCell" rowHeight="156" id="Mrh-a9-QsX" customClass="IncomeTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="156"/>
@@ -69,6 +70,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="incomeCellImg" destination="cBY-jf-xli" id="y5m-Ou-MZA"/>
                                         </connections>
@@ -100,9 +102,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="bankCardBtn" destination="rR0-FY-BVL" id="Qno-hh-w61"/>
                         <outlet property="bellImg" destination="v9o-zn-aPU" id="hec-dV-GyN"/>
                         <outlet property="incomeTableView" destination="pey-Jf-9nM" id="Cg4-y4-2VV"/>
                         <outlet property="nameLabel" destination="bmo-w6-3Sv" id="WUe-mC-XwS"/>
+                        <outlet property="noIncomeImg" destination="m1q-3w-7RC" id="a9u-gB-ZXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2s-rY-gKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,16 +125,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F8t-ZC-ZdP">
-                                <rect key="frame" x="49" y="317" width="222" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addCardBtnClick:" destination="4Yb-G1-ikf" eventType="touchUpInside" id="2Bo-Po-otQ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kXx-xs-kMr">
                                 <rect key="frame" x="24" y="15" width="35" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,9 +135,23 @@
                                     <action selector="backBtnClick:" destination="4Yb-G1-ikf" eventType="touchUpInside" id="lbE-WC-Pjb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F8t-ZC-ZdP">
+                                <rect key="frame" x="49" y="317" width="222" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCardBtnClick:" destination="4Yb-G1-ikf" eventType="touchUpInside" id="2Bo-Po-otQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addBankBtn" destination="F8t-ZC-ZdP" id="OX4-2J-sZ4"/>
+                        <outlet property="backBtn" destination="kXx-xs-kMr" id="n32-EU-3Bi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGF-P9-7ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,6 +165,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddBankCard1" id="pzX-ft-xLm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NcT-Ac-wpq">
                                 <rect key="frame" x="23" y="15" width="35" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,13 +189,13 @@
                                     <action selector="nextBtnClick:" destination="OKZ-uc-j7y" eventType="touchUpInside" id="tqQ-Jk-6df"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddBankCard1" id="pzX-ft-xLm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="NcT-Ac-wpq" id="b3f-Kg-puI"/>
+                        <outlet property="nextBtn" destination="yOL-QV-VT0" id="GqG-dl-uhC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvb-ht-puU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,9 +230,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x59-wi-4xy">
+                                <rect key="frame" x="123" y="318" width="70" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="MY2-W6-7cd" id="sqW-QB-qTI"/>
+                        <outlet property="protocolBtn" destination="x59-wi-4xy" id="dIF-UI-b7C"/>
+                        <outlet property="submitBtn" destination="cFL-Mv-7oH" id="9Cv-Sw-RLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nI-mO-eiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

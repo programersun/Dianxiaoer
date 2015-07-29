@@ -10,6 +10,8 @@
 #import "AddCardSecondViewController.h"
 
 @interface AddCardFirstViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 
 @end
 
@@ -17,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_backBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_nextBtn];
     // Do any additional setup after loading the view.
 }
 - (IBAction)backBtnClick:(id)sender {

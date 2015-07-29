@@ -14,7 +14,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="submitChooesDay02" id="ydN-rw-CkW">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="submitChooesDay02" id="ydN-rw-CkW">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -43,6 +43,11 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="backgroundImg" destination="ydN-rw-CkW" id="fsH-5o-dru"/>
+                <outlet property="submitBtn" destination="oV5-Vk-DUz" id="J31-d1-rVl"/>
+                <outlet property="telBtn" destination="e34-rb-tgV" id="ymu-VZ-zkq"/>
+            </connections>
             <point key="canvasLocation" x="228" y="296"/>
         </view>
     </objects>

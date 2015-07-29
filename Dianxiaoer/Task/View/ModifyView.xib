@@ -45,6 +45,8 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="backgroundImg" destination="yh1-0K-UXu" id="PyY-xO-aVg"/>
+                <outlet property="cancelBtn" destination="4xH-ln-O2e" id="Cig-WI-nHL"/>
+                <outlet property="submitBtn" destination="Tun-lY-zhO" id="HAc-SN-sBr"/>
             </connections>
             <point key="canvasLocation" x="228" y="296"/>
         </view>

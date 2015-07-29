@@ -13,6 +13,15 @@
 #import "QrCodeViewController.h"
 
 @interface MyMainViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *myInfoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *infoFirstBtn;
+@property (weak, nonatomic) IBOutlet UIButton *infoSecondBtn;
+@property (weak, nonatomic) IBOutlet UIButton *qrCodeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *settingBtn;
+@property (weak, nonatomic) IBOutlet UILabel *qrCodeLabel;
+
 
 @end
 
@@ -21,6 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backgroundView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_myInfoBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_infoFirstBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_infoSecondBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_qrCodeBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_qrCodeLabel];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_settingBtn];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -60,7 +78,7 @@
 }
 
 - (IBAction)settinBtnClick:(id)sender {
-    SettingViewController *settingVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingViewController"];
+    SettingViewController *settingVC = [[UIStoryboard storyboardWithName:@"MySetting" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingViewController"];
     if (settingVC == nil) {
         settingVC = [[SettingViewController alloc] init];
     }

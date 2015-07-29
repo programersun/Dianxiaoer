@@ -16,5 +16,9 @@
 
 @interface ModifyView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+
+
 @property (nonatomic, assign) id<ModifyViewDelegate> delegate;
 @end

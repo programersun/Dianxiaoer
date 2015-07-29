@@ -10,5 +10,6 @@
 
 @interface ChooseDay : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
 
 @end

@@ -12,9 +12,16 @@
 
 @optional
 - (void)toUpLoadIDVC;
+- (void)toBespeakVC;
 
 @end
 
 @interface FinshInputMyInfoView : UIView
 @property (nonatomic, assign) id <FinshInputMyInfoViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *bespeakBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+
+
 @end

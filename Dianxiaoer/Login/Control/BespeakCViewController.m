@@ -13,6 +13,14 @@
 
 @interface BespeakCViewController () <bespeakAlertViewDelegate>
 @property (nonatomic, strong) bespeakAlertView *bespeakAlertView;
+
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *getSelfBtn;
+@property (weak, nonatomic) IBOutlet UIButton *entrustBtn;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (nonatomic, assign) BOOL isBySelf;
 @end
@@ -23,6 +31,11 @@
     [super viewDidLoad];
     _isBySelf = YES;
     [self changeBackground];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_rightBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nextBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_getSelfBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_entrustBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -70,6 +83,7 @@
     _bespeakAlertView = [nib instantiateWithOwner:nil options:nil][0];
     _bespeakAlertView.delegate = self;
     _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
     [self.view addSubview:_bespeakAlertView];
 }
 

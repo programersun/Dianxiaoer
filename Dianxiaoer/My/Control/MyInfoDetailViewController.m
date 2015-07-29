@@ -10,15 +10,23 @@
 #import "FinshInputMyInfoView.h"
 #import "UpLoadIDViewController.h"
 #import "UpLoadIDCardViewController.h"
+#import "UpLoadIDCardFirstViewController.h"
 
 @interface MyInfoDetailViewController () <FinshInputMyInfoViewDelegate>
 @property (nonatomic, strong) FinshInputMyInfoView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIButton *upLoadIDCardBtn;
+
 @end
 
 @implementation MyInfoDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_submitBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_upLoadIDCardBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -49,6 +57,9 @@
     _backgroundView = [nib instantiateWithOwner:nil options:nil][0];
     _backgroundView.delegate = self;
     _backgroundView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backgroundView.bespeakBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backgroundView.upLoadBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backgroundView.cancelBtn];
     [self.view addSubview:_backgroundView];
 }
 
@@ -56,11 +67,22 @@
     [_backgroundView removeFromSuperview];
 }
 
-- (void)toUpLoadIDVC {
+#pragma mark - FinshInputMyInfoViewDelegate
 
+- (void)toUpLoadIDVC {
+    [self backgroundViewDisappear];
     UpLoadIDViewController *vc = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"UpLoadIDViewController"];
     if (vc == nil) {
         vc = [[UpLoadIDViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+- (void)toBespeakVC {
+    [self backgroundViewDisappear];
+    UpLoadIDCardFirstViewController *vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"UpLoadIDCardFirstViewController"];
+    if (vc == nil) {
+        vc = [[UpLoadIDCardFirstViewController alloc] init];
     }
     [[self navigationController] pushViewController:vc animated:YES];
 }

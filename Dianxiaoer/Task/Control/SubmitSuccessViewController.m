@@ -51,8 +51,12 @@
 - (void)submitSuccessViewAppear {
     UINib *nib = [UINib nibWithNibName:@"SubmitSuccessView" bundle:nil];
     _submitSuccessView = [nib instantiateWithOwner:nil options:nil][0];
+    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitSuccessViewDisappear)];
+    [_submitSuccessView.backgroundImg addGestureRecognizer:backTouch];
     _submitSuccessView.delegate = self;
     _submitSuccessView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitSuccessView.submitBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitSuccessView.telBtn];
     [self.view addSubview:_submitSuccessView];
     
 }

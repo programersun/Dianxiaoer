@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *verificationText;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *messageBtn;
+@property (weak, nonatomic) IBOutlet UIButton *changePasswordTypeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registBtn;
+
 @property (nonatomic, assign) BOOL showPassword;
 @end
 
@@ -23,6 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _showPassword = NO;
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_messageBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_changePasswordTypeBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_registBtn];
     // Do any additional setup after loading the view.
 }
 - (IBAction)backBtnClick:(id)sender {

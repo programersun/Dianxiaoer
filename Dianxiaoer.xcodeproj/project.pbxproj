@@ -110,6 +110,7 @@
 		58F512431B578DBC00F887AB /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F512421B578DBC00F887AB /* MenuView.m */; };
 		58F512491B579F1200F887AB /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F512481B579F1200F887AB /* MyInfoViewController.m */; };
 		58F5124C1B57A7F900F887AB /* SkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F5124B1B57A7F900F887AB /* SkillViewController.m */; };
+		A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A445AC051B68C62C0025D804 /* MySetting.storyboard */; };
 		A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */; };
 		A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */; };
 /* End PBXBuildFile section */
@@ -303,6 +304,7 @@
 		58F512481B579F1200F887AB /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		58F5124A1B57A7F900F887AB /* SkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillViewController.h; sourceTree = "<group>"; };
 		58F5124B1B57A7F900F887AB /* SkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillViewController.m; sourceTree = "<group>"; };
+		A445AC051B68C62C0025D804 /* MySetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySetting.storyboard; sourceTree = "<group>"; };
 		A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTableViewFooterView.h; sourceTree = "<group>"; };
 		A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTableViewFooterView.m; sourceTree = "<group>"; };
 		A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainTableViewFooterView.xib; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				584AB3511B568A08008E84DE /* View */,
 				584AB34F1B568A08008E84DE /* Control */,
 				58F5122D1B5743C100F887AB /* My.storyboard */,
+				A445AC051B68C62C0025D804 /* MySetting.storyboard */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */,
 				5858BB3D1B55FFA900444888 /* Main.storyboard in Resources */,
 				588FE57A1B5FCF450077D39C /* Release.storyboard in Resources */,
+				A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */,
 				5892AB101B5F2DF200F2E873 /* ScheduleMonthHeaderView.xib in Resources */,
 				58EEDA8B1B57DB9000BEA778 /* FinshInputMyInfoView.xib in Resources */,
 				5858BB421B55FFA900444888 /* LaunchScreen.xib in Resources */,

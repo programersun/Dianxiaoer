@@ -19,7 +19,7 @@
 }
 
 - (IBAction)yueBtnClick:(id)sender {
-    
+    [self.delegate toBespeakVC];
 }
 - (IBAction)inputBtnClick:(id)sender {
     [self.delegate toUpLoadIDVC];

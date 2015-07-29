@@ -333,7 +333,7 @@
 #pragma MARK: ScheduleOtherHeaderViewDelegate
 - (void)dayCellSelect:(UIButton *)sender {
     for (int i = 1 ; i <= 6 ; i++) {
-        if (sender.tag == 100 + i) {
+        if (sender.tag == 100 + i && [[_cellOpenArray objectAtIndex:i] isEqualToString:@"0"]) {
             [_cellOpenArray replaceObjectAtIndex:i withObject:@"1"];
         }
         else {

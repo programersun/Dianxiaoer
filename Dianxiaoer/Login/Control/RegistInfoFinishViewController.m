@@ -16,12 +16,21 @@
 @interface RegistInfoFinishViewController () <bespeakAlertViewDelegate,GiveUpBespeakAlertDelegate>
 @property (nonatomic, strong) bespeakAlertView *bespeakAlertView;
 @property (nonatomic, strong) GiveUpBespeakAlert *giveUpBespeakAlert;
+
+@property (weak, nonatomic) IBOutlet UIButton *bespeakNowBtn;
+@property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *giveUpBtn;
+
 @end
 
 @implementation RegistInfoFinishViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakNowBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_upLoadBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -43,6 +52,8 @@
     _giveUpBespeakAlert = [nib instantiateWithOwner:nil options:nil][0];
     _giveUpBespeakAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _giveUpBespeakAlert.delegate = self;
+    [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.submitBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.giveUpBtn];
     [self.view addSubview:_giveUpBespeakAlert];
 }
 
@@ -80,6 +91,7 @@
     [_bespeakAlertView.backgroundView addGestureRecognizer:backTouch];
     _bespeakAlertView.delegate = self;
     _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
     [self.view addSubview:_bespeakAlertView];
 }
 

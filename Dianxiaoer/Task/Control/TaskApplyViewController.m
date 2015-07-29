@@ -14,6 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *workingEnvironmentScrollView;
 @property (weak, nonatomic) IBOutlet UIButton *buttomLeftBtn;
 @property (weak, nonatomic) IBOutlet UIButton *buttomRightBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreDaysBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scrollToLeftBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scrollToRightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreWorkBtn;
 
 @property (nonatomic, assign) UIImage *backgroundImg;
 @end
@@ -23,7 +29,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _backgroundImg = [UIImage imageNamed:@"TaskApplyImg"];
-    _mainScrollView.contentSize = _backgroundImg.size;
+    _backgroundView.image = _backgroundImg;
+    _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    
+    [self changeFrame:heightChange withObjcet:_backgroundView];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_moreDaysBtn];
+    [self changeFrame:heightChange withObjcet:_scrollToLeftBtn];
+    [self changeFrame:heightChange withObjcet:_workingEnvironmentScrollView];
+    [self changeFrame:heightChange withObjcet:_scrollToRightBtn];
+    [self changeFrame:heightChange withObjcet:_moreWorkBtn];
+    [self changeFrame:heightChange withObjcet:_buttomLeftBtn];
+    [self changeFrame:heightChange withObjcet:_buttomRightBtn];
+    
+    
     // Do any additional setup after loading the view.
 }
 

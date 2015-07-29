@@ -9,6 +9,7 @@
 #import "QrCodeViewController.h"
 
 @interface QrCodeViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 
 @end
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_closeBtn];
     // Do any additional setup after loading the view.
 }
 

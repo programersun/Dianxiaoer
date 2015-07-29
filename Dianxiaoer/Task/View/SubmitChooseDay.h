@@ -16,6 +16,7 @@
 
 @interface SubmitChooseDay : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 @property (nonatomic, assign) id<SubmitChooseDayDelegate> delegate;
 @end

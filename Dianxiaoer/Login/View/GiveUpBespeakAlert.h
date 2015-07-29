@@ -17,4 +17,7 @@
 
 @interface GiveUpBespeakAlert : UIView
 @property (nonatomic, assign) id <GiveUpBespeakAlertDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *giveUpBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @end

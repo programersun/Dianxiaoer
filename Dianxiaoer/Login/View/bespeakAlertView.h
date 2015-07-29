@@ -17,5 +17,7 @@
 
 @interface bespeakAlertView : UIView
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @property (nonatomic, assign) id <bespeakAlertViewDelegate> delegate;
 @end

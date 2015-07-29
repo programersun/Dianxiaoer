@@ -46,6 +46,11 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="bespeakBtn" destination="GRa-1i-V2M" id="Lns-6Q-xnX"/>
+                <outlet property="cancelBtn" destination="hG7-n6-nhe" id="Fwm-Pr-LzT"/>
+                <outlet property="upLoadBtn" destination="LwO-Tg-qlL" id="pQR-mM-IKN"/>
+            </connections>
             <point key="canvasLocation" x="231" y="296"/>
         </view>
     </objects>

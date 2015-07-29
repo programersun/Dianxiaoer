@@ -72,23 +72,17 @@
                                     <action selector="loginBtnClick:" destination="xTA-rm-OtW" eventType="touchUpInside" id="eIE-uT-wXn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号码" minimumFontSize="17" id="Myg-rf-xjU">
-                                <rect key="frame" x="106" y="111" width="166" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="TbE-Ej-CZS">
-                                <rect key="frame" x="106" y="155" width="166" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="C85-qJ-3eg"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backBtn" destination="fLN-L5-Ibp" id="zD5-dn-p1C"/>
+                        <outlet property="forgetPasswordBtn" destination="TIO-5w-5sb" id="ZBS-Ts-hs7"/>
+                        <outlet property="loginBtn" destination="aaO-n0-wtT" id="Y03-hl-KCi"/>
+                        <outlet property="registBtn" destination="vZp-lQ-Sr4" id="ceG-67-LXv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLC-sA-4Ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,6 +143,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="9eD-H0-tVR" id="oYs-dE-eYj"/>
+                        <outlet property="changePasswordTypeBtn" destination="Qxe-0c-DLm" id="FrZ-5a-TAz"/>
+                        <outlet property="messageBtn" destination="yTa-9I-asf" id="k6P-CM-LQa"/>
+                        <outlet property="registBtn" destination="jBJ-UH-Vkl" id="PxH-Mf-Afu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghd-fu-tpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,8 +210,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="Otf-49-1CT" id="1eX-p0-7lD"/>
                         <outlet property="nanBtn" destination="G3n-zA-XC6" id="Raj-Ia-Tcp"/>
                         <outlet property="nvBtn" destination="nz7-AO-Wl8" id="5bI-cT-xbj"/>
+                        <outlet property="submitBtn" destination="Kcq-Zb-fyl" id="bW7-IX-Psq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaI-gN-ahi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,6 +265,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bespeakNowBtn" destination="NIB-lJ-Lmf" id="qB0-gn-nlw"/>
+                        <outlet property="giveUpBtn" destination="20e-Wh-bpu" id="0i9-Dz-Yoz"/>
+                        <outlet property="upLoadBtn" destination="nJ5-vJ-fri" id="h4r-B3-g4x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGR-Lg-LGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,6 +330,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="uqa-48-lgE" id="scR-TU-0Jn"/>
+                        <outlet property="nextBtn" destination="BuO-OJ-MW7" id="Hc6-dB-jGn"/>
+                        <outlet property="otherPayBtn" destination="kyo-ex-vW6" id="8rC-em-itc"/>
+                        <outlet property="rightBtn" destination="sQh-Y8-vt3" id="Tnt-G8-wJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pN-XZ-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,6 +396,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="Hkh-aA-Fta" id="lLX-vz-Iwg"/>
+                        <outlet property="moreAddressBtn" destination="ReK-4f-MXS" id="XnC-vE-FLb"/>
+                        <outlet property="nextBtn" destination="HR0-E8-2cq" id="Dd8-cH-oed"/>
+                        <outlet property="rightBtn" destination="KYy-x1-W1R" id="JEH-p7-EOt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czM-F8-fdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -454,7 +473,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="wyg-BR-5nm" id="QOs-ng-vtd"/>
                         <outlet property="backgroundView" destination="el6-28-i2r" id="MCq-1t-hiU"/>
+                        <outlet property="entrustBtn" destination="GhR-SK-ASL" id="nnd-uw-V1t"/>
+                        <outlet property="getSelfBtn" destination="XDy-qz-ssa" id="YT9-ih-k5r"/>
+                        <outlet property="nextBtn" destination="fE3-z6-aVm" id="FDf-5N-A4c"/>
+                        <outlet property="rightBtn" destination="9tV-Qr-Ecg" id="7dg-Vl-Kbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUi-uD-b1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,6 +530,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="xJa-6Q-gYa" id="Nhu-zW-qps"/>
+                        <outlet property="nextBtn" destination="GCD-iy-Cek" id="gPj-1P-eGZ"/>
+                        <outlet property="rightBtn" destination="nAD-dO-IOr" id="e6W-Dr-l5H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrm-pd-xOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -556,6 +585,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="XC0-gT-Yzf" id="OG2-b7-3Mg"/>
+                        <outlet property="nextBtn" destination="uVF-JD-0qr" id="yfb-71-uBW"/>
+                        <outlet property="rightBtn" destination="BPS-bS-B2n" id="cYQ-YK-ZN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-dy-Oya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -610,6 +644,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="1K9-IR-av9" id="sc6-XL-bJT"/>
+                        <outlet property="nextBtn" destination="D4C-x8-XRf" id="XV5-av-rUD"/>
+                        <outlet property="rightBtn" destination="se8-uZ-VUw" id="Fvw-W2-vrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf1-b4-W0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

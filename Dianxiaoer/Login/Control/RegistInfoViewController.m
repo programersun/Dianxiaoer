@@ -12,6 +12,8 @@
 @interface RegistInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *nanBtn;
 @property (weak, nonatomic) IBOutlet UIButton *nvBtn;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 @property (assign, nonatomic) BOOL nanOrnv;
 @end
@@ -22,6 +24,10 @@
     [super viewDidLoad];
     _nanOrnv = YES;
     [self setNanOrnvImg];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nanBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nvBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_submitBtn];
     // Do any additional setup after loading the view.
 }
 

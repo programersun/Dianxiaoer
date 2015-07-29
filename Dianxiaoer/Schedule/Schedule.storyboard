@@ -29,15 +29,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleDetail" translatesAutoresizingMaskIntoConstraints="NO" id="d74-gC-Q6U">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="320" id="ul2-yu-jBf"/>
+                                                        <constraint firstAttribute="height" constant="100" id="wHQ-Ka-c8A"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="d74-gC-Q6U" firstAttribute="leading" secondItem="iRq-tf-3w1" secondAttribute="leading" id="0c7-D5-8Bm"/>
-                                                <constraint firstAttribute="bottom" secondItem="d74-gC-Q6U" secondAttribute="bottom" id="SLp-ak-pTG"/>
-                                                <constraint firstItem="d74-gC-Q6U" firstAttribute="top" secondItem="iRq-tf-3w1" secondAttribute="top" id="T2U-9f-nyM"/>
-                                                <constraint firstAttribute="trailing" secondItem="d74-gC-Q6U" secondAttribute="trailing" id="sAN-5B-uwt"/>
+                                                <constraint firstAttribute="centerX" secondItem="d74-gC-Q6U" secondAttribute="centerX" id="VqQ-c6-H2K"/>
+                                                <constraint firstAttribute="centerY" secondItem="d74-gC-Q6U" secondAttribute="centerY" id="ki5-bG-nJL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoScheduleTableViewCell" id="OUh-BS-UOQ" customClass="NoScheduleTableViewCell">
                                         <rect key="frame" x="0.0" y="122" width="320" height="98"/>
@@ -48,15 +51,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddSchedule" translatesAutoresizingMaskIntoConstraints="NO" id="Grf-m7-Iz1">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="98" id="n4p-Mp-MkF"/>
+                                                        <constraint firstAttribute="width" constant="320" id="v4e-xh-c2C"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Grf-m7-Iz1" firstAttribute="leading" secondItem="jYh-19-dTD" secondAttribute="leading" id="8Kr-oX-8Ay"/>
-                                                <constraint firstAttribute="trailing" secondItem="Grf-m7-Iz1" secondAttribute="trailing" id="HEM-7E-v6Z"/>
-                                                <constraint firstAttribute="bottom" secondItem="Grf-m7-Iz1" secondAttribute="bottom" id="N86-WZ-gkc"/>
-                                                <constraint firstItem="Grf-m7-Iz1" firstAttribute="top" secondItem="jYh-19-dTD" secondAttribute="top" id="ZOo-Sb-z00"/>
+                                                <constraint firstAttribute="centerY" secondItem="Grf-m7-Iz1" secondAttribute="centerY" id="H5I-HB-r8E"/>
+                                                <constraint firstAttribute="centerX" secondItem="Grf-m7-Iz1" secondAttribute="centerX" id="kuk-35-7UR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScheduleDateTableViewCell" rowHeight="224" id="DI1-q1-4FS" customClass="ScheduleDateTableViewCell">
                                         <rect key="frame" x="0.0" y="220" width="320" height="224"/>
@@ -67,15 +73,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleMonth" translatesAutoresizingMaskIntoConstraints="NO" id="Vor-GM-m3P">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="224" id="5la-oY-9Go"/>
+                                                        <constraint firstAttribute="width" constant="320" id="Cd3-4r-3Pr"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vor-GM-m3P" firstAttribute="top" secondItem="ymp-Fw-Ljm" secondAttribute="top" id="5Qd-FV-kEE"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vor-GM-m3P" secondAttribute="trailing" id="OHV-3K-0qh"/>
-                                                <constraint firstAttribute="bottom" secondItem="Vor-GM-m3P" secondAttribute="bottom" id="ZfF-Fz-tzK"/>
-                                                <constraint firstItem="Vor-GM-m3P" firstAttribute="leading" secondItem="ymp-Fw-Ljm" secondAttribute="leading" id="aJ6-nx-kac"/>
+                                                <constraint firstAttribute="centerX" secondItem="Vor-GM-m3P" secondAttribute="centerX" id="bCB-R5-FUO"/>
+                                                <constraint firstAttribute="centerY" secondItem="Vor-GM-m3P" secondAttribute="centerY" id="bpd-WF-ASk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

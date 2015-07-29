@@ -15,12 +15,23 @@
 @property (nonatomic, strong) bespeakAlertView *bespeakAlertView;
 @property (nonatomic, strong) PaySuccessAlertView *paySuccessAlertView;
 
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *otherPayBtn;
+
 @end
 
 @implementation bespeakViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_rightBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nextBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_otherPayBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -56,6 +67,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(paySuccessAlertViewDisappear)];
     [_paySuccessAlertView.backgroundView addGestureRecognizer:backTouch];
     _paySuccessAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
     _paySuccessAlertView.delegate = self;
     [self.view addSubview:_paySuccessAlertView];
 }

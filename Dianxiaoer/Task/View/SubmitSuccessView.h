@@ -17,4 +17,8 @@
 
 @interface SubmitSuccessView : UIView
 @property (nonatomic, assign) id<SubmitSuccessViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIButton *telBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @end

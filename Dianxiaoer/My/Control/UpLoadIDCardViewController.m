@@ -9,13 +9,17 @@
 #import "UpLoadIDCardViewController.h"
 
 @interface UpLoadIDCardViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @end
 
 @implementation UpLoadIDCardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_submitBtn];
     // Do any additional setup after loading the view.
 }
 

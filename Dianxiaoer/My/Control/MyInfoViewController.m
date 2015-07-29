@@ -10,6 +10,11 @@
 
 @interface MyInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *myInfoScrollView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (nonatomic, assign) UIImage *backgroundImg;
 
 @end
 
@@ -17,17 +22,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *img = [UIImage imageNamed:@"MyInfo"];
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
-    _myInfoScrollView.contentSize = img.size;
-    [_myInfoScrollView addSubview:imgView];
+    _backgroundImg = [UIImage imageNamed:@"MyInfo"];
+    _backgroundView.image = _backgroundImg;
+    _myInfoScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    _myInfoScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * HEIGHTCHANGE);
     
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backgroundView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_rightBtn];
     // Do any additional setup after loading the view.
 }
 
 - (IBAction)backClick:(id)sender {
     [self backBtnClick];
 }
+
+- (IBAction)rightBtnClick:(id)sender {
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {

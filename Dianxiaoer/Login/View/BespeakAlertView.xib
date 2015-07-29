@@ -33,6 +33,7 @@
             </subviews>
             <connections>
                 <outlet property="backgroundView" destination="8pv-Gn-Voc" id="iSN-0S-xvo"/>
+                <outlet property="submitBtn" destination="b3Q-kB-qvt" id="H8V-n5-ETn"/>
             </connections>
             <point key="canvasLocation" x="213" y="296"/>
         </view>

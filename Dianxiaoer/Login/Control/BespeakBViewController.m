@@ -14,12 +14,24 @@
 @interface BespeakBViewController () <bespeakAlertViewDelegate>
 @property (nonatomic, strong) bespeakAlertView *bespeakAlertView;
 @property (nonatomic, strong) MoreAddressAlert *moreAddressAlert;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *moreAddressBtn;
+
+
 @end
 
 @implementation BespeakBViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_rightBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nextBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_moreAddressBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -43,6 +55,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(moreAddressAlertViewDisappear)];
     [_moreAddressAlert addGestureRecognizer:backTouch];
     _moreAddressAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_moreAddressAlert.submitBtn];
     [self.view addSubview:_moreAddressAlert];
 }
 
@@ -64,6 +77,7 @@
     _bespeakAlertView = [nib instantiateWithOwner:nil options:nil][0];
     _bespeakAlertView.delegate = self;
     _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
     [self.view addSubview:_bespeakAlertView];
 }
 

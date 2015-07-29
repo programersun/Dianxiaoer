@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -10,13 +10,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="OJV-62-lSe">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OJV-62-lSe">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pdz-t9-avO">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-t9-avO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -26,6 +24,16 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pdz-t9-avO" secondAttribute="bottom" id="C6I-6i-5Hm"/>
+                <constraint firstAttribute="trailing" secondItem="pdz-t9-avO" secondAttribute="trailing" id="NCR-LA-ElN"/>
+                <constraint firstAttribute="trailing" secondItem="OJV-62-lSe" secondAttribute="trailing" id="Odr-PQ-RO9"/>
+                <constraint firstAttribute="bottom" secondItem="OJV-62-lSe" secondAttribute="bottom" id="Wxd-UW-jAT"/>
+                <constraint firstItem="pdz-t9-avO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bxf-n9-T2L"/>
+                <constraint firstItem="pdz-t9-avO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c4o-Rk-0yJ"/>
+                <constraint firstItem="OJV-62-lSe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tr6-7l-IHv"/>
+                <constraint firstItem="OJV-62-lSe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vF8-Bb-Eft"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bidHeaderBtn" destination="pdz-t9-avO" id="n0b-fx-9kD"/>

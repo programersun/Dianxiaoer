@@ -11,6 +11,10 @@
 #import "SR_UserInfoDetail.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetPasswordBtn;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -19,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_registBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_forgetPasswordBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_loginBtn];
     // Do any additional setup after loading the view.
 }
 

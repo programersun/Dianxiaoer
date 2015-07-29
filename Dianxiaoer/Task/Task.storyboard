@@ -104,100 +104,6 @@
             </objects>
             <point key="canvasLocation" x="253" y="-59"/>
         </scene>
-        <!--Submit Success View Controller-->
-        <scene sceneID="X7G-7X-KjO">
-            <objects>
-                <viewController storyboardIdentifier="SubmitSuccessViewController" id="aqw-xx-JaM" customClass="SubmitSuccessViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wwp-Vx-Ovc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="submitDay" id="7hp-kq-D9B">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="N2I-9Q-r0x">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BidDetialTableViewCell" rowHeight="59" id="vCN-th-dDP" customClass="BidDetialTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="59"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCN-th-dDP" id="VTl-uQ-pmg">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BidDetailCellImg" id="QCr-3O-G0X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="aqw-xx-JaM" id="dRn-4s-7hj"/>
-                                    <outlet property="delegate" destination="aqw-xx-JaM" id="Btu-OW-hMf"/>
-                                </connections>
-                            </tableView>
-                            <view contentMode="scaleToFill" id="IUb-MJ-mpg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q7C-eK-QlH">
-                                        <rect key="frame" x="16" y="17" width="26" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backBtnClick:" destination="aqw-xx-JaM" eventType="touchUpInside" id="aIc-8R-LqL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9s2-SI-QOu">
-                                        <rect key="frame" x="271" y="17" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="rightBtnClick:" destination="aqw-xx-JaM" eventType="touchUpInside" id="QjV-GN-h5f"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
-                            <view contentMode="scaleToFill" id="sZF-Ku-4NH">
-                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" id="uLS-1W-4EX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c0t-X1-QFl">
-                                        <rect key="frame" x="135" y="12" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="submitBtnClick:" destination="aqw-xx-JaM" eventType="touchUpInside" id="f48-vl-7B3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="bidDeatilTableView" destination="N2I-9Q-r0x" id="rXY-nH-Ip8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XWW-w8-wdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="624" y="-59"/>
-        </scene>
         <!--Task Apply View Controller-->
         <scene sceneID="GdQ-HJ-3n5">
             <objects>
@@ -297,9 +203,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="6jl-ms-5ML" id="57f-bx-ihr"/>
+                        <outlet property="backgroundView" destination="llJ-zO-GsH" id="c5S-lQ-4Ip"/>
                         <outlet property="buttomLeftBtn" destination="xgY-s4-2Ui" id="Ntc-EJ-JpR"/>
                         <outlet property="buttomRightBtn" destination="gMP-yO-p7L" id="xbY-ob-tN2"/>
                         <outlet property="mainScrollView" destination="GUU-pw-pDn" id="9Ej-AY-6cG"/>
+                        <outlet property="moreDaysBtn" destination="vtw-R1-kJM" id="jDb-nv-bOj"/>
+                        <outlet property="moreWorkBtn" destination="tTB-jk-9Dk" id="V4j-fi-Eov"/>
+                        <outlet property="scrollToLeftBtn" destination="VS6-WO-bUS" id="LUZ-hL-ULF"/>
+                        <outlet property="scrollToRightBtn" destination="czM-ck-JNo" id="Qa6-6h-4C8"/>
                         <outlet property="workingEnvironmentScrollView" destination="0ah-xf-qtM" id="dF2-Fn-YNQ"/>
                     </connections>
                 </viewController>
@@ -309,11 +221,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BidDetailCellImg" width="320" height="59"/>
         <image name="TaskApplyImg" width="320" height="1735"/>
-        <image name="buyButtomBackground" width="320" height="61"/>
         <image name="myTaskImg" width="320" height="568"/>
-        <image name="submitDay" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

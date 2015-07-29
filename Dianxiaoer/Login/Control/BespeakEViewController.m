@@ -11,12 +11,19 @@
 
 @interface BespeakEViewController () <bespeakAlertViewDelegate>
 @property (nonatomic, strong) bespeakAlertView *bespeakAlertView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
 @end
 
 @implementation BespeakEViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_backBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_rightBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_nextBtn];
     // Do any additional setup after loading the view.
 }
 
@@ -41,6 +48,7 @@
     _bespeakAlertView = [nib instantiateWithOwner:nil options:nil][0];
     _bespeakAlertView.delegate = self;
     _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
     [self.view addSubview:_bespeakAlertView];
 }
 
