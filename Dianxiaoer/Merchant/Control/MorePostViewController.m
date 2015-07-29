@@ -14,6 +14,12 @@
 @interface MorePostViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (nonatomic, assign) UIImage *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreShopBtn;
+@property (weak, nonatomic) IBOutlet UIButton *consultBtn;
+
 
 @end
 
@@ -22,7 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _backgroundImg = [UIImage imageNamed:@"morePost"];
-    [_mainScrollView setContentSize:CGSizeMake(_backgroundImg.size.width, _backgroundImg.size.height - 1)];
+    
+    _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    [self changeFrame:heightChange withObjcet:_backgroundView];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_cellBtn];
+    [self changeFrame:heightChange withObjcet:_moreShopBtn];
+    [self changeFrame:heightChange withObjcet:_consultBtn];
     
     // Do any additional setup after loading the view.
 }

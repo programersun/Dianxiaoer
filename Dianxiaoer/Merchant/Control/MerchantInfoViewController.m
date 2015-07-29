@@ -11,6 +11,13 @@
 @interface MerchantInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *workingEnvironmentScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scrollToLeftBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scrollToRightBtn;
+@property (weak, nonatomic) IBOutlet UIButton *consultBtn;
+
+
 @property (nonatomic, assign) UIImage *backgroundImg;
 @end
 
@@ -19,7 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _backgroundImg = [UIImage imageNamed:@"MerchantInfo"];
-    [_mainScrollView setContentSize:CGSizeMake(_backgroundImg.size.width, _backgroundImg.size.height - 1)];
+    _backgroundView.image = _backgroundImg;
+    _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    
+    [self changeFrame:heightChange withObjcet:_backgroundView];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_scrollToLeftBtn];
+    [self changeFrame:heightChange withObjcet:_scrollToRightBtn];
+    [self changeFrame:heightChange withObjcet:_consultBtn];
+
     // Do any additional setup after loading the view.
 }
 

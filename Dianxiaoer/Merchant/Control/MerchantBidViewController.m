@@ -13,6 +13,18 @@
 @interface MerchantBidViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *workingEnvironmentScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundVIew;
+
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreDaysBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *scrollToLeftBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scrollToRigthBtn;
+@property (weak, nonatomic) IBOutlet UIButton *moreWorkBtn;
+@property (weak, nonatomic) IBOutlet UIButton *conulstBtn;
+@property (weak, nonatomic) IBOutlet UIButton *enlistBtn;
+
 
 @property (nonatomic, strong) ShareView *shareView;
 @property (nonatomic, assign) UIImage *backgroundImg;
@@ -23,7 +35,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _backgroundImg = [UIImage imageNamed:@"MerchantBid"];
-    _mainScrollView.contentSize = _backgroundImg.size;
+    _backgroundVIew.image = _backgroundImg;
+    _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    
+    [self changeFrame:heightChange withObjcet:_backgroundVIew];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_shareBtn];
+    [self changeFrame:heightChange withObjcet:_moreDaysBtn];
+    [self changeFrame:heightChange withObjcet:_scrollToLeftBtn];
+    [self changeFrame:heightChange withObjcet:_workingEnvironmentScrollView];
+    [self changeFrame:heightChange withObjcet:_scrollToRigthBtn];
+    [self changeFrame:heightChange withObjcet:_moreWorkBtn];
+    [self changeFrame:heightChange withObjcet:_conulstBtn];
+    [self changeFrame:heightChange withObjcet:_enlistBtn];
     
     // Do any additional setup after loading the view.
 }
@@ -42,7 +70,8 @@
     _shareView = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shareViewDisappear)];
     [_shareView addGestureRecognizer:backTouch];
-    
+    _shareView.frame = CGRectMake(0, 0,[[UIScreen mainScreen] bounds].size.width , [[UIScreen mainScreen] bounds].size.height);
+    _shareView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_shareView];
 }
 

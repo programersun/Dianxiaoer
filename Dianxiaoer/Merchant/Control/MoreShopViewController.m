@@ -10,13 +10,26 @@
 #import "MorePostViewController.h"
 
 @interface MoreShopViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 
+@property (nonatomic, assign) UIImage *backgroundImg;
 @end
 
 @implementation MoreShopViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _backgroundImg = [UIImage imageNamed:@"moreShop"];
+    _backgroundView.image = _backgroundImg;
+    
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    [self changeFrame:heightChange withObjcet:_backgroundView];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_cellBtn];
+
     // Do any additional setup after loading the view.
 }
 

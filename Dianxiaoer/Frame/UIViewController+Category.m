@@ -43,4 +43,8 @@
     [self.view addSubview:callWebview];
 }
 
+- (void)changeFrame:(CGFloat)heightChange withObjcet:(UIView * )sender {
+    sender.frame = CGRectMake(sender.frame.origin.x * heightChange, sender.frame.origin.y * heightChange,sender.frame.size.width * heightChange, sender.frame.size.height * heightChange);
+}
+
 @end

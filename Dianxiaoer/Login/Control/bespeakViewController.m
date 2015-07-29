@@ -55,6 +55,7 @@
     _paySuccessAlertView = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(paySuccessAlertViewDisappear)];
     [_paySuccessAlertView.backgroundView addGestureRecognizer:backTouch];
+    _paySuccessAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _paySuccessAlertView.delegate = self;
     [self.view addSubview:_paySuccessAlertView];
 }
@@ -71,6 +72,7 @@
     UINib *nib = [UINib nibWithNibName:@"BespeakAlertView" bundle:nil];
     _bespeakAlertView = [nib instantiateWithOwner:nil options:nil][0];
     _bespeakAlertView.delegate = self;
+    _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_bespeakAlertView];
 }
 

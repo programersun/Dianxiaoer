@@ -17,4 +17,8 @@
 
 @interface SearchAlert : UIView
 @property (nonatomic, assign) id <SearchAlertDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @end

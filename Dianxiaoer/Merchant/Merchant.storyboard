@@ -14,11 +14,11 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Sh8-1v-bl5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBid" id="MxN-Ra-33b">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBid" id="MxN-Ra-33b">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1745"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mBY-re-TAb">
                                         <rect key="frame" x="21" y="23" width="30" height="30"/>
@@ -113,7 +113,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="mBY-re-TAb" id="hEd-Ad-YiI"/>
+                        <outlet property="backgroundVIew" destination="MxN-Ra-33b" id="dXf-a0-FlV"/>
+                        <outlet property="conulstBtn" destination="s9S-MH-HfE" id="QFn-th-vdi"/>
+                        <outlet property="enlistBtn" destination="tpc-yf-FIK" id="YHp-Nd-g9B"/>
                         <outlet property="mainScrollView" destination="Sh8-1v-bl5" id="Ggb-7H-nsj"/>
+                        <outlet property="moreDaysBtn" destination="t57-jM-ff3" id="1UZ-RY-oqK"/>
+                        <outlet property="moreWorkBtn" destination="7lT-pL-chD" id="uA2-qL-TEB"/>
+                        <outlet property="scrollToLeftBtn" destination="u8C-p7-S3k" id="I1B-zQ-Vi8"/>
+                        <outlet property="scrollToRigthBtn" destination="Kdg-qa-9zf" id="W0V-lu-C0M"/>
+                        <outlet property="shareBtn" destination="t3g-Bj-5hc" id="jwU-qR-tvg"/>
                         <outlet property="workingEnvironmentScrollView" destination="IBa-5f-hak" id="HaT-4M-KaZ"/>
                     </connections>
                 </viewController>
@@ -131,11 +140,11 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="w2d-9a-rTp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantInfo" id="KKv-oa-fek">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantInfo" id="KKv-oa-fek">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="838"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apG-W3-3Ry">
                                         <rect key="frame" x="21" y="22" width="30" height="30"/>
@@ -187,7 +196,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="apG-W3-3Ry" id="xK2-ro-LsR"/>
+                        <outlet property="backgroundView" destination="KKv-oa-fek" id="pOP-2W-Ltc"/>
+                        <outlet property="consultBtn" destination="n5Y-yQ-09t" id="eoV-O1-OsS"/>
                         <outlet property="mainScrollView" destination="w2d-9a-rTp" id="0tt-ez-UMl"/>
+                        <outlet property="scrollToLeftBtn" destination="G00-ZR-955" id="z1c-1W-ul6"/>
+                        <outlet property="scrollToRightBtn" destination="AXY-g0-Imj" id="5Q0-Ae-fCg"/>
                         <outlet property="workingEnvironmentScrollView" destination="sjv-AM-lJu" id="slT-1V-i2Z"/>
                     </connections>
                 </viewController>
@@ -207,9 +221,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morePost" id="ZeF-XT-c5n">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morePost" id="ZeF-XT-c5n">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="699"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0iE-aU-RQ0">
                                         <rect key="frame" x="22" y="23" width="30" height="30"/>
@@ -257,7 +271,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="0iE-aU-RQ0" id="jEl-Fo-T5F"/>
+                        <outlet property="backgroundView" destination="ZeF-XT-c5n" id="IH3-Ol-bp1"/>
+                        <outlet property="cellBtn" destination="M5e-Rb-eiG" id="0ne-jv-klo"/>
+                        <outlet property="consultBtn" destination="qgK-mq-8oa" id="OIg-3S-sch"/>
                         <outlet property="mainScrollView" destination="mNc-qe-pPk" id="RsE-Rl-lQV"/>
+                        <outlet property="moreShopBtn" destination="wpx-vA-Yg3" id="2s6-bE-0J3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9y-C9-ur3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,9 +291,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreShop" id="KcQ-8Z-SdQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreShop" id="KcQ-8Z-SdQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="36F-xr-MWJ">
                                 <rect key="frame" x="15" y="17" width="30" height="30"/>
@@ -299,6 +318,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="36F-xr-MWJ" id="NJb-3B-hfg"/>
+                        <outlet property="backgroundView" destination="KcQ-8Z-SdQ" id="VLu-ty-7nS"/>
+                        <outlet property="cellBtn" destination="8X0-8C-Gax" id="qex-Bl-f6i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pn3-2K-LpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,7 +338,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morePostDetail" id="q4G-gq-4sf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bF4-Fs-4Kf">
                                 <rect key="frame" x="21" y="22" width="30" height="30"/>
@@ -359,6 +383,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="bF4-Fs-4Kf" id="DoF-9q-y8g"/>
+                        <outlet property="backgroundView" destination="q4G-gq-4sf" id="aAT-zG-fvc"/>
+                        <outlet property="cellBtn" destination="Fgn-o8-Neh" id="7rE-Gd-o8h"/>
+                        <outlet property="cellNextBtn" destination="yIQ-Rc-CRT" id="8Bn-Aj-h14"/>
+                        <outlet property="headImg" destination="oof-0m-gxN" id="5h3-KP-Qoc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbX-ab-ujG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

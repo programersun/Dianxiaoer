@@ -14,12 +14,37 @@
 
 @interface TaskMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundVIew;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellABtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellAHeadBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellBBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellBHeadBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellCBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellCHeadBtn;
+
+@property (nonatomic, assign) UIImage *backgroundImg;
+
 @end
 
 @implementation TaskMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _backgroundImg = [UIImage imageNamed:@"myTaskImg"];
+    _backgroundVIew.image = _backgroundImg;
+    
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    [self changeFrame:heightChange withObjcet:_backgroundVIew];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_cellABtn];
+    [self changeFrame:heightChange withObjcet:_cellAHeadBtn];
+    [self changeFrame:heightChange withObjcet:_cellBBtn];
+    [self changeFrame:heightChange withObjcet:_cellBHeadBtn];
+    [self changeFrame:heightChange withObjcet:_cellCBtn];
+    [self changeFrame:heightChange withObjcet:_cellCHeadBtn];
+
     // Do any additional setup after loading the view.
 }
 

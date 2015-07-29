@@ -41,6 +41,7 @@
 - (IBAction)cancelBtnClick:(id)sender {
     UINib *nib = [UINib nibWithNibName:@"GiveUpBespeakAlert" bundle:nil];
     _giveUpBespeakAlert = [nib instantiateWithOwner:nil options:nil][0];
+    _giveUpBespeakAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _giveUpBespeakAlert.delegate = self;
     [self.view addSubview:_giveUpBespeakAlert];
 }
@@ -78,6 +79,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bespeakAlertViewDisappear)];
     [_bespeakAlertView.backgroundView addGestureRecognizer:backTouch];
     _bespeakAlertView.delegate = self;
+    _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_bespeakAlertView];
 }
 

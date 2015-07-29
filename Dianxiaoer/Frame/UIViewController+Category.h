@@ -14,4 +14,5 @@
 - (void)backBtnClick;
 - (void)toRootView;
 - (void)tel;
+- (void)changeFrame:(CGFloat)heightChange withObjcet:(UIView *)sender;
 @end

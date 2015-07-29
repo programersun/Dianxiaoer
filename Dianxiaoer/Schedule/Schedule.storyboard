@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -8,13 +8,16 @@
         <scene sceneID="QLh-Ad-hyj">
             <objects>
                 <viewController storyboardIdentifier="ScheduleViewController" id="QyA-UY-FdJ" customClass="ScheduleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ILF-dV-Eal"/>
+                        <viewControllerLayoutGuide type="bottom" id="cKY-Pc-S2D"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Axe-BE-eyC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="3ql-Wr-3RR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-Wr-3RR">
                                 <rect key="frame" x="0.0" y="100" width="320" height="468"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScheduleTableViewCell" rowHeight="100" id="LlC-nn-oXp" customClass="ScheduleTableViewCell">
@@ -24,11 +27,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleDetail" id="d74-gC-Q6U">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleDetail" translatesAutoresizingMaskIntoConstraints="NO" id="d74-gC-Q6U">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="d74-gC-Q6U" firstAttribute="leading" secondItem="iRq-tf-3w1" secondAttribute="leading" id="0c7-D5-8Bm"/>
+                                                <constraint firstAttribute="bottom" secondItem="d74-gC-Q6U" secondAttribute="bottom" id="SLp-ak-pTG"/>
+                                                <constraint firstItem="d74-gC-Q6U" firstAttribute="top" secondItem="iRq-tf-3w1" secondAttribute="top" id="T2U-9f-nyM"/>
+                                                <constraint firstAttribute="trailing" secondItem="d74-gC-Q6U" secondAttribute="trailing" id="sAN-5B-uwt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoScheduleTableViewCell" id="OUh-BS-UOQ" customClass="NoScheduleTableViewCell">
@@ -38,11 +46,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddSchedule" id="Grf-m7-Iz1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddSchedule" translatesAutoresizingMaskIntoConstraints="NO" id="Grf-m7-Iz1">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Grf-m7-Iz1" firstAttribute="leading" secondItem="jYh-19-dTD" secondAttribute="leading" id="8Kr-oX-8Ay"/>
+                                                <constraint firstAttribute="trailing" secondItem="Grf-m7-Iz1" secondAttribute="trailing" id="HEM-7E-v6Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="Grf-m7-Iz1" secondAttribute="bottom" id="N86-WZ-gkc"/>
+                                                <constraint firstItem="Grf-m7-Iz1" firstAttribute="top" secondItem="jYh-19-dTD" secondAttribute="top" id="ZOo-Sb-z00"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScheduleDateTableViewCell" rowHeight="224" id="DI1-q1-4FS" customClass="ScheduleDateTableViewCell">
@@ -52,11 +65,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleMonth" id="Vor-GM-m3P">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScheduleMonth" translatesAutoresizingMaskIntoConstraints="NO" id="Vor-GM-m3P">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vor-GM-m3P" firstAttribute="top" secondItem="ymp-Fw-Ljm" secondAttribute="top" id="5Qd-FV-kEE"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vor-GM-m3P" secondAttribute="trailing" id="OHV-3K-0qh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vor-GM-m3P" secondAttribute="bottom" id="ZfF-Fz-tzK"/>
+                                                <constraint firstItem="Vor-GM-m3P" firstAttribute="leading" secondItem="ymp-Fw-Ljm" secondAttribute="leading" id="aJ6-nx-kac"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -65,17 +83,14 @@
                                     <outlet property="delegate" destination="QyA-UY-FdJ" id="gvE-Bz-xxu"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" id="2B8-nt-d1T">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2B8-nt-d1T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Schedule00" id="nZ0-Bt-uh0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Schedule00" translatesAutoresizingMaskIntoConstraints="NO" id="nZ0-Bt-uh0">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z6x-vC-BKD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6x-vC-BKD">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -83,9 +98,8 @@
                                             <action selector="topViewClick:" destination="QyA-UY-FdJ" eventType="touchUpInside" id="PzW-V5-7U5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wlS-H5-AYN">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlS-H5-AYN">
                                         <rect key="frame" x="12" y="32" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -95,9 +109,30 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nZ0-Bt-uh0" secondAttribute="trailing" id="6X6-Nf-8xH"/>
+                                    <constraint firstAttribute="height" constant="100" id="74S-Wr-5E1"/>
+                                    <constraint firstAttribute="bottom" secondItem="nZ0-Bt-uh0" secondAttribute="bottom" id="Ccv-Mt-dg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="z6x-vC-BKD" secondAttribute="trailing" id="WKr-Lt-wmr"/>
+                                    <constraint firstItem="z6x-vC-BKD" firstAttribute="top" secondItem="2B8-nt-d1T" secondAttribute="top" id="b6X-NN-cpL"/>
+                                    <constraint firstItem="nZ0-Bt-uh0" firstAttribute="top" secondItem="2B8-nt-d1T" secondAttribute="top" id="csV-PC-yz8"/>
+                                    <constraint firstItem="z6x-vC-BKD" firstAttribute="leading" secondItem="2B8-nt-d1T" secondAttribute="leading" id="h1p-N4-gr8"/>
+                                    <constraint firstAttribute="bottom" secondItem="z6x-vC-BKD" secondAttribute="bottom" id="iUs-w5-7DS"/>
+                                    <constraint firstItem="nZ0-Bt-uh0" firstAttribute="leading" secondItem="2B8-nt-d1T" secondAttribute="leading" id="jEB-oe-b45"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3ql-Wr-3RR" secondAttribute="trailing" id="4vS-zd-Lhj"/>
+                            <constraint firstItem="3ql-Wr-3RR" firstAttribute="top" secondItem="2B8-nt-d1T" secondAttribute="bottom" id="8QN-6M-q7E"/>
+                            <constraint firstItem="3ql-Wr-3RR" firstAttribute="top" secondItem="2B8-nt-d1T" secondAttribute="bottom" id="B3B-Ta-0Hh"/>
+                            <constraint firstItem="3ql-Wr-3RR" firstAttribute="leading" secondItem="Axe-BE-eyC" secondAttribute="leading" id="dnL-xb-qc9"/>
+                            <constraint firstItem="2B8-nt-d1T" firstAttribute="top" secondItem="Axe-BE-eyC" secondAttribute="top" id="hOG-Gj-8Xb"/>
+                            <constraint firstItem="2B8-nt-d1T" firstAttribute="leading" secondItem="Axe-BE-eyC" secondAttribute="leading" id="nE6-Lz-mob"/>
+                            <constraint firstAttribute="trailing" secondItem="2B8-nt-d1T" secondAttribute="trailing" id="wEk-vV-QEV"/>
+                            <constraint firstItem="cKY-Pc-S2D" firstAttribute="top" secondItem="3ql-Wr-3RR" secondAttribute="bottom" id="wsv-cj-Mag"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="scheduleTableView" destination="3ql-Wr-3RR" id="LIT-kP-Je0"/>

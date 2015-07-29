@@ -24,6 +24,7 @@
 #import "AssistantMainViewController.h"
 #import "IncomeViewController.h"
 #import "ScheduleViewController.h"
+#import "mainTableViewFooterView.h"
 
 @interface MainViewController () <UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate,MainBannerTableViewCellDelegate ,MenuViewDelegate,SearchAlertDelegate,TodayTopViewDelegate>
 
@@ -31,6 +32,11 @@
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *orderBtn;
 @property (weak, nonatomic) IBOutlet UIView *todayTopView;
+@property (weak, nonatomic) IBOutlet UIButton *menuBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderBtnTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topVIewTop;
+
+
 
 @property (nonatomic, strong) MenuView *menuView;
 @property (nonatomic, strong) SearchAlert *searchAlert;
@@ -49,7 +55,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBarHidden = YES;
@@ -57,6 +63,8 @@
     _screenWidth  = [UIScreen mainScreen].bounds.size.width;
     _screenHeight = [UIScreen mainScreen].bounds.size.height;
     [self addDownPanToTopView];
+    _topVIewTop.constant = 0;
+    _orderBtnTop.constant = -(_screenWidth/2 + 22);
     // Do any additional setup after loading the view.
 }
 
@@ -81,6 +89,10 @@
 - (IBAction)searchBtnClick:(id)sender {
     UINib *nib = [UINib nibWithNibName:@"SearchAlert" bundle:nil];
     _searchAlert = [nib instantiateWithOwner:nil options:nil][0];
+    _searchAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.backgroundView];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.cancelBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.submitBtn];
     _searchAlert.delegate = self;
     [self.view addSubview:_searchAlert];
 }
@@ -121,6 +133,7 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundViewDisappear)];
     [_menuView addGestureRecognizer:backTouch];
     _menuView.delegate = self;
+    _menuView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_menuView];
 }
 
@@ -144,17 +157,17 @@
 - (void)todayTopViewUp {
     if (_topUp.state == UIGestureRecognizerStateEnded ) {
         [UIView animateWithDuration:1.0 animations:^{
-            _todayTopView.frame = CGRectMake(0, -568, 320, 568);
+            _todayTopView.frame = CGRectMake(0, 0, _screenWidth, 0);
             _todayTopView.alpha = 0;
         }];
     }
 }
 
 - (void)todayTopViewAppear {
-    _todayTopView.frame = CGRectMake(0, -568, 320, 568);
+    _todayTopView.frame = CGRectMake(0, 0, _screenWidth, 0);
     _todayTopView.alpha = 0;
     [UIView animateWithDuration:1.0 animations:^{
-        _todayTopView.frame = CGRectMake(0, 0, 320, 568);
+        _todayTopView.frame = CGRectMake(0, 0, _screenWidth, _screenHeight);
         _todayTopView.alpha = 0.95;
     }];
     
@@ -199,6 +212,7 @@
 //            vc = [[TaskMainViewController alloc] init];
 //        }
 //        [[self navigationController] pushViewController:vc animated:YES];
+
     }
 }
 
@@ -243,6 +257,26 @@
     return 3;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 2) {
+        return 30;
+    }
+    else {
+        return 0.00001;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section == 2) {
+        UINib *nib = [UINib nibWithNibName:@"mainTableViewFooterView" bundle:nil];
+        mainTableViewFooterView *view = [nib instantiateWithOwner:nil options:nil][0];
+        return view;
+    }
+    else {
+        return nil;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
@@ -281,6 +315,8 @@
         if (bannerCell == nil) {
             bannerCell = [[MainBannerTableViewCell alloc] init];
         }
+        bannerCell.bannerCollectionView.frame = CGRectMake(0, 0, _screenWidth, _screenWidth/2);
+        bannerCell.bannerPageConrtol.frame = CGRectMake(_screenWidth/2 -bannerCell.bannerPageConrtol.frame.size.width/2 , _screenWidth/2 - bannerCell.bannerPageConrtol.frame.size.height, bannerCell.bannerPageConrtol.frame.size.width, bannerCell.bannerPageConrtol.frame.size.height);
         bannerCell.delegate = self;
         [bannerCell startLoadDataBanner];
         return bannerCell;
@@ -336,44 +372,32 @@
             if (heightChange > 0) {
                 
                 if (_topView.frame.origin.y > -64 && _topView.frame.origin.y - heightChange >= -64) {
-                    _topView.hidden = NO;
-                    _topView.frame = CGRectMake(0, _topView.frame.origin.y - heightChange, _topView.frame.size.width, _topView.frame.size.height);
-                    _mainTableView.frame = CGRectMake(0, _mainTableView.frame.origin.y - heightChange, _screenWidth, _screenHeight);
+                    _topVIewTop.constant = _topVIewTop.constant - heightChange;
                 }
                 else {
-                    _topView.frame = CGRectMake(0, -64, _topView.frame.size.width, _topView.frame.size.height);
-                    _mainTableView.frame = CGRectMake(0, 0, _screenWidth, _screenHeight);
+                    _topVIewTop.constant = -64;
                 }
             }
             else {
                 if (_topView.frame.origin.y < 0 && _topView.frame.origin.y - heightChange <= 0) {
-                    _topView.hidden = NO;
-                    _topView.frame = CGRectMake(0, _topView.frame.origin.y - heightChange, _topView.frame.size.width, _topView.frame.size.height);
-                    _mainTableView.frame = CGRectMake(0, _mainTableView.frame.origin.y - heightChange, _screenWidth, _screenHeight);
+                    _topVIewTop.constant = _topVIewTop.constant - heightChange;
                 }
                 else {
-                    _topView.frame = CGRectMake(0, 0, _topView.frame.size.width, _topView.frame.size.height);
-                    _mainTableView.frame = CGRectMake(0, 64, _screenWidth, _screenHeight);
+                    _topVIewTop.constant = 0;
                 }
                 
             }
         }
-        else {
-            _topView.hidden = YES;
-            _mainTableView.frame = CGRectMake(0, 0, _screenWidth, _screenHeight);
-        }
-        if (newcontentOffsetY < 160) {
-            _orderBtn.frame = CGRectMake(_orderBtn.frame.origin.x, _mainTableView.frame.origin.y + 182 - newcontentOffsetY, _orderBtn.frame.size.width, _orderBtn.frame.size.height);
+        if (newcontentOffsetY < _screenWidth / 2) {
+            _orderBtnTop.constant = -(_screenWidth / 2 + 22 - newcontentOffsetY);
         }
         else {
-            _orderBtn.frame = CGRectMake(_orderBtn.frame.origin.x, _mainTableView.frame.origin.y + 20, _orderBtn.frame.size.width, _orderBtn.frame.size.height);
+            _orderBtnTop.constant = -22;
         }
     }
     else {
-        _topView.hidden = NO;
-        _mainTableView.frame = CGRectMake(0, 64, _screenWidth, _screenHeight);
-        _topView.frame = CGRectMake(0, 0, _topView.frame.size.width, _topView.frame.size.height);
-        _orderBtn.frame = CGRectMake(_orderBtn.frame.origin.x, _mainTableView.frame.origin.y + 182 - newcontentOffsetY, _orderBtn.frame.size.width, _orderBtn.frame.size.height);
+        _topVIewTop.constant = 0;
+        _orderBtnTop.constant = -(_screenWidth / 2 + 22 - newcontentOffsetY);
     }
 
     _oldcontentOffsetY = newcontentOffsetY;

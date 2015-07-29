@@ -42,6 +42,7 @@
     _moreAddressAlert = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(moreAddressAlertViewDisappear)];
     [_moreAddressAlert addGestureRecognizer:backTouch];
+    _moreAddressAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_moreAddressAlert];
 }
 
@@ -62,6 +63,7 @@
     UINib *nib = [UINib nibWithNibName:@"BespeakAlertView" bundle:nil];
     _bespeakAlertView = [nib instantiateWithOwner:nil options:nil][0];
     _bespeakAlertView.delegate = self;
+    _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_bespeakAlertView];
 }
 

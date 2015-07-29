@@ -87,6 +87,7 @@
     if (cell == nil) {
         cell = [[MainBannerCollectionViewCell alloc] init];
     }
+    cell.bannerImg.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.width/2);
     cell.bannerImg.image = [UIImage imageNamed:@"banner"];
     if (indexPath.row == 0 || indexPath.row == pageControlNum) {
         cell.bannerImg.image = [UIImage imageNamed:@"banner"];

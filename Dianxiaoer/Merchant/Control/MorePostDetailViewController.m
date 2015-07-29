@@ -12,12 +12,30 @@
 
 @interface MorePostDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *headImg;
+@property (weak, nonatomic) IBOutlet UIButton *cellBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cellNextBtn;
+
+
+@property (nonatomic, assign) UIImage *backgroundImg;
 @end
 
 @implementation MorePostDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _backgroundImg = [UIImage imageNamed:@"morePostDetail"];
+    _backgroundView.image = _backgroundImg;
+    
+    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    [self changeFrame:heightChange withObjcet:_backgroundView];
+    [self changeFrame:heightChange withObjcet:_backBtn];
+    [self changeFrame:heightChange withObjcet:_headImg];
+    [self changeFrame:heightChange withObjcet:_cellBtn];
+    [self changeFrame:heightChange withObjcet:_cellNextBtn];
     // Do any additional setup after loading the view.
 }
 

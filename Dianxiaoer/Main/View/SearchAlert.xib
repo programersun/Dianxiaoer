@@ -12,7 +12,7 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchAlert" id="XjM-rx-Tb9">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FkB-Ng-h8G">
                     <rect key="frame" x="40" y="508" width="45" height="45"/>
@@ -36,6 +36,11 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="backgroundView" destination="XjM-rx-Tb9" id="7Zb-Sd-52r"/>
+                <outlet property="cancelBtn" destination="FkB-Ng-h8G" id="oih-FY-Zuw"/>
+                <outlet property="submitBtn" destination="dJI-vi-8GD" id="j8R-HT-woE"/>
+            </connections>
             <point key="canvasLocation" x="208" y="308"/>
         </view>
     </objects>

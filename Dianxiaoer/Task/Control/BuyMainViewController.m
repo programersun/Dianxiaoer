@@ -66,6 +66,7 @@
     _submitChooseDay = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitChooseViewDisappear)];
     [_submitChooseDay.backgroundImg addGestureRecognizer:backTouch];
+    _submitChooseDay.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _submitChooseDay.delegate = self;
     [self.view addSubview:_submitChooseDay];
     
@@ -106,6 +107,7 @@
     _modifyView = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(modifyViewDisappear)];
     [_modifyView.backgroundImg addGestureRecognizer:backTouch];
+    _modifyView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _modifyView.delegate = self;
     [self.view addSubview:_modifyView];
     
@@ -160,6 +162,7 @@
     _chooseDayView = [nib instantiateWithOwner:nil options:nil][0];
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseViewDisappear)];
     [_chooseDayView.backgroundImg addGestureRecognizer:backTouch];
+    _chooseDayView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_chooseDayView];
 
 }

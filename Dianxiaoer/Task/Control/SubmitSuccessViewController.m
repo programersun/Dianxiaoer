@@ -52,6 +52,7 @@
     UINib *nib = [UINib nibWithNibName:@"SubmitSuccessView" bundle:nil];
     _submitSuccessView = [nib instantiateWithOwner:nil options:nil][0];
     _submitSuccessView.delegate = self;
+    _submitSuccessView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_submitSuccessView];
     
 }

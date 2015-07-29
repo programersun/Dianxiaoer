@@ -48,6 +48,7 @@
     UINib *nib = [UINib nibWithNibName:@"FinshInputMyInfoView" bundle:nil];
     _backgroundView = [nib instantiateWithOwner:nil options:nil][0];
     _backgroundView.delegate = self;
+    _backgroundView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:_backgroundView];
 }
 
