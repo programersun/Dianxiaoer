@@ -272,7 +272,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="t2b-Tp-RsS" firstAttribute="top" secondItem="ZOp-gT-3SY" secondAttribute="top" constant="2" id="3In-0A-yWm"/>
                                                 <constraint firstAttribute="centerX" secondItem="SCO-8E-nZJ" secondAttribute="centerX" constant="-35.5" id="7OO-2o-wFz"/>
@@ -285,12 +285,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="backgroundImg" destination="jbo-af-Y1q" id="dnh-gL-6l0"/>
-                                            <outlet property="centerLine" destination="TMX-d7-K2B" id="3ks-Oh-Yey"/>
                                             <outlet property="headImg" destination="67L-4M-enc" id="1Mj-FS-egD"/>
-                                            <outlet property="infoDistanceLabel" destination="QSF-Nj-WSx" id="7qr-rz-mEw"/>
-                                            <outlet property="infoTimeLabel" destination="f8k-i8-USd" id="hPn-w8-drK"/>
-                                            <outlet property="infoWorkLabel" destination="x4H-7L-5m4" id="BBU-Ho-mRM"/>
                                             <outlet property="timeLabel" destination="t2b-Tp-RsS" id="LOe-1q-pcp"/>
                                         </connections>
                                     </tableViewCell>
