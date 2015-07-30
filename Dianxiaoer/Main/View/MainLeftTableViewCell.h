@@ -10,14 +10,6 @@
 
 @interface MainLeftTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *centerLine;
-
-@property (weak, nonatomic) IBOutlet UIView *infoView;
-
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
-@property (weak, nonatomic) IBOutlet UILabel *infoWorkLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoDistanceLabel;
 
 @end

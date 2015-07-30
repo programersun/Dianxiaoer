@@ -47,8 +47,4 @@
     sender.frame = CGRectMake(sender.frame.origin.x * heightChange, sender.frame.origin.y * heightChange,sender.frame.size.width * heightChange, sender.frame.size.height * heightChange);
 }
 
-- (void)changeBounds:(CGFloat)heightChange withObjcet:(UIView *)sender {
-    sender.bounds = CGRectMake(0, 0, sender.bounds.size.width * heightChange, sender.bounds.size.height * heightChange);
-}
-
 @end

@@ -195,14 +195,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="backgroundImg" destination="eIJ-9D-wJZ" id="cqw-Md-6Xc"/>
-                                            <outlet property="centerLine" destination="TG6-vo-8nH" id="GcX-jN-9HJ"/>
-                                            <outlet property="headImg" destination="PFe-tt-zBo" id="v9g-7e-pM2"/>
-                                            <outlet property="infoDistanceLabel" destination="x2U-hL-bY8" id="sIl-0n-dPe"/>
-                                            <outlet property="infoTimeLabel" destination="6XH-dy-6ZM" id="cCM-fq-R99"/>
-                                            <outlet property="infoView" destination="Itq-3c-9aN" id="7m7-sx-Erw"/>
-                                            <outlet property="infoWorkLabel" destination="tol-N6-BhZ" id="Tmf-Yo-T3u"/>
-                                            <outlet property="timeLabel" destination="P7n-2K-gNw" id="Ued-cH-POW"/>
+                                            <outlet property="headImg" destination="PFe-tt-zBo" id="YoB-a1-gMj"/>
+                                            <outlet property="timeLabel" destination="P7n-2K-gNw" id="IrT-IU-oD1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="mainRightCell" rowHeight="130" id="NCc-BH-Lol" customClass="MainRightTableViewCell">
