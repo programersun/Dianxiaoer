@@ -15,4 +15,5 @@
 - (void)toRootView;
 - (void)tel;
 - (void)changeFrame:(CGFloat)heightChange withObjcet:(UIView *)sender;
+- (void)changeBounds:(CGFloat)heightChange withObjcet:(UIView *)sender;
 @end

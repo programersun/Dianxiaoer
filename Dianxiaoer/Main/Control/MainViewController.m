@@ -330,6 +330,17 @@
         mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 2;
         mainLeftCell.headImg.layer.masksToBounds = YES;
         [mainLeftCell.headImg addGestureRecognizer:_headTouch];
+        
+        [self changeBounds:HEIGHTCHANGE withObjcet:mainLeftCell.timeLabel];
+        [self changeBounds:HEIGHTCHANGE withObjcet:mainLeftCell.centerLine];
+        [self changeBounds:HEIGHTCHANGE withObjcet:mainLeftCell.infoView];
+        
+        [self changeFrame:HEIGHTCHANGE withObjcet:mainLeftCell.headImg];
+        [self changeFrame:HEIGHTCHANGE withObjcet:mainLeftCell.backgroundImg];
+        [self changeFrame:HEIGHTCHANGE withObjcet:mainLeftCell.infoWorkLabel];
+        [self changeFrame:HEIGHTCHANGE withObjcet:mainLeftCell.infoTimeLabel];
+        [self changeFrame:HEIGHTCHANGE withObjcet:mainLeftCell.infoDistanceLabel];
+        
         return mainLeftCell;
     }
     else {
