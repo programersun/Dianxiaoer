@@ -15,7 +15,9 @@
 
 @end
 @interface PaySuccessAlertView : UIView
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIImageView *alertImgView;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @property (nonatomic, assign) id <paySuccessAlertViewDelegate> delegate;
 @end

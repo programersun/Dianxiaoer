@@ -90,8 +90,9 @@
     UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bespeakAlertViewDisappear)];
     [_bespeakAlertView.backgroundView addGestureRecognizer:backTouch];
     _bespeakAlertView.delegate = self;
-    _bespeakAlertView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.submitBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.alertImgView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_bespeakAlertView.backgroundView];
     [self.view addSubview:_bespeakAlertView];
 }
 

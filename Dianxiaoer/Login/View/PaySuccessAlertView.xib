@@ -11,8 +11,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.90000000000000002" contentMode="scaleToFill" id="3Hc-3B-qJC">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paySuccessAlert" id="5i2-NA-ylY">
@@ -31,7 +31,8 @@
                 </button>
             </subviews>
             <connections>
-                <outlet property="backgroundView" destination="5i2-NA-ylY" id="60U-ey-mSi"/>
+                <outlet property="alertImgView" destination="5i2-NA-ylY" id="BcQ-sK-T9e"/>
+                <outlet property="backgroundView" destination="3Hc-3B-qJC" id="sLl-Kj-9ls"/>
                 <outlet property="submitBtn" destination="ghG-kv-Gfk" id="f3I-4C-qpY"/>
             </connections>
             <point key="canvasLocation" x="213" y="296"/>
