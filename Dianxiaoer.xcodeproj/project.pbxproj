@@ -113,6 +113,10 @@
 		A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A445AC051B68C62C0025D804 /* MySetting.storyboard */; };
 		A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */; };
 		A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */; };
+		A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */; };
+		A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */; };
+		A497C6411B6B21A600732744 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A497C6401B6B21A600732744 /* area.plist */; };
+		A4D71DF61B6A5D2F00241781 /* ReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -308,6 +312,12 @@
 		A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTableViewFooterView.h; sourceTree = "<group>"; };
 		A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTableViewFooterView.m; sourceTree = "<group>"; };
 		A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainTableViewFooterView.xib; sourceTree = "<group>"; };
+		A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReleasePickerView.xib; sourceTree = "<group>"; };
+		A497C63B1B6B0D0B00732744 /* ReleasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePickerView.h; sourceTree = "<group>"; };
+		A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleasePickerView.m; sourceTree = "<group>"; };
+		A497C6401B6B21A600732744 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		A4D71DF41B6A5D2F00241781 /* ReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseTableViewCell.h; sourceTree = "<group>"; };
+		A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +493,7 @@
 		5858BB2E1B55FFA900444888 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A497C6401B6B21A600732744 /* area.plist */,
 				5858BB2F1B55FFA900444888 /* Info.plist */,
 				5858BB301B55FFA900444888 /* main.m */,
 				58E904861B595FDE00089D4A /* PrefixHeader.pch */,
@@ -562,8 +573,8 @@
 		588FE5751B5FCF300077D39C /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				588FE5771B5FCF300077D39C /* Model */,
-				588FE5781B5FCF300077D39C /* View */,
+				A4D71DF21B6A5D2200241781 /* Model */,
+				A4D71DF31B6A5D2200241781 /* View */,
 				588FE5761B5FCF300077D39C /* Control */,
 				588FE5791B5FCF450077D39C /* Release.storyboard */,
 			);
@@ -577,20 +588,6 @@
 				588FE57C1B5FCFA30077D39C /* ReleaseViewController.m */,
 			);
 			path = Control;
-			sourceTree = "<group>";
-		};
-		588FE5771B5FCF300077D39C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		588FE5781B5FCF300077D39C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5892AAF01B5F2C3000F2E873 /* Schedule */ = {
@@ -860,6 +857,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A4D71DF21B6A5D2200241781 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4D71DF31B6A5D2200241781 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4D71DF41B6A5D2F00241781 /* ReleaseTableViewCell.h */,
+				A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */,
+				A497C63B1B6B0D0B00732744 /* ReleasePickerView.h */,
+				A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */,
+				A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -960,6 +976,7 @@
 				5892AB101B5F2DF200F2E873 /* ScheduleMonthHeaderView.xib in Resources */,
 				58EEDA8B1B57DB9000BEA778 /* FinshInputMyInfoView.xib in Resources */,
 				5858BB421B55FFA900444888 /* LaunchScreen.xib in Resources */,
+				A497C6411B6B21A600732744 /* area.plist in Resources */,
 				5896EB801B5CA60C00A6C294 /* Merchant.storyboard in Resources */,
 				5896EB6B1B5C815300A6C294 /* GiveUpBespeakAlert.xib in Resources */,
 				58F5122E1B5743C100F887AB /* My.storyboard in Resources */,
@@ -968,6 +985,7 @@
 				5896EB881B5CB85700A6C294 /* ShareView.xib in Resources */,
 				58E55A3D1B647127008BAB03 /* ModifyView.xib in Resources */,
 				58E55A4A1B6484CC008BAB03 /* BidDetailHeaderView.xib in Resources */,
+				A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */,
 				5895601F1B622B7400A68B06 /* SubmitChooseDay.xib in Resources */,
 				5896EB701B5C862800A6C294 /* MoreAddressAlert.xib in Resources */,
 				5896EB721B5C8A4800A6C294 /* SearchAlert.xib in Resources */,
@@ -1007,6 +1025,7 @@
 				58E10DCB1B58D55600683069 /* SR_UserInfoDetail.m in Sources */,
 				5896EBA81B5CEC5300A6C294 /* MorePostViewController.m in Sources */,
 				58A7B9DC1B61413700728556 /* HWViewPager.m in Sources */,
+				A4D71DF61B6A5D2F00241781 /* ReleaseTableViewCell.m in Sources */,
 				58977F4F1B60AF80009508B1 /* AddCardFirstViewController.m in Sources */,
 				5892AAFB1B5F2D1C00F2E873 /* ScheduleTableViewCell.m in Sources */,
 				A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */,
@@ -1020,6 +1039,7 @@
 				584AB3451B568967008E84DE /* MainBannerCollectionViewCell.m in Sources */,
 				58E55A401B6475B3008BAB03 /* SubmitSuccessView.m in Sources */,
 				58E10DB21B58919100683069 /* RegistViewController.m in Sources */,
+				A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */,
 				58977F551B60C213009508B1 /* BuyMainViewController.m in Sources */,
 				5892AB011B5F2D4500F2E873 /* ScheduleDateTableViewCell.m in Sources */,
 				58F512381B5771D700F887AB /* SettingHeadTableViewCell.m in Sources */,

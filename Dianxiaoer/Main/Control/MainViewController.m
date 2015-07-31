@@ -25,6 +25,7 @@
 #import "IncomeViewController.h"
 #import "ScheduleViewController.h"
 #import "mainTableViewFooterView.h"
+#import "ReleaseViewController.h"
 
 @interface MainViewController () <UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate,MainBannerTableViewCellDelegate ,MenuViewDelegate,SearchAlertDelegate,TodayTopViewDelegate>
 
@@ -207,11 +208,11 @@
     }
     else {
         
-//        TaskMainViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskMainViewController"];
-//        if (vc == nil) {
-//            vc = [[TaskMainViewController alloc] init];
-//        }
-//        [[self navigationController] pushViewController:vc animated:YES];
+        ReleaseViewController *vc = [[UIStoryboard storyboardWithName:@"Release" bundle:nil] instantiateViewControllerWithIdentifier:@"ReleaseViewController"];
+        if (vc == nil) {
+            vc = [[ReleaseViewController alloc] init];
+        }
+        [[self navigationController] pushViewController:vc animated:YES];
 
     }
 }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReleasePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLM-8N-vAc" userLabel="backgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3x-9r-RpK">
+                    <rect key="frame" x="0.0" y="304" width="320" height="264"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUy-Sc-deT" userLabel="toolView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ef-Li5">
+                                    <rect key="frame" x="15" y="6" width="30" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="取消">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="uoX-eB-izY"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4B-Id-wPQ">
+                                    <rect key="frame" x="275" y="6" width="30" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="确定">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="submitBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gdg-UG-8tj"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择职位" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-nt-9nR">
+                                    <rect key="frame" x="130" y="11" width="60" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="gYS-ef-Li5" firstAttribute="leading" secondItem="SUy-Sc-deT" secondAttribute="leading" constant="15" id="5pI-LW-KRR"/>
+                                <constraint firstAttribute="trailing" secondItem="v4B-Id-wPQ" secondAttribute="trailing" constant="15" id="Dzw-IB-Wt2"/>
+                                <constraint firstAttribute="centerY" secondItem="V6N-nt-9nR" secondAttribute="centerY" id="T6S-WX-Dr8"/>
+                                <constraint firstAttribute="centerY" secondItem="gYS-ef-Li5" secondAttribute="centerY" id="mET-VV-3Vp"/>
+                                <constraint firstAttribute="width" secondItem="SUy-Sc-deT" secondAttribute="height" multiplier="8:1" id="nbG-ff-6Dp"/>
+                                <constraint firstAttribute="centerX" secondItem="V6N-nt-9nR" secondAttribute="centerX" id="sbK-o2-gva"/>
+                                <constraint firstAttribute="centerY" secondItem="v4B-Id-wPQ" secondAttribute="centerY" id="uaM-D4-NOV"/>
+                            </constraints>
+                        </view>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-gs-1YJ">
+                            <rect key="frame" x="0.0" y="44" width="320" height="216"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="iN0-l3-epB" id="h7E-jq-kL6"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="Nwb-yG-7iT"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="C3x-9r-RpK" secondAttribute="height" multiplier="40:33" id="9tH-GO-phm"/>
+                        <constraint firstItem="5cm-gs-1YJ" firstAttribute="leading" secondItem="C3x-9r-RpK" secondAttribute="leading" id="DkJ-Kl-ZRX"/>
+                        <constraint firstAttribute="trailing" secondItem="5cm-gs-1YJ" secondAttribute="trailing" id="Hyy-Pj-RGu"/>
+                        <constraint firstItem="SUy-Sc-deT" firstAttribute="leading" secondItem="C3x-9r-RpK" secondAttribute="leading" id="KbF-lw-gBG"/>
+                        <constraint firstAttribute="trailing" secondItem="SUy-Sc-deT" secondAttribute="trailing" id="Sbq-aa-8W4"/>
+                        <constraint firstItem="5cm-gs-1YJ" firstAttribute="top" secondItem="SUy-Sc-deT" secondAttribute="bottom" id="WPY-HA-9sD"/>
+                        <constraint firstAttribute="bottom" secondItem="5cm-gs-1YJ" secondAttribute="bottom" id="bqk-sf-5Py"/>
+                        <constraint firstItem="SUy-Sc-deT" firstAttribute="top" secondItem="C3x-9r-RpK" secondAttribute="top" id="tkl-zq-nI2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="C3x-9r-RpK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Xp-Sb-Ja8"/>
+                <constraint firstAttribute="bottom" secondItem="hLM-8N-vAc" secondAttribute="bottom" id="IuG-sC-9Jz"/>
+                <constraint firstItem="hLM-8N-vAc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Naw-cR-ltq"/>
+                <constraint firstAttribute="bottom" secondItem="C3x-9r-RpK" secondAttribute="bottom" id="Py5-rG-qAW"/>
+                <constraint firstAttribute="trailing" secondItem="hLM-8N-vAc" secondAttribute="trailing" id="XhY-9O-txu"/>
+                <constraint firstItem="hLM-8N-vAc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ajx-23-Ntl"/>
+                <constraint firstAttribute="trailing" secondItem="C3x-9r-RpK" secondAttribute="trailing" id="xtp-qY-xcy"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="hLM-8N-vAc" id="NpQ-L7-Eva"/>
+                <outlet property="cancelBtn" destination="gYS-ef-Li5" id="hzZ-WY-hpj"/>
+                <outlet property="pickerBackgroundView" destination="C3x-9r-RpK" id="B54-y7-SZf"/>
+                <outlet property="releasePicker" destination="5cm-gs-1YJ" id="Czm-kD-4I8"/>
+                <outlet property="submitBtn" destination="v4B-Id-wPQ" id="MxY-x7-IhP"/>
+                <outlet property="titleLabel" destination="V6N-nt-9nR" id="G20-Al-r2Z"/>
+            </connections>
+            <point key="canvasLocation" x="201" y="308"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

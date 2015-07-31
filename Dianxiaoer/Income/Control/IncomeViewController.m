@@ -145,7 +145,12 @@
     _oldcontentOffsetY = scrollView.contentOffset.y;
 }
 
+
+
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat newcontentOffsetY = scrollView.contentOffset.y;
     CGFloat heightChange = newcontentOffsetY - _oldcontentOffsetY;
     
@@ -156,8 +161,6 @@
                 _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
                 _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
-            }completion:^(BOOL finished) {
-                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }
@@ -170,13 +173,9 @@
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
             } completion:^(BOOL finished) {
                 _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
-                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
             }];
         }
     }
-}
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
 }
 
 - (void)didReceiveMemoryWarning {
