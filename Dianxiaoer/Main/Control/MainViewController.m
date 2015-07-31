@@ -250,7 +250,7 @@
         return [UIScreen mainScreen].bounds.size.width / 2;
     }
     else {
-        return 130;
+        return 130 * HEIGHTCHANGE;
     }
 }
 
@@ -322,28 +322,39 @@
         [bannerCell startLoadDataBanner];
         return bannerCell;
     }
-    else if (indexPath.row % 2 == 0) {
+    else {
         MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
         if (mainLeftCell == nil) {
             mainLeftCell = [[MainLeftTableViewCell alloc] init];
         }
         mainLeftCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
-        mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 2;
+        mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 1.5;
         mainLeftCell.headImg.layer.masksToBounds = YES;
         [mainLeftCell.headImg addGestureRecognizer:_headTouch];
         return mainLeftCell;
     }
-    else {
-        MainRightTableViewCell *mainRightCell = [tableView dequeueReusableCellWithIdentifier:@"mainRightCell"];
-        if (mainRightCell == nil) {
-            mainRightCell = [[MainRightTableViewCell alloc] init];
-        }
-        mainRightCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
-        mainRightCell.headImg.layer.cornerRadius = mainRightCell.headImg.frame.size.width / 2;
-        mainRightCell.headImg.layer.masksToBounds = YES;
-        [mainRightCell.headImg addGestureRecognizer:_headTouch];
-        return mainRightCell;
-    }
+//    else if (indexPath.row % 2 == 0) {
+//        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
+//        if (mainLeftCell == nil) {
+//            mainLeftCell = [[MainLeftTableViewCell alloc] init];
+//        }
+//        mainLeftCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+//        mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 2;
+//        mainLeftCell.headImg.layer.masksToBounds = YES;
+//        [mainLeftCell.headImg addGestureRecognizer:_headTouch];
+//        return mainLeftCell;
+//    }
+//    else {
+//        MainRightTableViewCell *mainRightCell = [tableView dequeueReusableCellWithIdentifier:@"mainRightCell"];
+//        if (mainRightCell == nil) {
+//            mainRightCell = [[MainRightTableViewCell alloc] init];
+//        }
+//        mainRightCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+//        mainRightCell.headImg.layer.cornerRadius = mainRightCell.headImg.frame.size.width / 2;
+//        mainRightCell.headImg.layer.masksToBounds = YES;
+//        [mainRightCell.headImg addGestureRecognizer:_headTouch];
+//        return mainRightCell;
+//    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
