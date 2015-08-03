@@ -43,14 +43,14 @@
                                         <action selector="submitBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gdg-UG-8tj"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择职位" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-nt-9nR">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择职位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-nt-9nR">
                                     <rect key="frame" x="130" y="11" width="60" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.12549019607843137" green="0.14117647058823529" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="gYS-ef-Li5" firstAttribute="leading" secondItem="SUy-Sc-deT" secondAttribute="leading" constant="15" id="5pI-LW-KRR"/>
                                 <constraint firstAttribute="trailing" secondItem="v4B-Id-wPQ" secondAttribute="trailing" constant="15" id="Dzw-IB-Wt2"/>
@@ -63,14 +63,14 @@
                         </view>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-gs-1YJ">
                             <rect key="frame" x="0.0" y="44" width="320" height="216"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <outlet property="dataSource" destination="iN0-l3-epB" id="h7E-jq-kL6"/>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="Nwb-yG-7iT"/>
                             </connections>
                         </pickerView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="C3x-9r-RpK" secondAttribute="height" multiplier="40:33" id="9tH-GO-phm"/>
                         <constraint firstItem="5cm-gs-1YJ" firstAttribute="leading" secondItem="C3x-9r-RpK" secondAttribute="leading" id="DkJ-Kl-ZRX"/>

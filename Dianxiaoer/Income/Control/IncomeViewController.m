@@ -113,7 +113,7 @@
 }
 
 
-#pragma MARK: UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
+#pragma mark - UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 156 * SCREENWIDTH / 320;

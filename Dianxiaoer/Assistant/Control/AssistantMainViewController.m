@@ -10,11 +10,12 @@
 #import "AssistantMainTableViewCell.h"
 #import "AssistantHeaderView.h"
 #import "MerchantBidViewController.h"
+#import "SearchAlert.h"
 
-@interface AssistantMainViewController () <UITableViewDataSource ,UITableViewDelegate>
+@interface AssistantMainViewController () <UITableViewDataSource ,UITableViewDelegate,SearchAlertDelegate>
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
-
+@property (nonatomic, strong) SearchAlert *searchAlert;
 
 @end
 
@@ -31,10 +32,22 @@
 }
 
 - (IBAction)searchBtnClick:(id)sender {
-    
+    UINib *nib = [UINib nibWithNibName:@"SearchAlert" bundle:nil];
+    _searchAlert = [nib instantiateWithOwner:nil options:nil][0];
+    _searchAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.backgroundView];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.cancelBtn];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_searchAlert.submitBtn];
+    _searchAlert.delegate = self;
+    [self.view addSubview:_searchAlert];
 }
 
-#pragma MARK: UITableViewDataSource ,UITableViewDelegate
+#pragma mark - SearchAlertDelegate
+- (void)toRootVC {
+    [_searchAlert removeFromSuperview];
+}
+
+#pragma mark - UITableViewDataSource ,UITableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;

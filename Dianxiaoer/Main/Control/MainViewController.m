@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MainBannerCollectionViewCell.h"
 #import "MainBannerTableViewCell.h"
+#import "MainMiddleTableViewCell.h"
 #import "MainLeftTableViewCell.h"
 #import "MainRightTableViewCell.h"
 #import "MainHeaderCellView.h"
@@ -177,7 +178,7 @@
     [_todayTopView addGestureRecognizer:_topUp];
 }
 
-#pragma MARK: MainBannerTableViewCellDelegate
+#pragma mark - MainBannerTableViewCellDelegate
 
 - (void)bannerTouch {
     AssistantMainViewController *vc = [[UIStoryboard storyboardWithName:@"Assistant" bundle:nil] instantiateViewControllerWithIdentifier:@"AssistantMainViewController"];
@@ -187,20 +188,20 @@
     [[self navigationController] pushViewController:vc animated:YES];
 }
 
-#pragma MARK: TodayTopViewDelegate
+#pragma mark - TodayTopViewDelegate
 
 - (void)todayTopMenuBtnClick {
     [_todayTopView removeFromSuperview];
     [self backgroudViewAppear];
 }
 
-#pragma MARK: SearchAlertDelegate
+#pragma mark - SearchAlertDelegate
 
 - (void)toRootVC {
     [_searchAlert removeFromSuperview];
 }
 
-#pragma MARK: MenuViewDelegate
+#pragma mark - MenuViewDelegate
 
 - (void)toMessageVC {
     if ([self needLogin]) {
@@ -243,7 +244,7 @@
     }
 }
 
-#pragma MARK: UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
+#pragma mark - UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -323,15 +324,24 @@
         return bannerCell;
     }
     else {
-        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
-        if (mainLeftCell == nil) {
-            mainLeftCell = [[MainLeftTableViewCell alloc] init];
+//        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
+//        if (mainLeftCell == nil) {
+//            mainLeftCell = [[MainLeftTableViewCell alloc] init];
+//        }
+//        mainLeftCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+//        mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 1.5;
+//        mainLeftCell.headImg.layer.masksToBounds = YES;
+//        [mainLeftCell.headImg addGestureRecognizer:_headTouch];
+//        return mainLeftCell;
+        MainMiddleTableViewCell *mainMiddleCell = [tableView dequeueReusableCellWithIdentifier:@"MainMiddleTableViewCell"];
+        if (mainMiddleCell == nil) {
+            mainMiddleCell = [[MainMiddleTableViewCell alloc] init];
         }
-        mainLeftCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
-        mainLeftCell.headImg.layer.cornerRadius = mainLeftCell.headImg.frame.size.width / 1.5;
-        mainLeftCell.headImg.layer.masksToBounds = YES;
-        [mainLeftCell.headImg addGestureRecognizer:_headTouch];
-        return mainLeftCell;
+        mainMiddleCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+        mainMiddleCell.headImg.layer.cornerRadius = mainMiddleCell.headImg.frame.size.width / 1.5;
+        mainMiddleCell.headImg.layer.masksToBounds = YES;
+        [mainMiddleCell.headImg addGestureRecognizer:_headTouch];
+        return mainMiddleCell;
     }
 //    else if (indexPath.row % 2 == 0) {
 //        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];

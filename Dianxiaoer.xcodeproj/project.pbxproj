@@ -111,8 +111,10 @@
 		58F512491B579F1200F887AB /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F512481B579F1200F887AB /* MyInfoViewController.m */; };
 		58F5124C1B57A7F900F887AB /* SkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F5124B1B57A7F900F887AB /* SkillViewController.m */; };
 		A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A445AC051B68C62C0025D804 /* MySetting.storyboard */; };
+		A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */; };
 		A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */; };
 		A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */; };
+		A4968A071B6CDB9E00DE88EF /* HZLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4968A061B6CDB9E00DE88EF /* HZLocation.m */; };
 		A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */; };
 		A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */; };
 		A497C6411B6B21A600732744 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A497C6401B6B21A600732744 /* area.plist */; };
@@ -309,9 +311,13 @@
 		58F5124A1B57A7F900F887AB /* SkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillViewController.h; sourceTree = "<group>"; };
 		58F5124B1B57A7F900F887AB /* SkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillViewController.m; sourceTree = "<group>"; };
 		A445AC051B68C62C0025D804 /* MySetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySetting.storyboard; sourceTree = "<group>"; };
+		A451A9C21B6F01D90094D21D /* MainMiddleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMiddleTableViewCell.h; sourceTree = "<group>"; };
+		A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMiddleTableViewCell.m; sourceTree = "<group>"; };
 		A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTableViewFooterView.h; sourceTree = "<group>"; };
 		A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTableViewFooterView.m; sourceTree = "<group>"; };
 		A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainTableViewFooterView.xib; sourceTree = "<group>"; };
+		A4968A051B6CDB9E00DE88EF /* HZLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZLocation.h; sourceTree = "<group>"; };
+		A4968A061B6CDB9E00DE88EF /* HZLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZLocation.m; sourceTree = "<group>"; };
 		A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReleasePickerView.xib; sourceTree = "<group>"; };
 		A497C63B1B6B0D0B00732744 /* ReleasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePickerView.h; sourceTree = "<group>"; };
 		A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleasePickerView.m; sourceTree = "<group>"; };
@@ -374,6 +380,8 @@
 				584AB33E1B568967008E84DE /* MainHeaderCellView.h */,
 				584AB33F1B568967008E84DE /* MainHeaderCellView.m */,
 				584AB3401B568967008E84DE /* MainHeaderCellView.xib */,
+				A451A9C21B6F01D90094D21D /* MainMiddleTableViewCell.h */,
+				A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */,
 				584AB3411B568967008E84DE /* MainLeftTableViewCell.h */,
 				584AB3421B568967008E84DE /* MainLeftTableViewCell.m */,
 				584AB3431B568967008E84DE /* MainRightTableViewCell.h */,
@@ -869,6 +877,8 @@
 			children = (
 				A4D71DF41B6A5D2F00241781 /* ReleaseTableViewCell.h */,
 				A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */,
+				A4968A051B6CDB9E00DE88EF /* HZLocation.h */,
+				A4968A061B6CDB9E00DE88EF /* HZLocation.m */,
 				A497C63B1B6B0D0B00732744 /* ReleasePickerView.h */,
 				A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */,
 				A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */,
@@ -1022,6 +1032,7 @@
 				5896EB8B1B5CC18600A6C294 /* MerchantInfoViewController.m in Sources */,
 				58977F521B60AF92009508B1 /* AddCardSecondViewController.m in Sources */,
 				5858BB341B55FFA900444888 /* AppDelegate.m in Sources */,
+				A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */,
 				58E10DCB1B58D55600683069 /* SR_UserInfoDetail.m in Sources */,
 				5896EBA81B5CEC5300A6C294 /* MorePostViewController.m in Sources */,
 				58A7B9DC1B61413700728556 /* HWViewPager.m in Sources */,
@@ -1070,6 +1081,7 @@
 				584AB34A1B568967008E84DE /* MainRightTableViewCell.m in Sources */,
 				58977F4C1B60AF58009508B1 /* MyBankCardViewController.m in Sources */,
 				5880966E1B5E1B2900C3AEC0 /* IncomeTableViewCell.m in Sources */,
+				A4968A071B6CDB9E00DE88EF /* HZLocation.m in Sources */,
 				58F512351B5771A900F887AB /* SettingViewController.m in Sources */,
 				588FE57D1B5FCFA30077D39C /* ReleaseViewController.m in Sources */,
 				5896EB691B5C813A00A6C294 /* GiveUpBespeakAlert.m in Sources */,

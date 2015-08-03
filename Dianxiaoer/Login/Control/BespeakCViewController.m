@@ -74,7 +74,7 @@
     }
 }
 
-#pragma MARK: bespeakAlertViewDelegate
+#pragma mark - bespeakAlertViewDelegate
 - (void)tobespeakVC {
     [self bespeakAlertViewDisappear];
 }

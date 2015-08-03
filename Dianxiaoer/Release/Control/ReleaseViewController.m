@@ -9,6 +9,7 @@
 #import "ReleaseViewController.h"
 #import "ReleaseTableViewCell.h"
 #import "ReleasePickerView.h"
+#import "TaskMainViewController.h"
 
 @interface ReleaseViewController () <UITableViewDataSource,UITableViewDelegate,ReleasePickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *releaseTableView;
@@ -26,8 +27,8 @@
     [super viewDidLoad];
     _startSelectArray = [[NSMutableArray alloc] initWithObjects:
                          @"想去哪里兼职？",
-                         @"选择想要工作的日期",
                          @"选择想要工作的时间段",
+                         @"选择想要工作的日期",
                          @"想从事什么餐饮职业？", nil];
     _selectArray = [[NSMutableArray alloc] initWithObjects:@"",@"",@"",@"", nil];
     _isSelectArray = [[NSMutableArray alloc] initWithObjects:@"0",@"0",@"0",@"0", nil];
@@ -40,18 +41,28 @@
 }
 
 - (IBAction)releaseBtnClick:(id)sender {
-    
+    TaskMainViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskMainViewController"];
+    if (vc == nil) {
+        vc = [[TaskMainViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 #pragma mark - ReleasePickerViewDelegate
 
-- (void)reloadCell:(NSString *)chooseString {
-    if (_releasePickerView.pickerStyle == ChooseAddress) {
-        _selectArray[0] = chooseString;
+- (void)pickerDidChaneStatus:(ReleasePickerView *)picker {
+    if (picker.pickerStyle == ChooseAddress) {
+        _selectArray[0] = [NSString stringWithFormat:@"%@ %@ %@", picker.locate.state, picker.locate.city, picker.locate.district];
         _isSelectArray[0] = @"1";
     }
-    if (_releasePickerView.pickerStyle == ChoosePosition) {
-        _selectArray[3] = chooseString;
+    
+    if (picker.pickerStyle == ChooseTime) {
+        _selectArray[1] = [NSString stringWithFormat:@"%@ - %@", picker.timeStart, picker.timeEnd];
+        _isSelectArray[1] = @"1";
+    }
+    
+    if (picker.pickerStyle == ChoosePosition) {
+        _selectArray[3] = [NSString stringWithFormat:@"%@", picker.position];
         _isSelectArray[3] = @"1";
     }
     [_releaseTableView reloadData];
@@ -104,7 +115,9 @@
             _releasePickerView.titleLabel.text = @"工作地点";
             break;
         case 1:
-            
+            _releasePickerView = [[ReleasePickerView alloc] initWithStyle:ChooseTime delegate:self];
+            [_releasePickerView showInView:self.view];
+            _releasePickerView.titleLabel.text = @"选择时间";
             break;
         case 2:
             

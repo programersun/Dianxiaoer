@@ -51,7 +51,7 @@
     
 }
 
-#pragma MARK: paySuccessAlertViewDelegate
+#pragma mark - paySuccessAlertViewDelegate
 
 - (void)toNextVC {
     BespeakBViewController *vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"BespeakBViewController"];
@@ -78,7 +78,7 @@
     [_paySuccessAlertView removeFromSuperview];
 }
 
-#pragma MARK: bespeakAlertViewDelegate
+#pragma mark - bespeakAlertViewDelegate
 - (void)tobespeakVC {
     [self bespeakAlertViewDisappear];
 }

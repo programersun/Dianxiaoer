@@ -49,7 +49,8 @@
 }
 
 - (IBAction)backBtnClick:(id)sender {
-    [self backBtnClick];
+//    [self backBtnClick];
+    [self toRootView];
 }
 
 - (IBAction)taskBuyBtnClick:(id)sender {

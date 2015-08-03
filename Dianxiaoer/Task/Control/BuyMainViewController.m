@@ -14,6 +14,7 @@
 #import "SubmitChooseDay.h"
 #import "ModifyView.h"
 #import "SubmitSuccessViewController.h"
+#import "ReleaseViewController.h"
 
 @interface BuyMainViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,HWViewPagerDelegate,BuyCollectionViewCellDelegate,SubmitChooseDayDelegate,ModifyViewDelegate>
 
@@ -123,7 +124,11 @@
 #pragma mark - ModifyViewDelegate
 
 - (void)submitBtnClick {
-    
+    ReleaseViewController *vc = [[UIStoryboard storyboardWithName:@"Release" bundle:nil] instantiateViewControllerWithIdentifier:@"ReleaseViewController"];
+    if (vc == nil) {
+        vc = [[ReleaseViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout

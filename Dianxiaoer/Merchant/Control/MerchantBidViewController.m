@@ -9,8 +9,10 @@
 #import "MerchantBidViewController.h"
 #import "ShareView.h"
 #import "MorePostViewController.h"
+#import "SubmitChooseDay.h"
+#import "TaskMainViewController.h"
 
-@interface MerchantBidViewController ()
+@interface MerchantBidViewController () <SubmitChooseDayDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *workingEnvironmentScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundVIew;
@@ -25,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *conulstBtn;
 @property (weak, nonatomic) IBOutlet UIButton *enlistBtn;
 
-
+@property (nonatomic, strong) SubmitChooseDay *submitChooseDay;
 @property (nonatomic, strong) ShareView *shareView;
 @property (nonatomic, assign) UIImage *backgroundImg;
 @end
@@ -114,9 +116,36 @@
         [self toLoginVC];
     }
     else {
-        
+        [self submitChooseViewAppear];
     }
 }
+
+#pragma mark - SubmitChooseDayDelegate
+
+- (void)submitChooseDayBtnClick {
+    TaskMainViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskMainViewController"];
+    if (vc == nil) {
+        vc = [[TaskMainViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+- (void)submitChooseViewAppear {
+    UINib *nib = [UINib nibWithNibName:@"SubmitChooseDay" bundle:nil];
+    _submitChooseDay = [nib instantiateWithOwner:nil options:nil][0];
+    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitChooseViewDisappear)];
+    [_submitChooseDay.backgroundImg addGestureRecognizer:backTouch];
+    _submitChooseDay.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitChooseDay.submitBtn];
+    _submitChooseDay.delegate = self;
+    [self.view addSubview:_submitChooseDay];
+    
+}
+
+- (void)submitChooseViewDisappear {
+    [_submitChooseDay removeFromSuperview];
+}
+
 
 /*
 #pragma mark - Navigation

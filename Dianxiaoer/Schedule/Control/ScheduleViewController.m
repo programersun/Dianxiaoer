@@ -13,6 +13,7 @@
 #import "ScheduleOtherHeaderView.h"
 #import "ScheduleMonthHeaderView.h"
 #import "TaskApplyViewController.h"
+#import "ReleaseViewController.h"
 
 @interface ScheduleViewController () <UITableViewDataSource,UITableViewDelegate,ScheduleOtherHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
@@ -38,7 +39,7 @@
     [_scheduleTableView reloadData];
 }
 
-#pragma MARK: UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
+#pragma mark - UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section <= 6) {
@@ -257,12 +258,20 @@
     [[self navigationController] pushViewController:vc animated:YES];
 }
 
+- (void)toReleaseViewController {
+    ReleaseViewController *vc = [[UIStoryboard storyboardWithName:@"Release" bundle:nil] instantiateViewControllerWithIdentifier:@"ReleaseViewController"];
+    if (vc == nil) {
+        vc = [[ReleaseViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
         {
             if (indexPath.row == 3) {
-                //
+                [self toReleaseViewController];
             }
             else {
                 [self toTaskApplyViewController];
@@ -272,7 +281,7 @@
         case 1:
         {
             if (indexPath.row == 1) {
-                //
+                [self toReleaseViewController];
             }
             else {
                 [self toTaskApplyViewController];
@@ -281,18 +290,18 @@
         }
         case 2:
         {
-            //
+            [self toReleaseViewController];
             break;
         }
         case 3:
         {
-            //
+            [self toReleaseViewController];
             break;
         }
         case 4:
         {
             if (indexPath.row == 2) {
-                //
+                [self toReleaseViewController];
             }
             else {
                 [self toTaskApplyViewController];
@@ -301,13 +310,13 @@
         }
         case 5:
         {
-            //
+            [self toReleaseViewController];
             break;
         }
         case 6:
         {
             if (indexPath.row == 2) {
-                //
+                [self toReleaseViewController];
             }
             else {
                 [self toTaskApplyViewController];
@@ -317,12 +326,12 @@
         }
         case 7:
         {
-            //
+            [self toReleaseViewController];
             break;
         }
         case 8:
         {
-            //
+            [self toReleaseViewController];
             break;
         }
         default:
@@ -330,7 +339,7 @@
     }
 }
 
-#pragma MARK: ScheduleOtherHeaderViewDelegate
+#pragma mark - ScheduleOtherHeaderViewDelegate
 - (void)dayCellSelect:(UIButton *)sender {
     for (int i = 1 ; i <= 6 ; i++) {
         if (sender.tag == 100 + i && [[_cellOpenArray objectAtIndex:i] isEqualToString:@"0"]) {

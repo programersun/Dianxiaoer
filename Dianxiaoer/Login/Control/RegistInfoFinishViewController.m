@@ -62,13 +62,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma MARK: GiveUpBespeakAlertDelegate
+#pragma mark - GiveUpBespeakAlertDelegate
 
 - (void)toRootVC {
     [self toRootView];
 }
 
-#pragma MARK: bespeakAlertViewDelegate
+#pragma mark - bespeakAlertViewDelegate
 - (void)tobespeakVC {
     
     UpLoadIDCardFirstViewController *vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"UpLoadIDCardFirstViewController"];

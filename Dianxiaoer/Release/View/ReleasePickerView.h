@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HZLocation.h"
 
-@protocol  ReleasePickerViewDelegate
+@class ReleasePickerView;
 
-@optional
-- (void)reloadCell:(NSString *)chooseString;
+@protocol  ReleasePickerViewDelegate <NSObject>
 
+- (void)pickerDidChaneStatus:(ReleasePickerView *)picker;
 @end
 
 typedef enum {
     ChooseAddress,
-    ChoosePosition
+    ChoosePosition,
+    ChooseTime
 }PickerStyle;
 
 @interface ReleasePickerView : UIView
@@ -29,8 +31,16 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIView *pickerBackgroundView;
 @property PickerStyle pickerStyle;
 
+@property NSString *timeStart;
+@property NSString *timeEnd;
+@property NSString *timeCount;
+
+@property NSString *position;
+
 @property (nonatomic, assign) id<ReleasePickerViewDelegate> delegate;
 - (id)initWithStyle:(PickerStyle)pickerStyle delegate:(id <ReleasePickerViewDelegate>) delegate;
+
+@property (strong, nonatomic) HZLocation *locate;
 - (void)showInView:(UIView *)view;
 - (void)cancelPicker;
 @end
