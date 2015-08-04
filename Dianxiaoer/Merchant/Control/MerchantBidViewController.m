@@ -10,7 +10,6 @@
 #import "ShareView.h"
 #import "MorePostViewController.h"
 #import "SubmitChooseDay.h"
-#import "TaskMainViewController.h"
 
 @interface MerchantBidViewController () <SubmitChooseDayDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
@@ -123,11 +122,13 @@
 #pragma mark - SubmitChooseDayDelegate
 
 - (void)submitChooseDayBtnClick {
-    TaskMainViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskMainViewController"];
-    if (vc == nil) {
-        vc = [[TaskMainViewController alloc] init];
-    }
-    [[self navigationController] pushViewController:vc animated:YES];
+//    TaskMainViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskMainViewController"];
+//    if (vc == nil) {
+//        vc = [[TaskMainViewController alloc] init];
+//    }
+//    [[self navigationController] pushViewController:vc animated:YES];
+    
+
 }
 
 - (void)submitChooseViewAppear {

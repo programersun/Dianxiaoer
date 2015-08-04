@@ -51,8 +51,8 @@
 - (void)submitSuccessViewAppear {
     UINib *nib = [UINib nibWithNibName:@"SubmitSuccessView" bundle:nil];
     _submitSuccessView = [nib instantiateWithOwner:nil options:nil][0];
-    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitSuccessViewDisappear)];
-    [_submitSuccessView.backgroundImg addGestureRecognizer:backTouch];
+//    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitSuccessViewDisappear)];
+//    [_submitSuccessView.backgroundImg addGestureRecognizer:backTouch];
     _submitSuccessView.delegate = self;
     _submitSuccessView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self changeFrame:SCREENWIDTH/320 withObjcet:_submitSuccessView.submitBtn];
@@ -88,11 +88,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 59;
+    return 59 * HEIGHTCHANGE;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 59;
+    return 59 * HEIGHTCHANGE;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
