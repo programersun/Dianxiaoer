@@ -248,9 +248,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="submitDay" translatesAutoresizingMaskIntoConstraints="NO" id="9mE-85-7mB">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEV-Br-nyf">
+                                <rect key="frame" x="0.0" y="522" width="320" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rEV-Br-nyf" secondAttribute="height" multiplier="80:11" constant="-7.2727272727272521" id="FeK-aX-icL"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Fqr-Tw-mSA">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BidDetialTableViewCell" rowHeight="59" id="mJr-Qj-7xI" customClass="BidDetialTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="59"/>
@@ -293,13 +300,13 @@
                                             <action selector="backBtnClick:" destination="XUp-gC-NSD" eventType="touchUpInside" id="FYh-J3-6Mi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3j-sG-Ccs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3j-sG-Ccs">
                                         <rect key="frame" x="271" y="17" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Gw2-3R-vaL"/>
                                             <constraint firstAttribute="width" constant="30" id="aci-rz-oYV"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="CalendarImg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -327,18 +334,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPj-vp-vVx">
                                 <rect key="frame" x="0.0" y="504" width="320" height="64"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-Zj-0VX">
+                                    <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-Zj-0VX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mgq-Zj-0VX" secondAttribute="height" multiplier="5:1" id="6Dj-ms-v8L"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO3-J8-oFm">
-                                        <rect key="frame" x="135" y="12" width="50" height="50"/>
+                                        <rect key="frame" x="135" y="7" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="XO3-J8-oFm" secondAttribute="height" multiplier="1:1" id="3Ij-9q-NiX"/>
+                                            <constraint firstAttribute="width" secondItem="XO3-J8-oFm" secondAttribute="height" multiplier="1:1" id="Itp-6y-FYT"/>
                                         </constraints>
-                                        <state key="normal" image="submitBtnImg">
+                                        <state key="normal" backgroundImage="submitBtnImg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -348,11 +355,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Mgq-Zj-0VX" secondAttribute="trailing" id="9k5-ox-Z1r"/>
+                                    <constraint firstAttribute="bottom" secondItem="XO3-J8-oFm" secondAttribute="bottom" constant="7" id="B7D-cb-23X"/>
+                                    <constraint firstItem="XO3-J8-oFm" firstAttribute="top" secondItem="gPj-vp-vVx" secondAttribute="top" constant="7" id="Lgc-gQ-m0O"/>
                                     <constraint firstItem="Mgq-Zj-0VX" firstAttribute="leading" secondItem="gPj-vp-vVx" secondAttribute="leading" id="SRj-A7-FmG"/>
-                                    <constraint firstAttribute="trailing" secondItem="XO3-J8-oFm" secondAttribute="trailing" constant="135" id="exw-T5-JRx"/>
-                                    <constraint firstAttribute="bottom" secondItem="XO3-J8-oFm" secondAttribute="bottom" constant="2" id="nGa-j3-Z95"/>
+                                    <constraint firstAttribute="centerX" secondItem="XO3-J8-oFm" secondAttribute="centerX" id="XsS-hA-G12"/>
                                     <constraint firstAttribute="width" secondItem="gPj-vp-vVx" secondAttribute="height" multiplier="5:1" id="vXB-tJ-BpA"/>
-                                    <constraint firstItem="XO3-J8-oFm" firstAttribute="leading" secondItem="gPj-vp-vVx" secondAttribute="leading" constant="135" id="xUf-fv-SmB"/>
                                     <constraint firstAttribute="bottom" secondItem="Mgq-Zj-0VX" secondAttribute="bottom" id="zXO-Lb-ZSn"/>
                                 </constraints>
                             </view>
@@ -367,9 +374,12 @@
                             <constraint firstItem="9mE-85-7mB" firstAttribute="leading" secondItem="fZX-UY-aWF" secondAttribute="leading" id="K9h-5b-iS8"/>
                             <constraint firstItem="Xpo-FO-256" firstAttribute="top" secondItem="Fqr-Tw-mSA" secondAttribute="bottom" id="VAp-qF-Hgl"/>
                             <constraint firstAttribute="trailing" secondItem="9mE-85-7mB" secondAttribute="trailing" id="YYQ-j3-ihd"/>
+                            <constraint firstItem="rEV-Br-nyf" firstAttribute="leading" secondItem="fZX-UY-aWF" secondAttribute="leading" id="e3w-8b-IHc"/>
                             <constraint firstItem="Fqr-Tw-mSA" firstAttribute="leading" secondItem="fZX-UY-aWF" secondAttribute="leading" id="huz-W7-HN0"/>
+                            <constraint firstItem="Xpo-FO-256" firstAttribute="top" secondItem="rEV-Br-nyf" secondAttribute="bottom" constant="1" id="ihd-ZA-B0J"/>
                             <constraint firstItem="9mE-85-7mB" firstAttribute="top" secondItem="fZX-UY-aWF" secondAttribute="top" constant="64" id="j1g-8n-w2P"/>
                             <constraint firstItem="Xpo-FO-256" firstAttribute="top" secondItem="9mE-85-7mB" secondAttribute="bottom" id="kj6-tW-3sU"/>
+                            <constraint firstAttribute="trailing" secondItem="rEV-Br-nyf" secondAttribute="trailing" id="nGV-PA-ITj"/>
                             <constraint firstItem="Xpo-FO-256" firstAttribute="top" secondItem="gPj-vp-vVx" secondAttribute="bottom" id="vSF-EQ-xfp"/>
                             <constraint firstItem="VQf-9l-xWB" firstAttribute="top" secondItem="fZX-UY-aWF" secondAttribute="top" id="wiR-ME-E4q"/>
                             <constraint firstItem="VQf-9l-xWB" firstAttribute="leading" secondItem="fZX-UY-aWF" secondAttribute="leading" id="xLU-Rj-vAf"/>
@@ -387,6 +397,7 @@
     </scenes>
     <resources>
         <image name="BidDetailCellImg" width="320" height="59"/>
+        <image name="CalendarImg" width="19" height="19"/>
         <image name="backImg" width="11" height="21"/>
         <image name="buyBackground" width="320" height="568"/>
         <image name="buyButtom02" width="320" height="61"/>

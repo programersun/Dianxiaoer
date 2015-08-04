@@ -10,12 +10,14 @@
 #import "BidDetailHeaderView.h"
 #import "BidDetialTableViewCell.h"
 #import "SubmitSuccessView.h"
+#import "ChooseDay.h"
 
 @interface SubmitSuccessViewController () <UITableViewDataSource,UITableViewDelegate,SubmitSuccessViewDelegate,BidDetailHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *bidDeatilTableView;
 
 @property (strong, nonatomic) NSMutableArray *cellOpenArray;
 @property (nonatomic, strong) SubmitSuccessView *submitSuccessView;
+@property (nonatomic, strong) ChooseDay *chooseDayView;
 
 @end
 
@@ -32,10 +34,25 @@
 }
 
 - (IBAction)rightBtnClick:(id)sender {
-    
+    [self chooseViewAppear];
 }
 - (IBAction)submitBtnClick:(id)sender {
     [self submitSuccessViewAppear];
+}
+
+- (void)chooseViewAppear {
+    UINib *nib = [UINib nibWithNibName:@"ChooseDay" bundle:nil];
+    _chooseDayView = [nib instantiateWithOwner:nil options:nil][0];
+    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseViewDisappear)];
+    [_chooseDayView.backgroundImg addGestureRecognizer:backTouch];
+    _chooseDayView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_chooseDayView.cancelBtn];
+    [self.view addSubview:_chooseDayView];
+    
+}
+
+- (void)chooseViewDisappear {
+    [_chooseDayView removeFromSuperview];
 }
 
 #pragma mark - SubmitSuccessViewDelegate
@@ -51,8 +68,6 @@
 - (void)submitSuccessViewAppear {
     UINib *nib = [UINib nibWithNibName:@"SubmitSuccessView" bundle:nil];
     _submitSuccessView = [nib instantiateWithOwner:nil options:nil][0];
-//    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitSuccessViewDisappear)];
-//    [_submitSuccessView.backgroundImg addGestureRecognizer:backTouch];
     _submitSuccessView.delegate = self;
     _submitSuccessView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self changeFrame:SCREENWIDTH/320 withObjcet:_submitSuccessView.submitBtn];

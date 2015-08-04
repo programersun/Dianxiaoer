@@ -114,6 +114,9 @@
 		A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */; };
 		A451A9C71B6F5EC40094D21D /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C61B6F5EC40094D21D /* ApplyViewController.m */; };
 		A47E9D441B704B370083D709 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47E9D431B704B370083D709 /* Apply.storyboard */; };
+		A47E9D471B705DE80083D709 /* ApplySuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E9D461B705DE80083D709 /* ApplySuccessView.m */; };
+		A47E9D491B705DF00083D709 /* ApplySuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47E9D481B705DF00083D709 /* ApplySuccessView.xib */; };
+		A47E9D4C1B7083C60083D709 /* ApplySuccessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E9D4B1B7083C60083D709 /* ApplySuccessTableViewCell.m */; };
 		A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */; };
 		A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */; };
 		A4968A071B6CDB9E00DE88EF /* HZLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4968A061B6CDB9E00DE88EF /* HZLocation.m */; };
@@ -318,6 +321,11 @@
 		A451A9C51B6F5EC40094D21D /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		A451A9C61B6F5EC40094D21D /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		A47E9D431B704B370083D709 /* Apply.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
+		A47E9D451B705DE80083D709 /* ApplySuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplySuccessView.h; sourceTree = "<group>"; };
+		A47E9D461B705DE80083D709 /* ApplySuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplySuccessView.m; sourceTree = "<group>"; };
+		A47E9D481B705DF00083D709 /* ApplySuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplySuccessView.xib; sourceTree = "<group>"; };
+		A47E9D4A1B7083C60083D709 /* ApplySuccessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplySuccessTableViewCell.h; sourceTree = "<group>"; };
+		A47E9D4B1B7083C60083D709 /* ApplySuccessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplySuccessTableViewCell.m; sourceTree = "<group>"; };
 		A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTableViewFooterView.h; sourceTree = "<group>"; };
 		A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTableViewFooterView.m; sourceTree = "<group>"; };
 		A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainTableViewFooterView.xib; sourceTree = "<group>"; };
@@ -693,6 +701,11 @@
 				5896EB841B5CB84A00A6C294 /* ShareView.h */,
 				5896EB851B5CB84A00A6C294 /* ShareView.m */,
 				5896EB871B5CB85700A6C294 /* ShareView.xib */,
+				A47E9D451B705DE80083D709 /* ApplySuccessView.h */,
+				A47E9D461B705DE80083D709 /* ApplySuccessView.m */,
+				A47E9D481B705DF00083D709 /* ApplySuccessView.xib */,
+				A47E9D4A1B7083C60083D709 /* ApplySuccessTableViewCell.h */,
+				A47E9D4B1B7083C60083D709 /* ApplySuccessTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -978,6 +991,7 @@
 				5896EBA51B5CE3A500A6C294 /* AssistantHeaderView.xib in Resources */,
 				58E10DB41B5891A000683069 /* Login.storyboard in Resources */,
 				58E55A421B6475D1008BAB03 /* SubmitSuccessView.xib in Resources */,
+				A47E9D491B705DF00083D709 /* ApplySuccessView.xib in Resources */,
 				584AB3481B568967008E84DE /* MainHeaderCellView.xib in Resources */,
 				5880966B1B5DEEDE00C3AEC0 /* Income.storyboard in Resources */,
 				5896EB911B5CC88C00A6C294 /* Task.storyboard in Resources */,
@@ -1035,6 +1049,7 @@
 				5892AB0C1B5F2DCF00F2E873 /* ScheduleMonthHeaderView.m in Sources */,
 				58977F581B60C99F009508B1 /* BuyCollectionViewCell.m in Sources */,
 				58EEDA861B57D92400BEA778 /* MyInfoDetailViewController.m in Sources */,
+				A47E9D4C1B7083C60083D709 /* ApplySuccessTableViewCell.m in Sources */,
 				588096621B5DDBC500C3AEC0 /* MoreShopViewController.m in Sources */,
 				5892AAFE1B5F2D3200F2E873 /* NoScheduleTableViewCell.m in Sources */,
 				58E9049E1B596E0100089D4A /* BespeakEViewController.m in Sources */,
@@ -1104,6 +1119,7 @@
 				58E647B31B5A403D00DB6454 /* UpLoadIDCardFirstViewController.m in Sources */,
 				58E10DAF1B58912600683069 /* LoginViewController.m in Sources */,
 				58F512431B578DBC00F887AB /* MenuView.m in Sources */,
+				A47E9D471B705DE80083D709 /* ApplySuccessView.m in Sources */,
 				58E10DD11B58E80700683069 /* bespeakViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

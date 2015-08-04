@@ -50,10 +50,6 @@
                                             <action selector="moreDaysBtnClick:" destination="VQe-OK-txu" eventType="touchUpInside" id="ucZ-Tv-141"/>
                                         </connections>
                                     </button>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IBa-5f-hak">
-                                        <rect key="frame" x="35" y="860" width="250" height="130"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u8C-p7-S3k" userLabel="scrollLeftBtn">
                                         <rect key="frame" x="10" y="916" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,6 +60,10 @@
                                             <action selector="scrollToLeftBtnClick:" destination="VQe-OK-txu" eventType="touchUpInside" id="w1O-o1-NV0"/>
                                         </connections>
                                     </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IBa-5f-hak">
+                                        <rect key="frame" x="35" y="860" width="250" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kdg-qa-9zf" userLabel="scrollRightBtn">
                                         <rect key="frame" x="280" y="916" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
