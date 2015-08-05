@@ -12,8 +12,9 @@
 #import "ShareView.h"
 #import "SubmitChooseDay.h"
 #import "MorePostViewController.h"
+#import "ApplyViewController.h"
 
-@interface MerchanBidMainViewController () <UITableViewDataSource,UITableViewDelegate,MerchanBidButtomTableViewCellDelegate,MerchanBidUPTableViewCellDelegate>
+@interface MerchanBidMainViewController () <UITableViewDataSource,UITableViewDelegate,MerchanBidButtomTableViewCellDelegate,MerchanBidUPTableViewCellDelegate,SubmitChooseDayDelegate>
 
 @property (nonatomic, strong) SubmitChooseDay *submitChooseDay;
 @property (nonatomic, strong) ShareView *shareView;
@@ -38,7 +39,52 @@
     _mainTableView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _isUpFirstReload = YES;
     _isButtomFirstReload = YES;
+    
+    [self changeFrame:HEIGHTCHANGE withObjcet:_buttomView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_buttomLeftBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_buttomRightBtn];
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)buttomLeftBtnClick:(id)sender {
+    [self tel];
+    
+}
+- (IBAction)buttomRightBtnClick:(id)sender {
+    if ([self needLogin]) {
+        [self toLoginVC];
+    }
+    else {
+        [self submitChooseViewAppear];
+    }
+}
+
+#pragma mark - SubmitChooseDayDelegate
+
+- (void)submitChooseDayBtnClick {
+    ApplyViewController *vc = [[UIStoryboard storyboardWithName:@"Apply" bundle:nil] instantiateViewControllerWithIdentifier:@"ApplyViewController"];
+    if (vc == nil) {
+        vc = [[ApplyViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+    
+    
+}
+
+- (void)submitChooseViewAppear {
+    UINib *nib = [UINib nibWithNibName:@"SubmitChooseDay" bundle:nil];
+    _submitChooseDay = [nib instantiateWithOwner:nil options:nil][0];
+    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitChooseViewDisappear)];
+    [_submitChooseDay.backgroundImg addGestureRecognizer:backTouch];
+    _submitChooseDay.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitChooseDay.submitBtn];
+    _submitChooseDay.delegate = self;
+    [self.view addSubview:_submitChooseDay];
+    
+}
+
+- (void)submitChooseViewDisappear {
+    [_submitChooseDay removeFromSuperview];
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
@@ -48,12 +94,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row == 0) {
-//        return _upHeight * HEIGHTCHANGE;
-//    }
-//    else {
-//        return _downHeight * HEIGHTCHANGE;
-//    }
     return SCREENHEIGHT;
 }
 
@@ -112,13 +152,13 @@
     if (yOff <= 0) {
         return;
     }
-    if (yOff >= 262) {
+    if (yOff >= _upHeight * HEIGHTCHANGE - SCREENHEIGHT + 100) {
         [_mainTableView setContentOffset:CGPointMake(0, SCREENHEIGHT) animated:YES];
     }
 }
 
-- (void)bickBtnClick {
-    [self bickBtnClick];
+- (void)MerchantBidUpBackBtnClick {
+    [self backBtnClick];
 }
 
 - (void)shareBtnClick {
@@ -133,6 +173,24 @@
 
 - (void)shareViewDisappear {
     [_shareView removeFromSuperview];
+}
+
+- (void)buttomViewChangeFrame:(CGFloat)yOff withHeightChange:(CGFloat)heightChange {
+    if (heightChange > 0) {
+        if (yOff > (_upHeight - 62) * HEIGHTCHANGE - SCREENHEIGHT &&  _buttomView.frame.origin.y > SCREENHEIGHT - 62 * HEIGHTCHANGE) {
+            _buttomView.frame = CGRectMake(_buttomView.frame.origin.x, _buttomView.frame.origin.y - heightChange, _buttomView.frame.size.width, _buttomView.frame.size.height);
+            if (_buttomView.frame.origin.y > SCREENHEIGHT - 62 * HEIGHTCHANGE) {
+                [UIView animateWithDuration:0.1 animations:^{
+                    _buttomView.frame = CGRectMake(_buttomView.frame.origin.x, SCREENHEIGHT - _buttomView.frame.size.height, _buttomView.frame.size.width, _buttomView.frame.size.height);
+                }];
+            }
+        }
+    }
+    else {
+        if (yOff < _upHeight * HEIGHTCHANGE - SCREENHEIGHT && _buttomView.frame.origin.y < SCREENHEIGHT) {
+            _buttomView.frame = CGRectMake(_buttomView.frame.origin.x, _buttomView.frame.origin.y - heightChange, _buttomView.frame.size.width, _buttomView.frame.size.height);
+        }
+    }
 }
 
 #pragma mark - MerchanBidButtomTableViewCellDelegate

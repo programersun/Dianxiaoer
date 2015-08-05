@@ -436,9 +436,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchanBidUPTableViewCell" rowHeight="830" id="yxL-jT-oj6" customClass="MerchanBidUPTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="830"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yxL-jT-oj6" id="b6U-XE-Ryg">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Ohh-g3-ASW">
@@ -480,6 +481,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="yxL-jT-oj6" id="4PI-eo-UTZ"/>
                                                     </connections>
@@ -495,9 +497,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="MerchanBidButtomTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchanBidButtomTableViewCell" rowHeight="1028" id="ojl-gX-NJz" customClass="MerchanBidButtomTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="852" width="320" height="1028"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojl-gX-NJz" id="B0H-tS-eOl">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1028"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="gP8-ha-YgL">
@@ -543,6 +546,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="ojl-gX-NJz" id="t7B-4P-EHd"/>
                                                     </connections>
@@ -564,10 +568,43 @@
                                     <outlet property="delegate" destination="NRf-JW-aDy" id="D6s-3E-gSH"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="6Mh-ep-F2Z">
+                                <rect key="frame" x="0.0" y="568" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" id="kGX-eL-HZ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9de-xl-eKC" userLabel="buttomLeftBtn">
+                                        <rect key="frame" x="30" y="1" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="submitbtnimg">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttomLeftBtnClick:" destination="NRf-JW-aDy" eventType="touchUpInside" id="EOJ-m9-efr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLl-bx-Ua0" userLabel="buttomRightBtn">
+                                        <rect key="frame" x="245" y="1" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="submitbtnimg">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttomRightBtnClick:" destination="NRf-JW-aDy" eventType="touchUpInside" id="Uzu-i6-fhe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="buttomLeftBtn" destination="9de-xl-eKC" id="yFD-P3-gut"/>
+                        <outlet property="buttomRightBtn" destination="VLl-bx-Ua0" id="tAO-TQ-d1c"/>
+                        <outlet property="buttomView" destination="6Mh-ep-F2Z" id="Eiw-7h-c3b"/>
                         <outlet property="mainTableView" destination="sDw-w7-DPW" id="RGN-5q-yD4"/>
                     </connections>
                 </viewController>
@@ -580,9 +617,11 @@
         <image name="MerchantBidBottom" width="320" height="1028"/>
         <image name="MerchantBidTop" width="320" height="830"/>
         <image name="MerchantInfo" width="320" height="838"/>
+        <image name="buyButtomBackground" width="320" height="61"/>
         <image name="morePost" width="320" height="699"/>
         <image name="morePostDetail" width="320" height="568"/>
         <image name="moreShop" width="320" height="568"/>
+        <image name="submitbtnimg" width="45" height="45"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -9,7 +9,7 @@
 #import "MerchanBidUPTableViewCell.h"
 
 @interface MerchanBidUPTableViewCell () <UIScrollViewDelegate>
-
+@property CGFloat oldyOff;
 @end
 
 @implementation MerchanBidUPTableViewCell
@@ -19,17 +19,30 @@
 }
 
 - (IBAction)backBtnClick:(id)sender {
-    [self.delegate bickBtnClick];
+    [self.delegate MerchantBidUpBackBtnClick];
 }
 
 - (IBAction)shareBtnClick:(id)sender {
     [self.delegate shareBtnClick];
 }
 - (IBAction)moreDaysBtnClick:(id)sender {
-    [self.delegate moreDaysBtnClick];
+//    [self.delegate moreDaysBtnClick];
 }
 
 #pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _oldyOff = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat heightChange = scrollView.contentOffset.y - _oldyOff;
+    if (scrollView.contentOffset.y <= 0) {
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    }
+    [self.delegate buttomViewChangeFrame:scrollView.contentOffset.y withHeightChange:heightChange];
+    _oldyOff = scrollView.contentOffset.y;
+}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self.delegate scrollDown:scrollView.contentOffset.y];

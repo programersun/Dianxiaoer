@@ -13,7 +13,9 @@
 @optional
 - (void)scrollDown:(CGFloat)yOff;
 @optional
-- (void)bickBtnClick;
+- (void)buttomViewChangeFrame:(CGFloat)yOff withHeightChange:(CGFloat)heightChange;
+@optional
+- (void)MerchantBidUpBackBtnClick;
 @optional
 - (void)shareBtnClick;
 @optional

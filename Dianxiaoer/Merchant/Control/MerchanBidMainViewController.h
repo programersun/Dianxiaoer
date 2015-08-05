@@ -10,5 +10,8 @@
 
 @interface MerchanBidMainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (weak, nonatomic) IBOutlet UIView *buttomView;
+@property (weak, nonatomic) IBOutlet UIButton *buttomLeftBtn;
+@property (weak, nonatomic) IBOutlet UIButton *buttomRightBtn;
 
 @end

@@ -31,6 +31,12 @@
 
 #pragma mark - UIScrollViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - SCREENHEIGHT) {
+        [scrollView setContentOffset:CGPointMake(0, scrollView.contentSize.height - SCREENHEIGHT) animated:NO];
+    }
+}
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self.delegate scrollUp:scrollView.contentOffset.y];
 }
