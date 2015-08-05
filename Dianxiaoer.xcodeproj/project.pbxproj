@@ -119,6 +119,9 @@
 		A47E9D4C1B7083C60083D709 /* ApplySuccessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E9D4B1B7083C60083D709 /* ApplySuccessTableViewCell.m */; };
 		A486301C1B67469A00EDD3CB /* mainTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */; };
 		A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */; };
+		A494429B1B71CDC2008F51E7 /* MerchanBidUPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A494429A1B71CDC2008F51E7 /* MerchanBidUPTableViewCell.m */; };
+		A494429E1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A494429D1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m */; };
+		A49442DF1B71FCF9008F51E7 /* MerchanBidMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49442DE1B71FCF9008F51E7 /* MerchanBidMainViewController.m */; };
 		A4968A071B6CDB9E00DE88EF /* HZLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4968A061B6CDB9E00DE88EF /* HZLocation.m */; };
 		A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */; };
 		A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */; };
@@ -329,6 +332,12 @@
 		A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainTableViewFooterView.h; sourceTree = "<group>"; };
 		A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainTableViewFooterView.m; sourceTree = "<group>"; };
 		A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainTableViewFooterView.xib; sourceTree = "<group>"; };
+		A49442991B71CDC2008F51E7 /* MerchanBidUPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchanBidUPTableViewCell.h; sourceTree = "<group>"; };
+		A494429A1B71CDC2008F51E7 /* MerchanBidUPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchanBidUPTableViewCell.m; sourceTree = "<group>"; };
+		A494429C1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchanBidButtomTableViewCell.h; sourceTree = "<group>"; };
+		A494429D1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchanBidButtomTableViewCell.m; sourceTree = "<group>"; };
+		A49442DD1B71FCF9008F51E7 /* MerchanBidMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchanBidMainViewController.h; sourceTree = "<group>"; };
+		A49442DE1B71FCF9008F51E7 /* MerchanBidMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchanBidMainViewController.m; sourceTree = "<group>"; };
 		A4968A051B6CDB9E00DE88EF /* HZLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZLocation.h; sourceTree = "<group>"; };
 		A4968A061B6CDB9E00DE88EF /* HZLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZLocation.m; sourceTree = "<group>"; };
 		A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReleasePickerView.xib; sourceTree = "<group>"; };
@@ -672,6 +681,8 @@
 		5896EB7C1B5CA5E500A6C294 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				A49442DD1B71FCF9008F51E7 /* MerchanBidMainViewController.h */,
+				A49442DE1B71FCF9008F51E7 /* MerchanBidMainViewController.m */,
 				5896EB811B5CA67D00A6C294 /* MerchantBidViewController.h */,
 				5896EB821B5CA67D00A6C294 /* MerchantBidViewController.m */,
 				5896EB891B5CC18600A6C294 /* MerchantInfoViewController.h */,
@@ -706,6 +717,10 @@
 				A47E9D481B705DF00083D709 /* ApplySuccessView.xib */,
 				A47E9D4A1B7083C60083D709 /* ApplySuccessTableViewCell.h */,
 				A47E9D4B1B7083C60083D709 /* ApplySuccessTableViewCell.m */,
+				A49442991B71CDC2008F51E7 /* MerchanBidUPTableViewCell.h */,
+				A494429A1B71CDC2008F51E7 /* MerchanBidUPTableViewCell.m */,
+				A494429C1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.h */,
+				A494429D1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1080,6 +1095,8 @@
 				58F512381B5771D700F887AB /* SettingHeadTableViewCell.m in Sources */,
 				58E904A11B596E6000089D4A /* BespeakBViewController.m in Sources */,
 				58EEDA831B57D82100BEA778 /* QrCodeViewController.m in Sources */,
+				A494429B1B71CDC2008F51E7 /* MerchanBidUPTableViewCell.m in Sources */,
+				A49442DF1B71FCF9008F51E7 /* MerchanBidMainViewController.m in Sources */,
 				58E9049D1B596E0100089D4A /* BespeakDViewController.m in Sources */,
 				5896EB781B5C8F6B00A6C294 /* TodayTopView.m in Sources */,
 				584AB34E1B5689A5008E84DE /* MainViewController.m in Sources */,
@@ -1115,6 +1132,7 @@
 				58E10DDE1B58ED3E00683069 /* RegistInfoFinishViewController.m in Sources */,
 				A451A9C71B6F5EC40094D21D /* ApplyViewController.m in Sources */,
 				58E10DD41B58E90700683069 /* bespeakAlertView.m in Sources */,
+				A494429E1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m in Sources */,
 				58F5124C1B57A7F900F887AB /* SkillViewController.m in Sources */,
 				58E647B31B5A403D00DB6454 /* UpLoadIDCardFirstViewController.m in Sources */,
 				58E10DAF1B58912600683069 /* LoginViewController.m in Sources */,

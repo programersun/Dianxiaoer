@@ -52,6 +52,8 @@
     _giveUpBespeakAlert = [nib instantiateWithOwner:nil options:nil][0];
     _giveUpBespeakAlert.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _giveUpBespeakAlert.delegate = self;
+    [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.backgroundView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.backgroundImg];
     [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.submitBtn];
     [self changeFrame:HEIGHTCHANGE withObjcet:_giveUpBespeakAlert.giveUpBtn];
     [self.view addSubview:_giveUpBespeakAlert];

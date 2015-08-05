@@ -12,10 +12,13 @@
 #import "SubmitChooseDay.h"
 #import "ApplyViewController.h"
 
-@interface MerchantBidViewController () <SubmitChooseDayDelegate>
+@interface MerchantBidViewController () <SubmitChooseDayDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *workingEnvironmentScrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundVIew;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundTopView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundButtomView;
+@property (weak, nonatomic) IBOutlet UIButton *topLeftBtn;
+@property (weak, nonatomic) IBOutlet UIButton *topRightBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
@@ -29,22 +32,29 @@
 
 @property (nonatomic, strong) SubmitChooseDay *submitChooseDay;
 @property (nonatomic, strong) ShareView *shareView;
-@property (nonatomic, assign) UIImage *backgroundImg;
+
+@property (nonatomic, strong) UIPanGestureRecognizer *scrollDown;
+@property (nonatomic, strong) UIPanGestureRecognizer *scrollUp;
+
+@property CGFloat startPanY;
+@property CGFloat oldContentOffsetY;
+@property CGFloat startContentOffsetY;
 @end
 
 @implementation MerchantBidViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _backgroundImg = [UIImage imageNamed:@"MerchantBid"];
-    _backgroundVIew.image = _backgroundImg;
     _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     
-    CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
+    CGFloat heightChange = SCREENWIDTH  / 320;
     
-    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , 1858 * heightChange);
     
-    [self changeFrame:heightChange withObjcet:_backgroundVIew];
+    [self changeFrame:heightChange withObjcet:_backgroundTopView];
+    [self changeFrame:heightChange withObjcet:_backgroundButtomView];
+    [self changeFrame:heightChange withObjcet:_topLeftBtn];
+    [self changeFrame:heightChange withObjcet:_topRightBtn];
     [self changeFrame:heightChange withObjcet:_backBtn];
     [self changeFrame:heightChange withObjcet:_shareBtn];
     [self changeFrame:heightChange withObjcet:_moreDaysBtn];
@@ -147,6 +157,108 @@
 - (void)submitChooseViewDisappear {
     [_submitChooseDay removeFromSuperview];
 }
+
+#pragma mark - UIScrollViewDelegate
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    _startContentOffsetY = scrollView.contentOffset.y;
+//    _oldContentOffsetY = scrollView.contentOffset.y;
+//}
+//
+//
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat newcontentOffsetY = scrollView.contentOffset.y;
+//    CGFloat heightChange = newcontentOffsetY - _oldContentOffsetY;
+//    
+//    if (heightChange > 0) {
+//        if (newcontentOffsetY >= 262 * HEIGHTCHANGE ) {
+//            if (newcontentOffsetY <= 262 * HEIGHTCHANGE + SCREENHEIGHT / 2) {
+//                [UIView animateWithDuration:1.0 animations:^{
+//                    [scrollView setContentOffset:CGPointMake(0, 260 * HEIGHTCHANGE) animated:YES];
+//                }];
+//                
+//            }
+//            else {
+//                [UIView animateWithDuration:1.0 animations:^{
+//                    [scrollView setContentOffset:CGPointMake(0, 830 * HEIGHTCHANGE) animated:NO];
+//                }];
+//            }
+//        }
+//    }
+//    else {
+//        
+//    }
+//    
+//}
+
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat newcontentOffsetY = scrollView.contentOffset.y;
+//    if (newcontentOffsetY <= 830 * HEIGHTCHANGE) {
+//        if (newcontentOffsetY >= 262 * HEIGHTCHANGE) {
+//            [UIView animateWithDuration:1.0 animations:^{
+//                [scrollView setContentOffset:CGPointMake(0, 260 * HEIGHTCHANGE) animated:NO];
+//            }completion:^(BOOL finished) {
+//                if (newcontentOffsetY >= 262 * HEIGHTCHANGE + SCREENHEIGHT / 3) {
+//                    [UIView animateWithDuration:1.0 animations:^{
+//                        [scrollView setContentOffset:CGPointMake(0, 830 * HEIGHTCHANGE) animated:NO];
+//                    }];
+//                }
+//            }];
+////            _scrollDown = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDown)];
+////            [_mainScrollView addGestureRecognizer:_scrollDown];
+//            
+//        }
+//        
+//    }
+//    if (newcontentOffsetY >= 830 * HEIGHTCHANGE) {
+//        if (newcontentOffsetY <= 830 * HEIGHTCHANGE) {
+//            [scrollView setContentOffset:CGPointMake(0, 830 * HEIGHTCHANGE) animated:YES];
+////            _scrollUp = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewUp)];
+////            [_mainScrollView addGestureRecognizer:_scrollUp];
+//        }
+//        
+//    }
+//}
+
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+//    
+//    [_mainScrollView removeGestureRecognizer:_scrollUp];
+//}
+
+//- (void)scrollViewDown {
+//    CGFloat endPanY;
+//    if (_scrollDown.state == UIGestureRecognizerStateBegan) {
+//        _startPanY = _scrollDown.view.center.y;
+//        NSLog(@"%f",_startPanY);
+//    }
+//
+//    if (_scrollDown.state == UIGestureRecognizerStateChanged)
+//    {
+//        
+//        endPanY = _scrollDown.view.center.y;
+//        NSLog(@"%f",endPanY);
+//        
+//    }
+//    
+//    if (_startPanY - endPanY > SCREENHEIGHT / 2) {
+//        [_mainScrollView setContentOffset:CGPointMake(0, 830) animated:YES];
+//    }
+//    
+//    if (_scrollDown.state == UIGestureRecognizerStateEnded) {
+//        [_mainScrollView removeGestureRecognizer:_scrollDown];
+//    }
+//
+//}
+//
+//- (void)scrollViewUp {
+//    
+//    
+//}
+//
+//
+
 
 
 /*

@@ -19,5 +19,7 @@
 @property (nonatomic, assign) id <GiveUpBespeakAlertDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *giveUpBtn;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end

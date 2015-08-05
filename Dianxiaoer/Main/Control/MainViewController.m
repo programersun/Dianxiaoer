@@ -20,6 +20,7 @@
 #import "SearchAlert.h"
 #import "TodayTopView.h"
 #import "MerchantBidViewController.h"
+#import "MerchanBidMainViewController.h"
 #import "MerchantInfoViewController.h"
 #import "TaskMainViewController.h"
 #import "AssistantMainViewController.h"
@@ -373,9 +374,9 @@
 //        [self toLoginVC];
 //    }
 //    else {
-        MerchantBidViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchantBidViewController"];
+        MerchanBidMainViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchanBidMainViewController"];
         if (vc == nil) {
-            vc = [[MerchantBidViewController alloc] init];
+            vc = [[MerchanBidMainViewController alloc] init];
         }
         [[self navigationController] pushViewController:vc animated:YES];
 //    }

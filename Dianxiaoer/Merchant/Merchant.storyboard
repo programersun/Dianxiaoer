@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="VQe-OK-txu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="NRf-JW-aDy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -16,12 +16,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBid" id="MxN-Ra-33b">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1745"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBidTop" id="MxN-Ra-33b">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBidBottom" id="LtV-b1-nnb">
+                                        <rect key="frame" x="0.0" y="830" width="320" height="1028"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mBY-re-TAb">
-                                        <rect key="frame" x="21" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="15" y="17" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t3g-Bj-5hc">
-                                        <rect key="frame" x="269" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="272" y="16" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t57-jM-ff3" userLabel="moreDayBtn">
-                                        <rect key="frame" x="60" y="580" width="200" height="75"/>
+                                        <rect key="frame" x="60" y="578" width="200" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,8 +54,28 @@
                                             <action selector="moreDaysBtnClick:" destination="VQe-OK-txu" eventType="touchUpInside" id="ucZ-Tv-141"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g4l-pO-XXp" userLabel="topLeftBtn">
+                                        <rect key="frame" x="32" y="768" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="consultBtnClick:" destination="VQe-OK-txu" eventType="touchUpInside" id="ZVS-Xu-dEe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFt-ml-JbL" userLabel="topRightBtn">
+                                        <rect key="frame" x="238" y="768" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="enlistBtnClick:" destination="VQe-OK-txu" eventType="touchUpInside" id="9wv-yN-ih4"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u8C-p7-S3k" userLabel="scrollLeftBtn">
-                                        <rect key="frame" x="10" y="916" width="30" height="30"/>
+                                        <rect key="frame" x="10" y="1030" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,11 +85,11 @@
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IBa-5f-hak">
-                                        <rect key="frame" x="35" y="860" width="250" height="130"/>
+                                        <rect key="frame" x="35" y="975" width="250" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kdg-qa-9zf" userLabel="scrollRightBtn">
-                                        <rect key="frame" x="280" y="916" width="30" height="30"/>
+                                        <rect key="frame" x="280" y="1030" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,7 +99,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7lT-pL-chD" userLabel="moreWorkBtn">
-                                        <rect key="frame" x="130" y="1460" width="60" height="20"/>
+                                        <rect key="frame" x="130" y="1573" width="60" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +109,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s9S-MH-HfE" userLabel="bottomLeftBtn">
-                                        <rect key="frame" x="32" y="1682" width="50" height="50"/>
+                                        <rect key="frame" x="32" y="1796" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,7 +119,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tpc-yf-FIK" userLabel="bottomRightBtn">
-                                        <rect key="frame" x="238" y="1682" width="50" height="50"/>
+                                        <rect key="frame" x="238" y="1796" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +138,8 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mBY-re-TAb" id="hEd-Ad-YiI"/>
-                        <outlet property="backgroundVIew" destination="MxN-Ra-33b" id="dXf-a0-FlV"/>
+                        <outlet property="backgroundButtomView" destination="LtV-b1-nnb" id="Hdg-gr-Vpc"/>
+                        <outlet property="backgroundTopView" destination="MxN-Ra-33b" id="nxr-bG-7vo"/>
                         <outlet property="conulstBtn" destination="s9S-MH-HfE" id="QFn-th-vdi"/>
                         <outlet property="enlistBtn" destination="tpc-yf-FIK" id="YHp-Nd-g9B"/>
                         <outlet property="mainScrollView" destination="Sh8-1v-bl5" id="Ggb-7H-nsj"/>
@@ -123,12 +148,14 @@
                         <outlet property="scrollToLeftBtn" destination="u8C-p7-S3k" id="I1B-zQ-Vi8"/>
                         <outlet property="scrollToRigthBtn" destination="Kdg-qa-9zf" id="W0V-lu-C0M"/>
                         <outlet property="shareBtn" destination="t3g-Bj-5hc" id="jwU-qR-tvg"/>
+                        <outlet property="topLeftBtn" destination="g4l-pO-XXp" id="3DW-uy-0Rf"/>
+                        <outlet property="topRightBtn" destination="hFt-ml-JbL" id="4Y0-vn-Y2X"/>
                         <outlet property="workingEnvironmentScrollView" destination="IBa-5f-hak" id="HaT-4M-KaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1C-ue-NsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="-59"/>
+            <point key="canvasLocation" x="67" y="-48"/>
         </scene>
         <!--Merchant Info View Controller-->
         <scene sceneID="6XX-KI-UEw">
@@ -395,9 +422,163 @@
             </objects>
             <point key="canvasLocation" x="2020" y="-59"/>
         </scene>
+        <!--Merchan Bid Main View Controller-->
+        <scene sceneID="vQK-XU-dHN">
+            <objects>
+                <viewController storyboardIdentifier="MerchanBidMainViewController" id="NRf-JW-aDy" customClass="MerchanBidMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4h-cN-VjT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sDw-w7-DPW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchanBidUPTableViewCell" rowHeight="830" id="yxL-jT-oj6" customClass="MerchanBidUPTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yxL-jT-oj6" id="b6U-XE-Ryg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Ohh-g3-ASW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBidTop" id="75H-6J-wEW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e61-Pi-pY3" userLabel="backBtn">
+                                                            <rect key="frame" x="15" y="16" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="backBtnClick:" destination="yxL-jT-oj6" eventType="touchUpInside" id="fX7-4q-Msu"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ucs-Jd-NM9" userLabel="shareBtn">
+                                                            <rect key="frame" x="272" y="16" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="shareBtnClick:" destination="yxL-jT-oj6" eventType="touchUpInside" id="Ohk-eQ-qsq"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P5p-xJ-I1A" userLabel="moreDayBtn">
+                                                            <rect key="frame" x="60" y="580" width="200" height="80"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="moreDaysBtnClick:" destination="yxL-jT-oj6" eventType="touchUpInside" id="ZLj-DC-i6e"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="yxL-jT-oj6" id="4PI-eo-UTZ"/>
+                                                    </connections>
+                                                </scrollView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backBtn" destination="e61-Pi-pY3" id="ogr-y6-a7I"/>
+                                            <outlet property="moreDaysBtn" destination="P5p-xJ-I1A" id="zcq-BC-g3t"/>
+                                            <outlet property="shareBtn" destination="ucs-Jd-NM9" id="q9h-cQ-naE"/>
+                                            <outlet property="upBackgroundImg" destination="75H-6J-wEW" id="0fW-N7-5J5"/>
+                                            <outlet property="upScrollView" destination="Ohh-g3-ASW" id="hhz-dX-thQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="MerchanBidButtomTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchanBidButtomTableViewCell" rowHeight="1028" id="ojl-gX-NJz" customClass="MerchanBidButtomTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojl-gX-NJz" id="B0H-tS-eOl">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="gP8-ha-YgL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1028"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MerchantBidBottom" id="yok-C7-QMV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1028"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z1y-FU-UgE" userLabel="scrollLeftBtn">
+                                                            <rect key="frame" x="10" y="198" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="scrollLeftBtnClick:" destination="ojl-gX-NJz" eventType="touchUpInside" id="ZaS-6E-cpN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="stm-Ox-qsn">
+                                                            <rect key="frame" x="35" y="143" width="250" height="130"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </scrollView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AZx-un-cdR" userLabel="scrollRightBtn">
+                                                            <rect key="frame" x="280" y="198" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="scrollRightBtnClick:" destination="ojl-gX-NJz" eventType="touchUpInside" id="Oyu-Tw-ycP"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bx1-5o-Ffv" userLabel="moreWorkBtn">
+                                                            <rect key="frame" x="125" y="740" width="70" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="moreWorkBtnClick:" destination="ojl-gX-NJz" eventType="touchUpInside" id="Eba-5N-ejy"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ojl-gX-NJz" id="t7B-4P-EHd"/>
+                                                    </connections>
+                                                </scrollView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttomScrollView" destination="gP8-ha-YgL" id="miU-gg-fvu"/>
+                                            <outlet property="downBackgroundImg" destination="yok-C7-QMV" id="5aa-qV-hlQ"/>
+                                            <outlet property="middleScrollView" destination="stm-Ox-qsn" id="Z7s-Jr-uqV"/>
+                                            <outlet property="moreWorkBtn" destination="bx1-5o-Ffv" id="GaT-0p-chy"/>
+                                            <outlet property="scrollLeftBtn" destination="z1y-FU-UgE" id="nvm-ty-0xM"/>
+                                            <outlet property="scrollRightBtn" destination="AZx-un-cdR" id="MNI-jE-7cV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NRf-JW-aDy" id="5Xa-Nr-I61"/>
+                                    <outlet property="delegate" destination="NRf-JW-aDy" id="D6s-3E-gSH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="sDw-w7-DPW" id="RGN-5q-yD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lek-zI-1cP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="-48"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="MerchantBid" width="320" height="1745"/>
+        <image name="MerchantBidBottom" width="320" height="1028"/>
+        <image name="MerchantBidTop" width="320" height="830"/>
         <image name="MerchantInfo" width="320" height="838"/>
         <image name="morePost" width="320" height="699"/>
         <image name="morePostDetail" width="320" height="568"/>
