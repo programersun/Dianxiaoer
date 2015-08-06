@@ -9,6 +9,7 @@
 #import "IncomeViewController.h"
 #import "IncomeTableViewCell.h"
 #import "MyBankCardViewController.h"
+#import "WithdrewMainViewController.h"
 #define INCOMECOUNT 3
 
 @interface IncomeViewController () <UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
@@ -17,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *incomeTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *noIncomeImg;
 @property (weak, nonatomic) IBOutlet UIButton *bankCardBtn;
+@property (weak, nonatomic) IBOutlet UIButton *withdrewBtn;
+@property (weak, nonatomic) IBOutlet UIButton *incomeDetailBtn;
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableUp;
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableDown;
@@ -35,6 +38,7 @@
     [self changeFrame:HEIGHTCHANGE withObjcet:_bellImg];
     [self changeFrame:HEIGHTCHANGE withObjcet:_noIncomeImg];
     [self changeFrame:HEIGHTCHANGE withObjcet:_bankCardBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_withdrewBtn];
     [self setType];
     [self addSwipe];
     // Do any additional setup after loading the view.
@@ -61,6 +65,19 @@
 - (IBAction)noIncomeBtnClick:(id)sender {
     
 }
+
+- (IBAction)withdrewBtnClick:(id)sender {
+    WithdrewMainViewController *vc = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"WithdrewMainViewController"];
+    if (vc == nil) {
+        vc = [[WithdrewMainViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+- (IBAction)incomeDetailBtnClick:(id)sender {
+    
+}
+
 
 - (IBAction)myBankCardBtnClick:(id)sender {
     MyBankCardViewController *vc = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"MyBankCardViewController"];

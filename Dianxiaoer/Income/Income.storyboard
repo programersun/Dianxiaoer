@@ -51,6 +51,36 @@
                                 <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sTF-Rf-QyH">
+                                <rect key="frame" x="229" y="373" width="62" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="withdrewBtnClick:" destination="Gyv-Lf-Rs3" eventType="touchUpInside" id="n3t-Uu-8c3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rR0-FY-BVL">
+                                <rect key="frame" x="272" y="17" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="myBankCardBtnClick:" destination="Gyv-Lf-Rs3" eventType="touchUpInside" id="Ng6-rt-gqg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFx-L2-kRY">
+                                <rect key="frame" x="265" y="135" width="46" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incomeDetailBtnClick:" destination="Gyv-Lf-Rs3" eventType="touchUpInside" id="7Z5-k8-A4C"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pey-Jf-9nM">
                                 <rect key="frame" x="0.0" y="412" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -70,7 +100,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="incomeCellImg" destination="cBY-jf-xli" id="y5m-Ou-MZA"/>
                                         </connections>
@@ -81,32 +111,17 @@
                                     <outlet property="delegate" destination="Gyv-Lf-Rs3" id="Jo1-A0-fEg"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sTF-Rf-QyH">
-                                <rect key="frame" x="229" y="373" width="62" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rR0-FY-BVL">
-                                <rect key="frame" x="272" y="17" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="myBankCardBtnClick:" destination="Gyv-Lf-Rs3" eventType="touchUpInside" id="Ng6-rt-gqg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="bankCardBtn" destination="rR0-FY-BVL" id="Qno-hh-w61"/>
                         <outlet property="bellImg" destination="v9o-zn-aPU" id="hec-dV-GyN"/>
+                        <outlet property="incomeDetailBtn" destination="RFx-L2-kRY" id="BD4-K0-lI9"/>
                         <outlet property="incomeTableView" destination="pey-Jf-9nM" id="Cg4-y4-2VV"/>
                         <outlet property="nameLabel" destination="bmo-w6-3Sv" id="WUe-mC-XwS"/>
                         <outlet property="noIncomeImg" destination="m1q-3w-7RC" id="a9u-gB-ZXG"/>
+                        <outlet property="withdrewBtn" destination="sTF-Rf-QyH" id="vPd-aO-2Um"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2s-rY-gKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGF-P9-7ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="443"/>
+            <point key="canvasLocation" x="520" y="443"/>
         </scene>
         <!--Add Card First View Controller-->
         <scene sceneID="CWR-jT-wgc">
@@ -199,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvb-ht-puU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="443"/>
+            <point key="canvasLocation" x="1206" y="443"/>
         </scene>
         <!--Add Card Second View Controller-->
         <scene sceneID="giI-Ys-A7D">
@@ -248,7 +263,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nI-mO-eiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="443"/>
+            <point key="canvasLocation" x="856" y="443"/>
+        </scene>
+        <!--Withdrew Main View Controller-->
+        <scene sceneID="vvW-HC-IKw">
+            <objects>
+                <viewController storyboardIdentifier="WithdrewMainViewController" id="gEJ-7q-6ko" customClass="WithdrewMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lg1-3G-QQY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="withdrewMainImg" id="DHE-EN-sff">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="prI-lZ-9t0">
+                                <rect key="frame" x="12" y="12" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnClick:" destination="gEJ-7q-6ko" eventType="touchUpInside" id="Fby-WU-0I9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nrn-3l-ak5">
+                                <rect key="frame" x="0.0" y="78" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseBankCardBtnClick:" destination="gEJ-7q-6ko" eventType="touchUpInside" id="vav-9g-3S3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ey5-1f-t1K">
+                                <rect key="frame" x="50" y="428" width="219" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitBtnClick:" destination="gEJ-7q-6ko" eventType="touchUpInside" id="Eeu-dd-peb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="prI-lZ-9t0" id="hr6-vN-e5D"/>
+                        <outlet property="backgroundImg" destination="DHE-EN-sff" id="FPN-P7-D0M"/>
+                        <outlet property="chooseBankCardBtn" destination="Nrn-3l-ak5" id="Cvf-23-e3s"/>
+                        <outlet property="submitBtn" destination="Ey5-1f-t1K" id="yIc-3c-NQw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M97-Cg-JDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="1087"/>
+        </scene>
+        <!--Withdrew Success View Controller-->
+        <scene sceneID="uc8-Nv-1me">
+            <objects>
+                <viewController storyboardIdentifier="WithdrewSuccessViewController" id="bjS-qD-X5h" customClass="WithdrewSuccessViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aYs-7K-zPe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="withdrewSuccessImg" id="4x2-uK-G9C">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r5R-Dd-21t">
+                                <rect key="frame" x="11" y="13" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnClick:" destination="bjS-qD-X5h" eventType="touchUpInside" id="38U-Bn-T4c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QKx-ey-mJX">
+                                <rect key="frame" x="53" y="427" width="215" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitBtnClick:" destination="bjS-qD-X5h" eventType="touchUpInside" id="xOi-sX-Jwh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="r5R-Dd-21t" id="1F4-RW-cxB"/>
+                        <outlet property="backgroundImg" destination="4x2-uK-G9C" id="T4S-fI-Rcr"/>
+                        <outlet property="submitBtn" destination="QKx-ey-mJX" id="Rul-Gm-VuE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zam-aO-dFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
@@ -259,6 +374,8 @@
         <image name="IncomeMainImg" width="320" height="568"/>
         <image name="MyBankCardMainImg" width="320" height="568"/>
         <image name="noIncome" width="320" height="156"/>
+        <image name="withdrewMainImg" width="320" height="568"/>
+        <image name="withdrewSuccessImg" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

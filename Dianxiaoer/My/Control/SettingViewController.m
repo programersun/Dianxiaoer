@@ -11,6 +11,7 @@
 #import "SettingOtherTableViewCell.h"
 #import "MyInfoDetailViewController.h"
 #import "SR_UserInfoDetail.h"
+#import "ModifyMainViewController.h"
 
 @interface SettingViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
@@ -110,9 +111,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0: {
-            MyInfoDetailViewController *myInfoDetailVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoDetailViewController"];
+//            MyInfoDetailViewController *myInfoDetailVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoDetailViewController"];
+//            if (myInfoDetailVC == nil) {
+//                myInfoDetailVC = [[MyInfoDetailViewController alloc] init];
+//            }
+//            [[self navigationController] pushViewController:myInfoDetailVC animated:YES];
+            ModifyMainViewController *myInfoDetailVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"ModifyMainViewController"];
             if (myInfoDetailVC == nil) {
-                myInfoDetailVC = [[MyInfoDetailViewController alloc] init];
+                myInfoDetailVC = [[ModifyMainViewController alloc] init];
             }
             [[self navigationController] pushViewController:myInfoDetailVC animated:YES];
             break;

@@ -9,7 +9,7 @@
 #import "AssistantMainViewController.h"
 #import "AssistantMainTableViewCell.h"
 #import "AssistantHeaderView.h"
-#import "MerchantBidViewController.h"
+#import "MerchanBidMainViewController.h"
 #import "SearchAlert.h"
 
 @interface AssistantMainViewController () <UITableViewDataSource ,UITableViewDelegate,SearchAlertDelegate>
@@ -96,9 +96,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-        MerchantBidViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchantBidViewController"];
+        MerchanBidMainViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchanBidMainViewController"];
         if (vc == nil) {
-            vc = [[MerchantBidViewController alloc] init];
+            vc = [[MerchanBidMainViewController alloc] init];
         }
         [[self navigationController] pushViewController:vc animated:YES];
 }

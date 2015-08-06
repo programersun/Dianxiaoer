@@ -1,23 +1,17 @@
 //
-//  MerchanBidMainViewController.m
+//  ScheduleDetailViewController.m
 //  Dianxiaoer
 //
-//  Created by 孙瑞 on 15/8/5.
+//  Created by 孙瑞 on 15/8/6.
 //  Copyright (c) 2015年 瑞孙. All rights reserved.
 //
 
-#import "MerchanBidMainViewController.h"
-#import "MerchanBidUPTableViewCell.h"
-#import "MerchanBidButtomTableViewCell.h"
-#import "ShareView.h"
-#import "SubmitChooseDay.h"
+#import "ScheduleDetailViewController.h"
+#import "ScheduleDetailUpTableViewCell.h"
+#import "ScheduleDetailButtomTableViewCell.h"
 #import "MorePostViewController.h"
-#import "ApplyViewController.h"
 
-@interface MerchanBidMainViewController () <UITableViewDataSource,UITableViewDelegate,MerchanBidButtomTableViewCellDelegate,MerchanBidUPTableViewCellDelegate,SubmitChooseDayDelegate>
-
-@property (nonatomic, strong) SubmitChooseDay *submitChooseDay;
-@property (nonatomic, strong) ShareView *shareView;
+@interface ScheduleDetailViewController () <UITableViewDataSource,UITableViewDelegate,ScheduleDetailButtomTableViewCellDelegate,ScheduleDetailUpTableViewCellDelegate>
 
 @property UIImage *upImg;
 @property UIImage *downImg;
@@ -28,13 +22,14 @@
 
 @end
 
-@implementation MerchanBidMainViewController
+@implementation ScheduleDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _upImg = [UIImage imageNamed:@"MerchantBidTop"];
+    
+    _upImg = [UIImage imageNamed:@"ScheduleDetailUpImg"];
     _upHeight = _upImg.size.height;
-    _downImg = [UIImage imageNamed:@"MerchantBidBottom"];
+    _downImg = [UIImage imageNamed:@"ScheduleDetailButtomImg"];
     _downHeight = _downImg.size.height;
     _mainTableView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     _isUpFirstReload = YES;
@@ -43,48 +38,15 @@
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomView];
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomLeftBtn];
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomRightBtn];
+    
     // Do any additional setup after loading the view.
 }
 
 - (IBAction)buttomLeftBtnClick:(id)sender {
     [self tel];
-    
 }
 - (IBAction)buttomRightBtnClick:(id)sender {
-    if ([self needLogin]) {
-        [self toLoginVC];
-    }
-    else {
-        [self submitChooseViewAppear];
-    }
-}
-
-#pragma mark - SubmitChooseDayDelegate
-
-- (void)submitChooseDayBtnClick {
-    ApplyViewController *vc = [[UIStoryboard storyboardWithName:@"Apply" bundle:nil] instantiateViewControllerWithIdentifier:@"ApplyViewController"];
-    if (vc == nil) {
-        vc = [[ApplyViewController alloc] init];
-    }
-    [[self navigationController] pushViewController:vc animated:YES];
     
-    
-}
-
-- (void)submitChooseViewAppear {
-    UINib *nib = [UINib nibWithNibName:@"SubmitChooseDay" bundle:nil];
-    _submitChooseDay = [nib instantiateWithOwner:nil options:nil][0];
-    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(submitChooseViewDisappear)];
-    [_submitChooseDay.backgroundImg addGestureRecognizer:backTouch];
-    _submitChooseDay.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
-    [self changeFrame:SCREENWIDTH/320 withObjcet:_submitChooseDay.submitBtn];
-    _submitChooseDay.delegate = self;
-    [self.view addSubview:_submitChooseDay];
-    
-}
-
-- (void)submitChooseViewDisappear {
-    [_submitChooseDay removeFromSuperview];
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
@@ -100,9 +62,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
-        MerchanBidUPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MerchanBidUPTableViewCell"];
+        ScheduleDetailUpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScheduleDetailUpTableViewCell"];
         if (cell == nil) {
-            cell = [[MerchanBidUPTableViewCell alloc] init];
+            cell = [[ScheduleDetailUpTableViewCell alloc] init];
         }
         
         cell.delegate = self;
@@ -113,8 +75,6 @@
         if (_isUpFirstReload) {
             [self changeFrame:HEIGHTCHANGE withObjcet:cell.upBackgroundImg];
             [self changeFrame:HEIGHTCHANGE withObjcet:cell.backBtn];
-            [self changeFrame:HEIGHTCHANGE withObjcet:cell.shareBtn];
-            [self changeFrame:HEIGHTCHANGE withObjcet:cell.moreDaysBtn];
             _isUpFirstReload = NO;
         }
         
@@ -122,18 +82,18 @@
         return cell;
     }
     else {
-        MerchanBidButtomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MerchanBidButtomTableViewCell"];
+        ScheduleDetailButtomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScheduleDetailButtomTableViewCell"];
         if (cell == nil) {
-            cell = [[MerchanBidButtomTableViewCell alloc] init];
+            cell = [[ScheduleDetailButtomTableViewCell alloc] init];
         }
         
         cell.delegate = self;
-        cell.downBackgroundImg.image = _downImg;
+        cell.buttomBackgroundImg.image = _downImg;
         [cell.buttomScrollView setContentSize:CGSizeMake(320 * HEIGHTCHANGE, _downHeight * HEIGHTCHANGE)];
         cell.buttomScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
         
         if (_isButtomFirstReload) {
-            [self changeFrame:HEIGHTCHANGE withObjcet:cell.downBackgroundImg];
+            [self changeFrame:HEIGHTCHANGE withObjcet:cell.buttomBackgroundImg];
             [self changeFrame:HEIGHTCHANGE withObjcet:cell.scrollLeftBtn];
             [self changeFrame:HEIGHTCHANGE withObjcet:cell.middleScrollView];
             [self changeFrame:HEIGHTCHANGE withObjcet:cell.scrollRightBtn];
@@ -145,7 +105,7 @@
     }
 }
 
-#pragma mark - MerchanBidUPTableViewCellDelegate
+#pragma mark - ScheduleDetailUpTableViewCellDelegate
 
 - (void)scrollDown:(CGFloat)yOff {
     if (yOff <= 0) {
@@ -156,22 +116,8 @@
     }
 }
 
-- (void)MerchantBidUpBackBtnClick {
+- (void)scheduleDetailUpBackBtnClick {
     [self backBtnClick];
-}
-
-- (void)shareBtnClick {
-    UINib *nib = [UINib nibWithNibName:@"ShareView" bundle:nil];
-    _shareView = [nib instantiateWithOwner:nil options:nil][0];
-    UITapGestureRecognizer *backTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shareViewDisappear)];
-    [_shareView addGestureRecognizer:backTouch];
-    _shareView.frame = CGRectMake(0, 0,[[UIScreen mainScreen] bounds].size.width , [[UIScreen mainScreen] bounds].size.height);
-    _shareView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
-    [self.view addSubview:_shareView];
-}
-
-- (void)shareViewDisappear {
-    [_shareView removeFromSuperview];
 }
 
 - (void)buttomViewChangeFrame:(CGFloat)yOff withHeightChange:(CGFloat)heightChange {
@@ -193,19 +139,17 @@
                     _buttomView.frame = CGRectMake(_buttomView.frame.origin.x, SCREENHEIGHT - _buttomView.frame.size.height, _buttomView.frame.size.width, _buttomView.frame.size.height);
                 }];
             }
-
+            
         }
     }
 }
 
-#pragma mark - MerchanBidButtomTableViewCellDelegate
+#pragma mark - ScheduleDetailButtomTableViewCellDelegate
 
 - (void)scrollUp:(CGFloat)yOff {
     if (yOff < -50) {
         
         [_mainTableView setContentOffset:CGPointMake(0, 0) animated:YES];
-//        _upScrollView.scrollEnabled = YES;
-//        _buttomScrollView.scrollEnabled = NO;
     }
 }
 
@@ -216,7 +160,6 @@
     }
     [[self navigationController] pushViewController:vc animated:YES];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,7 +7,6 @@
         <!--Setting View Controller-->
         <scene sceneID="Cs9-mh-5jR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="az9-6f-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SettingViewController" id="f9Q-4t-5Sa" customClass="SettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JB7-Rv-HsY"/>
@@ -152,13 +151,14 @@
                         <outlet property="settingTableView" destination="RqU-83-9bm" id="ihX-VA-9md"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="az9-6f-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="414.93333333333334" y="946.66666666666663"/>
         </scene>
     </scenes>
     <resources>
         <image name="backImg" width="11" height="21"/>
-        <image name="shopHeadImg" width="55" height="55"/>
+        <image name="shopHeadImg" width="110" height="110"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

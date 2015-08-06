@@ -9,6 +9,7 @@
 #import "MyMainViewController.h"
 #import "SettingViewController.h"
 #import "MyInfoViewController.h"
+#import "MyInfoMainViewController.h"
 #import "SkillViewController.h"
 #import "QrCodeViewController.h"
 
@@ -48,9 +49,9 @@
 }
 
 - (IBAction)nameBtnClick:(id)sender {
-    MyInfoViewController *myInfoVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoViewController"];
+    MyInfoMainViewController *myInfoVC = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoMainViewController"];
     if (myInfoVC == nil) {
-        myInfoVC = [[MyInfoViewController alloc] init];
+        myInfoVC = [[MyInfoMainViewController alloc] init];
     }
     [[self navigationController] pushViewController:myInfoVC animated:YES];
 }

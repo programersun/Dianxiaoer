@@ -9,7 +9,8 @@
 #import "TaskMainViewController.h"
 #import "MerchantInfoViewController.h"
 #import "MyInfoViewController.h"
-#import "MerchantBidViewController.h"
+#import "MyInfoMainViewController.h"
+#import "MerchanBidMainViewController.h"
 #import "BuyMainViewController.h"
 
 @interface TaskMainViewController ()
@@ -55,9 +56,9 @@
 
 - (IBAction)taskBuyBtnClick:(id)sender {
     
-    MerchantBidViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchantBidViewController"];
+    MerchanBidMainViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchanBidMainViewController"];
     if (vc == nil) {
-        vc = [[MerchantBidViewController alloc] init];
+        vc = [[MerchanBidMainViewController alloc] init];
     }
     [[self navigationController] pushViewController:vc animated:YES];
 }
@@ -79,9 +80,9 @@
 }
 
 - (IBAction)taskReleaseHeadBtnClick:(id)sender {
-    MyInfoViewController *vc = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoViewController"];
+    MyInfoMainViewController *vc = [[UIStoryboard storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"MyInfoMainViewController"];
     if (vc == nil) {
-        vc = [[MyInfoViewController alloc] init];
+        vc = [[MyInfoMainViewController alloc] init];
     }
     [[self navigationController] pushViewController:vc animated:YES];
 }

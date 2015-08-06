@@ -14,6 +14,7 @@
 #import "ScheduleMonthHeaderView.h"
 #import "TaskApplyViewController.h"
 #import "ReleaseViewController.h"
+#import "ScheduleDetailViewController.h"
 
 @interface ScheduleViewController () <UITableViewDataSource,UITableViewDelegate,ScheduleOtherHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
@@ -250,6 +251,14 @@
     }
 }
 
+- (void)toScheduleDetailViewController {
+    ScheduleDetailViewController *vc = [[UIStoryboard storyboardWithName:@"ScheduleDetail" bundle:nil] instantiateViewControllerWithIdentifier:@"ScheduleDetailViewController"];
+    if (vc == nil) {
+        vc = [[ScheduleDetailViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
 - (void)toTaskApplyViewController {
     TaskApplyViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskApplyViewController"];
     if (vc == nil) {
@@ -274,7 +283,8 @@
                 [self toReleaseViewController];
             }
             else {
-                [self toTaskApplyViewController];
+//                [self toTaskApplyViewController];
+                [self toScheduleDetailViewController];
             }
             break;
         }
@@ -284,7 +294,8 @@
                 [self toReleaseViewController];
             }
             else {
-                [self toTaskApplyViewController];
+//                [self toTaskApplyViewController];
+                [self toScheduleDetailViewController];
             }
             break;
         }
@@ -304,7 +315,8 @@
                 [self toReleaseViewController];
             }
             else {
-                [self toTaskApplyViewController];
+//                [self toTaskApplyViewController];
+                [self toScheduleDetailViewController];
             }
             break;
         }
@@ -319,7 +331,8 @@
                 [self toReleaseViewController];
             }
             else {
-                [self toTaskApplyViewController];
+//                [self toTaskApplyViewController];
+                [self toScheduleDetailViewController];
             }
             
             break;

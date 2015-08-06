@@ -7,7 +7,7 @@
 //
 
 #import "MorePostViewController.h"
-#import "MerchantBidViewController.h"
+#import "MerchanBidMainViewController.h"
 #import "MoreShopViewController.h"
 #import "MorePostDetailViewController.h"
 

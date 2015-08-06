@@ -341,7 +341,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO3-J8-oFm">
-                                        <rect key="frame" x="135" y="7" width="50" height="50"/>
+                                        <rect key="frame" x="135" y="7" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XO3-J8-oFm" secondAttribute="height" multiplier="1:1" id="Itp-6y-FYT"/>
                                         </constraints>
@@ -355,10 +355,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Mgq-Zj-0VX" secondAttribute="trailing" id="9k5-ox-Z1r"/>
-                                    <constraint firstAttribute="bottom" secondItem="XO3-J8-oFm" secondAttribute="bottom" constant="7" id="B7D-cb-23X"/>
+                                    <constraint firstAttribute="bottom" secondItem="XO3-J8-oFm" secondAttribute="bottom" constant="12" id="B7D-cb-23X"/>
                                     <constraint firstItem="XO3-J8-oFm" firstAttribute="top" secondItem="gPj-vp-vVx" secondAttribute="top" constant="7" id="Lgc-gQ-m0O"/>
                                     <constraint firstItem="Mgq-Zj-0VX" firstAttribute="leading" secondItem="gPj-vp-vVx" secondAttribute="leading" id="SRj-A7-FmG"/>
-                                    <constraint firstAttribute="centerX" secondItem="XO3-J8-oFm" secondAttribute="centerX" id="XsS-hA-G12"/>
+                                    <constraint firstAttribute="centerX" secondItem="XO3-J8-oFm" secondAttribute="centerX" constant="2.5" id="XsS-hA-G12"/>
                                     <constraint firstAttribute="width" secondItem="gPj-vp-vVx" secondAttribute="height" multiplier="5:1" id="vXB-tJ-BpA"/>
                                     <constraint firstAttribute="bottom" secondItem="Mgq-Zj-0VX" secondAttribute="bottom" id="zXO-Lb-ZSn"/>
                                 </constraints>

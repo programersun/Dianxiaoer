@@ -8,7 +8,7 @@
 
 #import "MorePostDetailViewController.h"
 #import "MerchantInfoViewController.h"
-#import "MerchantBidViewController.h"
+#import "MerchanBidMainViewController.h"
 
 @interface MorePostDetailViewController ()
 
@@ -56,9 +56,9 @@
 
 //点击岗位详情按钮
 - (IBAction)postDetailBtnClick:(id)sender {
-    MerchantBidViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchantBidViewController"];
+    MerchanBidMainViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchanBidMainViewController"];
     if (vc == nil) {
-        vc = [[MerchantBidViewController alloc] init];
+        vc = [[MerchanBidMainViewController alloc] init];
     }
     [[self navigationController] pushViewController:vc animated:YES];
 }

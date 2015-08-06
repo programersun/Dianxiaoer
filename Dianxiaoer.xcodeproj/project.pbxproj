@@ -127,6 +127,19 @@
 		A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */; };
 		A497C6411B6B21A600732744 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A497C6401B6B21A600732744 /* area.plist */; };
 		A4D71DF61B6A5D2F00241781 /* ReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */; };
+		A4E681F31B72F7310027BAA1 /* MyInfoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681F21B72F7310027BAA1 /* MyInfoMainViewController.m */; };
+		A4E681F61B7313980027BAA1 /* MyInfoMainTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681F51B7313980027BAA1 /* MyInfoMainTopTableViewCell.m */; };
+		A4E681F91B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681F81B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.m */; };
+		A4E681FC1B7324F60027BAA1 /* ScheduleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681FB1B7324F60027BAA1 /* ScheduleDetailViewController.m */; };
+		A4E681FF1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681FE1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.m */; };
+		A4E682021B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E682011B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.m */; };
+		A4E682061B73257C0027BAA1 /* ScheduleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E682051B73257C0027BAA1 /* ScheduleDetail.storyboard */; };
+		A4E682091B73321B0027BAA1 /* ModifyMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E682081B73321B0027BAA1 /* ModifyMainViewController.m */; };
+		A4E6820C1B733B9A0027BAA1 /* BasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6820B1B733B9A0027BAA1 /* BasicInfoViewController.m */; };
+		A4E6820F1B734AC30027BAA1 /* WithdrewMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6820E1B734AC30027BAA1 /* WithdrewMainViewController.m */; };
+		A4E682121B734F760027BAA1 /* WithdrewSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E682111B734F760027BAA1 /* WithdrewSuccessViewController.m */; };
+		A4E682141B7351A50027BAA1 /* ChooseBankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E682131B7351A50027BAA1 /* ChooseBankCardView.xib */; };
+		A4E682171B7356070027BAA1 /* ChooseBankCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E682161B7356070027BAA1 /* ChooseBankCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -346,6 +359,30 @@
 		A497C6401B6B21A600732744 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		A4D71DF41B6A5D2F00241781 /* ReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseTableViewCell.h; sourceTree = "<group>"; };
 		A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseTableViewCell.m; sourceTree = "<group>"; };
+		A4E681F11B72F7310027BAA1 /* MyInfoMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoMainViewController.h; sourceTree = "<group>"; };
+		A4E681F21B72F7310027BAA1 /* MyInfoMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoMainViewController.m; sourceTree = "<group>"; };
+		A4E681F41B7313980027BAA1 /* MyInfoMainTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoMainTopTableViewCell.h; sourceTree = "<group>"; };
+		A4E681F51B7313980027BAA1 /* MyInfoMainTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoMainTopTableViewCell.m; sourceTree = "<group>"; };
+		A4E681F71B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoMainButtomTableViewCell.h; sourceTree = "<group>"; };
+		A4E681F81B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoMainButtomTableViewCell.m; sourceTree = "<group>"; };
+		A4E681FA1B7324F60027BAA1 /* ScheduleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleDetailViewController.h; sourceTree = "<group>"; };
+		A4E681FB1B7324F60027BAA1 /* ScheduleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleDetailViewController.m; sourceTree = "<group>"; };
+		A4E681FD1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleDetailUpTableViewCell.h; sourceTree = "<group>"; };
+		A4E681FE1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleDetailUpTableViewCell.m; sourceTree = "<group>"; };
+		A4E682001B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleDetailButtomTableViewCell.h; sourceTree = "<group>"; };
+		A4E682011B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleDetailButtomTableViewCell.m; sourceTree = "<group>"; };
+		A4E682051B73257C0027BAA1 /* ScheduleDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleDetail.storyboard; sourceTree = "<group>"; };
+		A4E682071B73321B0027BAA1 /* ModifyMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyMainViewController.h; sourceTree = "<group>"; };
+		A4E682081B73321B0027BAA1 /* ModifyMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyMainViewController.m; sourceTree = "<group>"; };
+		A4E6820A1B733B9A0027BAA1 /* BasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoViewController.h; sourceTree = "<group>"; };
+		A4E6820B1B733B9A0027BAA1 /* BasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoViewController.m; sourceTree = "<group>"; };
+		A4E6820D1B734AC30027BAA1 /* WithdrewMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrewMainViewController.h; sourceTree = "<group>"; };
+		A4E6820E1B734AC30027BAA1 /* WithdrewMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrewMainViewController.m; sourceTree = "<group>"; };
+		A4E682101B734F760027BAA1 /* WithdrewSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrewSuccessViewController.h; sourceTree = "<group>"; };
+		A4E682111B734F760027BAA1 /* WithdrewSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrewSuccessViewController.m; sourceTree = "<group>"; };
+		A4E682131B7351A50027BAA1 /* ChooseBankCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseBankCardView.xib; sourceTree = "<group>"; };
+		A4E682151B7356070027BAA1 /* ChooseBankCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseBankCardView.h; sourceTree = "<group>"; };
+		A4E682161B7356070027BAA1 /* ChooseBankCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBankCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +489,12 @@
 				58EEDA8D1B57DE9800BEA778 /* UpLoadIDViewController.m */,
 				58EEDA8F1B57E6C800BEA778 /* UpLoadIDCardViewController.h */,
 				58EEDA901B57E6C800BEA778 /* UpLoadIDCardViewController.m */,
+				A4E681F11B72F7310027BAA1 /* MyInfoMainViewController.h */,
+				A4E681F21B72F7310027BAA1 /* MyInfoMainViewController.m */,
+				A4E682071B73321B0027BAA1 /* ModifyMainViewController.h */,
+				A4E682081B73321B0027BAA1 /* ModifyMainViewController.m */,
+				A4E6820A1B733B9A0027BAA1 /* BasicInfoViewController.h */,
+				A4E6820B1B733B9A0027BAA1 /* BasicInfoViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -473,6 +516,10 @@
 				58EEDA871B57DB8500BEA778 /* FinshInputMyInfoView.h */,
 				58EEDA881B57DB8500BEA778 /* FinshInputMyInfoView.m */,
 				58EEDA8A1B57DB9000BEA778 /* FinshInputMyInfoView.xib */,
+				A4E681F41B7313980027BAA1 /* MyInfoMainTopTableViewCell.h */,
+				A4E681F51B7313980027BAA1 /* MyInfoMainTopTableViewCell.m */,
+				A4E681F71B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.h */,
+				A4E681F81B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +627,10 @@
 				58977F4E1B60AF80009508B1 /* AddCardFirstViewController.m */,
 				58977F501B60AF92009508B1 /* AddCardSecondViewController.h */,
 				58977F511B60AF92009508B1 /* AddCardSecondViewController.m */,
+				A4E6820D1B734AC30027BAA1 /* WithdrewMainViewController.h */,
+				A4E6820E1B734AC30027BAA1 /* WithdrewMainViewController.m */,
+				A4E682101B734F760027BAA1 /* WithdrewSuccessViewController.h */,
+				A4E682111B734F760027BAA1 /* WithdrewSuccessViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -596,6 +647,9 @@
 			children = (
 				5880966C1B5E1B2900C3AEC0 /* IncomeTableViewCell.h */,
 				5880966D1B5E1B2900C3AEC0 /* IncomeTableViewCell.m */,
+				A4E682151B7356070027BAA1 /* ChooseBankCardView.h */,
+				A4E682161B7356070027BAA1 /* ChooseBankCardView.m */,
+				A4E682131B7351A50027BAA1 /* ChooseBankCardView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,6 +681,7 @@
 				5892AAF31B5F2C3000F2E873 /* View */,
 				5892AAF11B5F2C3000F2E873 /* Control */,
 				5892AAF41B5F2C5500F2E873 /* Schedule.storyboard */,
+				A4E682051B73257C0027BAA1 /* ScheduleDetail.storyboard */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -636,6 +691,8 @@
 			children = (
 				5892AAF61B5F2C7A00F2E873 /* ScheduleViewController.h */,
 				5892AAF71B5F2C7A00F2E873 /* ScheduleViewController.m */,
+				A4E681FA1B7324F60027BAA1 /* ScheduleDetailViewController.h */,
+				A4E681FB1B7324F60027BAA1 /* ScheduleDetailViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -662,6 +719,10 @@
 				5892AB0A1B5F2DCF00F2E873 /* ScheduleMonthHeaderView.h */,
 				5892AB0B1B5F2DCF00F2E873 /* ScheduleMonthHeaderView.m */,
 				5892AB0F1B5F2DF200F2E873 /* ScheduleMonthHeaderView.xib */,
+				A4E681FD1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.h */,
+				A4E681FE1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.m */,
+				A4E682001B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.h */,
+				A4E682011B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1018,11 +1079,13 @@
 				5896EB7A1B5C8F7D00A6C294 /* TodayTopView.xib in Resources */,
 				A486301E1B6746B100EDD3CB /* mainTableViewFooterView.xib in Resources */,
 				A47E9D441B704B370083D709 /* Apply.storyboard in Resources */,
+				A4E682141B7351A50027BAA1 /* ChooseBankCardView.xib in Resources */,
 				5858BB3D1B55FFA900444888 /* Main.storyboard in Resources */,
 				588FE57A1B5FCF450077D39C /* Release.storyboard in Resources */,
 				A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */,
 				5892AB101B5F2DF200F2E873 /* ScheduleMonthHeaderView.xib in Resources */,
 				58EEDA8B1B57DB9000BEA778 /* FinshInputMyInfoView.xib in Resources */,
+				A4E682061B73257C0027BAA1 /* ScheduleDetail.storyboard in Resources */,
 				5858BB421B55FFA900444888 /* LaunchScreen.xib in Resources */,
 				A497C6411B6B21A600732744 /* area.plist in Resources */,
 				5896EB801B5CA60C00A6C294 /* Merchant.storyboard in Resources */,
@@ -1087,10 +1150,15 @@
 				5896EB751B5C8A5300A6C294 /* SearchAlert.m in Sources */,
 				58EEDA8E1B57DE9800BEA778 /* UpLoadIDViewController.m in Sources */,
 				584AB3451B568967008E84DE /* MainBannerCollectionViewCell.m in Sources */,
+				A4E682171B7356070027BAA1 /* ChooseBankCardView.m in Sources */,
+				A4E682121B734F760027BAA1 /* WithdrewSuccessViewController.m in Sources */,
 				58E55A401B6475B3008BAB03 /* SubmitSuccessView.m in Sources */,
+				A4E6820C1B733B9A0027BAA1 /* BasicInfoViewController.m in Sources */,
 				58E10DB21B58919100683069 /* RegistViewController.m in Sources */,
 				A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */,
 				58977F551B60C213009508B1 /* BuyMainViewController.m in Sources */,
+				A4E681F61B7313980027BAA1 /* MyInfoMainTopTableViewCell.m in Sources */,
+				A4E681F31B72F7310027BAA1 /* MyInfoMainViewController.m in Sources */,
 				5892AB011B5F2D4500F2E873 /* ScheduleDateTableViewCell.m in Sources */,
 				58F512381B5771D700F887AB /* SettingHeadTableViewCell.m in Sources */,
 				58E904A11B596E6000089D4A /* BespeakBViewController.m in Sources */,
@@ -1100,11 +1168,14 @@
 				58E9049D1B596E0100089D4A /* BespeakDViewController.m in Sources */,
 				5896EB781B5C8F6B00A6C294 /* TodayTopView.m in Sources */,
 				584AB34E1B5689A5008E84DE /* MainViewController.m in Sources */,
+				A4E682021B7325230027BAA1 /* ScheduleDetailButtomTableViewCell.m in Sources */,
 				584AB3491B568967008E84DE /* MainLeftTableViewCell.m in Sources */,
 				5892AAF81B5F2C7A00F2E873 /* ScheduleViewController.m in Sources */,
 				5896EB6E1B5C861100A6C294 /* MoreAddressAlert.m in Sources */,
 				58E55A4D1B649B05008BAB03 /* BidDetialTableViewCell.m in Sources */,
 				5896EB861B5CB84A00A6C294 /* ShareView.m in Sources */,
+				A4E681FC1B7324F60027BAA1 /* ScheduleDetailViewController.m in Sources */,
+				A4E682091B73321B0027BAA1 /* ModifyMainViewController.m in Sources */,
 				58EEDA911B57E6C800BEA778 /* UpLoadIDCardViewController.m in Sources */,
 				58E9049C1B596E0100089D4A /* BespeakCViewController.m in Sources */,
 				5896EBAB1B5CF68800A6C294 /* TaskApplyViewController.m in Sources */,
@@ -1115,10 +1186,12 @@
 				58F512491B579F1200F887AB /* MyInfoViewController.m in Sources */,
 				58F5123B1B5771E700F887AB /* SettingOtherTableViewCell.m in Sources */,
 				58E10DCE1B58D92200683069 /* RegistInfoViewController.m in Sources */,
+				A4E6820F1B734AC30027BAA1 /* WithdrewMainViewController.m in Sources */,
 				588096651B5DDD0F00C3AEC0 /* MorePostDetailViewController.m in Sources */,
 				584AB3461B568967008E84DE /* MainBannerTableViewCell.m in Sources */,
 				58E55A3B1B647117008BAB03 /* ModifyView.m in Sources */,
 				5858BB371B55FFA900444888 /* Dianxiaoer.xcdatamodeld in Sources */,
+				A4E681FF1B7325160027BAA1 /* ScheduleDetailUpTableViewCell.m in Sources */,
 				584AB34A1B568967008E84DE /* MainRightTableViewCell.m in Sources */,
 				58977F4C1B60AF58009508B1 /* MyBankCardViewController.m in Sources */,
 				5880966E1B5E1B2900C3AEC0 /* IncomeTableViewCell.m in Sources */,
@@ -1135,6 +1208,7 @@
 				A494429E1B71CDD9008F51E7 /* MerchanBidButtomTableViewCell.m in Sources */,
 				58F5124C1B57A7F900F887AB /* SkillViewController.m in Sources */,
 				58E647B31B5A403D00DB6454 /* UpLoadIDCardFirstViewController.m in Sources */,
+				A4E681F91B7313A50027BAA1 /* MyInfoMainButtomTableViewCell.m in Sources */,
 				58E10DAF1B58912600683069 /* LoginViewController.m in Sources */,
 				58F512431B578DBC00F887AB /* MenuView.m in Sources */,
 				A47E9D471B705DE80083D709 /* ApplySuccessView.m in Sources */,
@@ -1269,7 +1343,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/sun/Desktop/Dianxiaoer/Dianxiaoer/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/cctv/Desktop/Dianxiaoer/Dianxiaoer/PrefixHeader.pch;
 				INFOPLIST_FILE = Dianxiaoer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1286,7 +1360,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/sun/Desktop/Dianxiaoer/Dianxiaoer/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/cctv/Desktop/Dianxiaoer/Dianxiaoer/PrefixHeader.pch;
 				INFOPLIST_FILE = Dianxiaoer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

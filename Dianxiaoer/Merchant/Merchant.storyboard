@@ -572,14 +572,14 @@
                                 <rect key="frame" x="0.0" y="568" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" id="kGX-eL-HZ2">
+                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyButtomBackground" id="kGX-eL-HZ2">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9de-xl-eKC" userLabel="buttomLeftBtn">
                                         <rect key="frame" x="30" y="1" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="submitbtnimg">
+                                        <state key="normal" image="telBtn">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -589,7 +589,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLl-bx-Ua0" userLabel="buttomRightBtn">
                                         <rect key="frame" x="245" y="1" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="submitbtnimg">
+                                        <state key="normal" image="applyBtn">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -617,11 +617,12 @@
         <image name="MerchantBidBottom" width="320" height="1028"/>
         <image name="MerchantBidTop" width="320" height="830"/>
         <image name="MerchantInfo" width="320" height="838"/>
+        <image name="applyBtn" width="45" height="45"/>
         <image name="buyButtomBackground" width="320" height="61"/>
         <image name="morePost" width="320" height="699"/>
         <image name="morePostDetail" width="320" height="568"/>
         <image name="moreShop" width="320" height="568"/>
-        <image name="submitbtnimg" width="45" height="45"/>
+        <image name="telBtn" width="45" height="45"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
