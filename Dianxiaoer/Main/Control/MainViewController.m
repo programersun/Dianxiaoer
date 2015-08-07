@@ -39,7 +39,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderBtnTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topVIewTop;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderBtnHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderBtnWidth;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuBtnHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuBtnWidth;
 
 @property (nonatomic, strong) MenuView *menuView;
 @property (nonatomic, strong) SearchAlert *searchAlert;
@@ -68,6 +72,11 @@
     [self addDownPanToTopView];
     _topVIewTop.constant = 0;
     _orderBtnTop.constant = -(_screenWidth/2 + 22);
+    _orderBtnWidth.constant = _orderBtnWidth.constant * HEIGHTCHANGE;
+    _orderBtnHeight.constant = _orderBtnHeight.constant * HEIGHTCHANGE;
+    
+    _menuBtnWidth.constant = _menuBtnWidth.constant * HEIGHTCHANGE;
+    _menuBtnHeight.constant = _menuBtnHeight.constant * HEIGHTCHANGE;
     // Do any additional setup after loading the view.
 }
 
@@ -137,6 +146,9 @@
     [_menuView addGestureRecognizer:backTouch];
     _menuView.delegate = self;
     _menuView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+//    _menuView.menuBtnWidth.constant = _menuView.menuBtnWidth.constant * HEIGHTCHANGE;
+//    _menuView.menuBtnHeight.constant = _menuView.menuBtnHeight.constant * HEIGHTCHANGE;
+    [_menuView changeLayOut];
     [self.view addSubview:_menuView];
 }
 
@@ -293,6 +305,8 @@
     if (section > 0) {
         UINib *nib = [UINib nibWithNibName:@"MainHeaderCellView" bundle:nil];
         MainHeaderCellView *view = [nib instantiateWithOwner:nil options:nil][0];
+        view.headerMidImgHeight.constant = view.headerMidImgHeight.constant * HEIGHTCHANGE;
+        view.headerMidImgWidth.constant = view.headerMidImgWidth.constant * HEIGHTCHANGE;
         return view;
     }
     else {

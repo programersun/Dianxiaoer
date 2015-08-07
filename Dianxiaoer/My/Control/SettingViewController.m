@@ -16,14 +16,20 @@
 @interface SettingViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 @property (weak, nonatomic) IBOutlet UIButton *logOutBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *logOutBtnWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *logOutBtnHeight;
+
 @end
 
 @implementation SettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _logOutBtn.layer.cornerRadius = _logOutBtn.frame.size.width / 2;
+    _logOutBtn.layer.cornerRadius = _logOutBtn.frame.size.width * HEIGHTCHANGE / 2;
     _logOutBtn.layer.masksToBounds = YES;
+    _logOutBtnHeight.constant = _logOutBtnHeight.constant * HEIGHTCHANGE;
+    _logOutBtnWidth.constant = _logOutBtnWidth.constant * HEIGHTCHANGE;
     _settingTableView.delegate = self;
     // Do any additional setup after loading the view.
 }
@@ -60,10 +66,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 75;
+        return 75 * HEIGHTCHANGE;
     }
     else {
-        return 50;
+        return 50 * HEIGHTCHANGE;
     }
 }
 

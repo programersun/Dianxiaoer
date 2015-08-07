@@ -10,6 +10,7 @@
 #import "IncomeTableViewCell.h"
 #import "MyBankCardViewController.h"
 #import "WithdrewMainViewController.h"
+#import "IncomeDetailViewController.h"
 #define INCOMECOUNT 3
 
 @interface IncomeViewController () <UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
@@ -39,6 +40,8 @@
     [self changeFrame:HEIGHTCHANGE withObjcet:_noIncomeImg];
     [self changeFrame:HEIGHTCHANGE withObjcet:_bankCardBtn];
     [self changeFrame:HEIGHTCHANGE withObjcet:_withdrewBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_incomeDetailBtn];
+    
     [self setType];
     [self addSwipe];
     // Do any additional setup after loading the view.
@@ -75,7 +78,11 @@
 }
 
 - (IBAction)incomeDetailBtnClick:(id)sender {
-    
+    IncomeDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"IncomeDetailViewController"];
+    if (vc == nil) {
+        vc = [[IncomeDetailViewController alloc] init];
+    }
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 
@@ -100,32 +107,39 @@
 
 - (void)incomeTableViewUp {
     if (_tableUp.state == UIGestureRecognizerStateEnded) {
-        if (_isUp) {
-            _isUp = NO;
-            [UIView animateWithDuration:0.5 animations:^{
-                _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-                _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-                _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
-                
-            } completion:^(BOOL finished) {
-                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
-            }];
-        }
+        [self incomeUp];
     }
 }
 
 - (void)incomeTableViewDown {
     if (_tableDown.state == UIGestureRecognizerStateEnded) {
-        if (_isUp == NO) {
-            _isUp = YES;
-            [UIView animateWithDuration:0.5 animations:^{
-                _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-                _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-                _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
-            }completion:^(BOOL finished) {
-                [_incomeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
-            }];
-        }
+        [self incomeDown];
+    }
+}
+
+- (void)incomeUp {
+    if (_isUp) {
+        _isUp = NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
+            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
+            _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
+            
+        }];
+    }
+
+}
+
+- (void)incomeDown {
+    if (!_isUp) {
+        _isUp = YES;
+        [UIView animateWithDuration:0.5 animations:^{
+            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
+            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
+            _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
+        }completion:^(BOOL finished) {
+            _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
+        }];
     }
 }
 
@@ -167,30 +181,19 @@
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
 }
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat newcontentOffsetY = scrollView.contentOffset.y;
     CGFloat heightChange = newcontentOffsetY - _oldcontentOffsetY;
     
     if (_isUp) {
         if (heightChange > 0) {
-            _isUp = NO;
-            [UIView animateWithDuration:0.5 animations:^{
-                _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-                _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-                _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
-            }];
+            [self incomeUp];
         }
     }
     else {
         if (heightChange < 0 && newcontentOffsetY < -30) {
-            _isUp = YES;
-            [UIView animateWithDuration:0.5 animations:^{
-                _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-                _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-                _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
-            } completion:^(BOOL finished) {
-                _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
-            }];
+            [self incomeDown];
         }
     }
 }

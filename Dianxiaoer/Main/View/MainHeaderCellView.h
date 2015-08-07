@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainHeaderCellView : UIView
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerMidImgWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerMidImgHeight;
 
 @end

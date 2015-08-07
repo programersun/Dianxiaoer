@@ -148,6 +148,8 @@
                     </view>
                     <connections>
                         <outlet property="logOutBtn" destination="VF0-af-iN8" id="0qV-ru-dcg"/>
+                        <outlet property="logOutBtnHeight" destination="uT2-AJ-Gr1" id="PnZ-K6-Y78"/>
+                        <outlet property="logOutBtnWidth" destination="OMc-dd-ZSs" id="3v9-zL-jnd"/>
                         <outlet property="settingTableView" destination="RqU-83-9bm" id="ihX-VA-9md"/>
                     </connections>
                 </viewController>

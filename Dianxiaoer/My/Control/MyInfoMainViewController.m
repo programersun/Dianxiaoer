@@ -34,6 +34,8 @@
     _isUpFirstReload = YES;
     _isButtomFirstReload = YES;
     
+    _mainTableView.scrollEnabled = NO;
+    
     // Do any additional setup after loading the view.
 }
 

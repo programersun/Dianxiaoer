@@ -40,6 +40,10 @@
                 <constraint firstAttribute="centerY" secondItem="70i-zr-ZAz" secondAttribute="centerY" constant="-8" id="kcf-nA-AmE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerMidImgHeight" destination="S4T-0n-Pcq" id="2hJ-gl-fo6"/>
+                <outlet property="headerMidImgWidth" destination="8QI-4Y-qvl" id="qO7-4y-Wd2"/>
+            </connections>
             <point key="canvasLocation" x="370.5" y="474"/>
         </view>
     </objects>

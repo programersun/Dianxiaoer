@@ -113,6 +113,7 @@
 		A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A445AC051B68C62C0025D804 /* MySetting.storyboard */; };
 		A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */; };
 		A451A9C71B6F5EC40094D21D /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C61B6F5EC40094D21D /* ApplyViewController.m */; };
+		A4731F501B74463800A8C4C9 /* IncomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4731F4F1B74463800A8C4C9 /* IncomeDetailViewController.m */; };
 		A47E9D441B704B370083D709 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47E9D431B704B370083D709 /* Apply.storyboard */; };
 		A47E9D471B705DE80083D709 /* ApplySuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E9D461B705DE80083D709 /* ApplySuccessView.m */; };
 		A47E9D491B705DF00083D709 /* ApplySuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47E9D481B705DF00083D709 /* ApplySuccessView.xib */; };
@@ -336,6 +337,8 @@
 		A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMiddleTableViewCell.m; sourceTree = "<group>"; };
 		A451A9C51B6F5EC40094D21D /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		A451A9C61B6F5EC40094D21D /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
+		A4731F4E1B74463800A8C4C9 /* IncomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeDetailViewController.h; sourceTree = "<group>"; };
+		A4731F4F1B74463800A8C4C9 /* IncomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailViewController.m; sourceTree = "<group>"; };
 		A47E9D431B704B370083D709 /* Apply.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
 		A47E9D451B705DE80083D709 /* ApplySuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplySuccessView.h; sourceTree = "<group>"; };
 		A47E9D461B705DE80083D709 /* ApplySuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplySuccessView.m; sourceTree = "<group>"; };
@@ -631,6 +634,8 @@
 				A4E6820E1B734AC30027BAA1 /* WithdrewMainViewController.m */,
 				A4E682101B734F760027BAA1 /* WithdrewSuccessViewController.h */,
 				A4E682111B734F760027BAA1 /* WithdrewSuccessViewController.m */,
+				A4731F4E1B74463800A8C4C9 /* IncomeDetailViewController.h */,
+				A4731F4F1B74463800A8C4C9 /* IncomeDetailViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1135,6 +1140,7 @@
 				58977F521B60AF92009508B1 /* AddCardSecondViewController.m in Sources */,
 				5858BB341B55FFA900444888 /* AppDelegate.m in Sources */,
 				A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */,
+				A4731F501B74463800A8C4C9 /* IncomeDetailViewController.m in Sources */,
 				58E10DCB1B58D55600683069 /* SR_UserInfoDetail.m in Sources */,
 				5896EBA81B5CEC5300A6C294 /* MorePostViewController.m in Sources */,
 				58A7B9DC1B61413700728556 /* HWViewPager.m in Sources */,

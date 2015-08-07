@@ -16,7 +16,11 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFP-J0-3Ed">
                     <rect key="frame" x="135" y="536" width="50" height="32"/>
-                    <state key="normal" image="mainBtnAppear">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="96s-ea-bsF"/>
+                        <constraint firstAttribute="height" constant="32" id="GuQ-Xc-eSu"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="mainBtnAppear">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -29,7 +33,7 @@
                         <constraint firstAttribute="width" constant="49" id="Sqb-UJ-m2J"/>
                         <constraint firstAttribute="height" constant="49" id="pph-D3-8yw"/>
                     </constraints>
-                    <state key="normal" image="date">
+                    <state key="normal" backgroundImage="date">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -42,7 +46,7 @@
                         <constraint firstAttribute="width" constant="49" id="e9X-xl-KeF"/>
                         <constraint firstAttribute="height" constant="49" id="xjQ-sB-NgP"/>
                     </constraints>
-                    <state key="normal" image="money">
+                    <state key="normal" backgroundImage="money">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -51,15 +55,38 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZH-Qc-WHK">
                     <rect key="frame" x="136" y="303" width="49" height="49"/>
-                    <state key="normal" image="releaseBtnImg">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="3Mk-pH-LD3"/>
+                        <constraint firstAttribute="width" constant="49" id="7BU-XM-Ex2"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="releaseBtnImg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="toWorkClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="CaM-fu-IJb"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-KM-zkD">
+                    <rect key="frame" x="193" y="317" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="PXV-FC-SJa"/>
+                        <constraint firstAttribute="width" constant="35" id="xjm-4Z-Cbp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="发布" backgroundImage="menuBack">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="toWorkClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="gKG-va-hS2"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vt-dh-l0G">
                     <rect key="frame" x="193" y="395" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="2oV-Na-Z07"/>
+                        <constraint firstAttribute="height" constant="22" id="Ory-gv-QfO"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="账户" backgroundImage="menuBack">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,6 +98,10 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yam-8b-rTb">
                     <rect key="frame" x="193" y="473" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="ZPn-hf-5HC"/>
+                        <constraint firstAttribute="height" constant="22" id="tUj-S5-Gc0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="日程" backgroundImage="menuBack">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,6 +113,10 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC4-w3-H8C">
                     <rect key="frame" x="193" y="541" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="3u1-nb-0ak"/>
+                        <constraint firstAttribute="height" constant="22" id="jck-YL-PT0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="关闭" backgroundImage="menuBack">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -91,21 +126,11 @@
                         <action selector="closeMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="H8S-rs-X2z"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-KM-zkD">
-                    <rect key="frame" x="193" y="317" width="35" height="22"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="发布" backgroundImage="menuBack">
-                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="toWorkClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="gKG-va-hS2"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowLine" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-wh-8x3">
                     <rect key="frame" x="156" y="354" width="9" height="189"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="9" id="3Fh-bb-ZzL"/>
+                        <constraint firstAttribute="height" constant="189" id="TLt-eQ-LMG"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -134,6 +159,30 @@
                 <constraint firstItem="kvx-i0-m4g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oxp-kE-y3t"/>
                 <constraint firstItem="Yam-8b-rTb" firstAttribute="leading" secondItem="bRo-dR-FOi" secondAttribute="trailing" constant="8" id="s40-Iz-nYG"/>
             </constraints>
+            <connections>
+                <outlet property="accountBtnButtom" destination="562-3q-0Mf" id="Wos-I4-VBv"/>
+                <outlet property="accountBtnHeight" destination="xjQ-sB-NgP" id="f8X-Lb-iUM"/>
+                <outlet property="accountBtnWidth" destination="e9X-xl-KeF" id="Nkr-H7-G0A"/>
+                <outlet property="accountRightBtnHeight" destination="Ory-gv-QfO" id="Ntw-97-0mo"/>
+                <outlet property="accountRightBtnWidth" destination="2oV-Na-Z07" id="UXr-kS-UPh"/>
+                <outlet property="closeBtnHeight" destination="jck-YL-PT0" id="EGX-Ry-Up4"/>
+                <outlet property="closeBtnWidth" destination="3u1-nb-0ak" id="vm4-sh-F20"/>
+                <outlet property="dateBtnButtom" destination="Vrs-ja-RdH" id="IMO-xr-vIh"/>
+                <outlet property="dateBtnHeight" destination="pph-D3-8yw" id="KPg-uU-9Ci"/>
+                <outlet property="dateBtnWidth" destination="Sqb-UJ-m2J" id="P0j-ND-st6"/>
+                <outlet property="dateRightBtnHeight" destination="tUj-S5-Gc0" id="TM9-3u-Lfj"/>
+                <outlet property="dateRightBtnWidth" destination="ZPn-hf-5HC" id="x9y-BT-nki"/>
+                <outlet property="menuBtnHeight" destination="GuQ-Xc-eSu" id="CgS-Iv-iDx"/>
+                <outlet property="menuBtnWidth" destination="96s-ea-bsF" id="KqB-fQ-q5C"/>
+                <outlet property="releaseBtnButtom" destination="nNg-jy-We0" id="mEa-Sc-VLx"/>
+                <outlet property="releaseBtnHeight" destination="7BU-XM-Ex2" id="2ge-3j-DvG"/>
+                <outlet property="releaseBtnWidth" destination="3Mk-pH-LD3" id="RaS-DB-MF5"/>
+                <outlet property="releaseRightBtnHeight" destination="PXV-FC-SJa" id="NTg-bt-fXZ"/>
+                <outlet property="releaseRightBtnWidth" destination="xjm-4Z-Cbp" id="WrZ-FC-TqE"/>
+                <outlet property="yellowLineButtom" destination="GrG-1k-Vx0" id="i7P-5z-Fsu"/>
+                <outlet property="yellowLineHeight" destination="TLt-eQ-LMG" id="nY1-Ee-tUq"/>
+                <outlet property="yellowLineWidth" destination="3Fh-bb-ZzL" id="lIq-u8-5QU"/>
+            </connections>
             <point key="canvasLocation" x="228" y="296"/>
         </view>
     </objects>

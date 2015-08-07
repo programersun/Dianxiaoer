@@ -85,22 +85,24 @@
                                 <rect key="frame" x="0.0" y="412" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IncomeTableViewCell" rowHeight="156" id="Mrh-a9-QsX" customClass="IncomeTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrh-a9-QsX" id="OvN-oF-SWE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Income1" id="cBY-jf-xli">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="incomeCellImg" destination="cBY-jf-xli" id="y5m-Ou-MZA"/>
                                         </connections>
@@ -170,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGF-P9-7ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520" y="443"/>
+            <point key="canvasLocation" x="570" y="-191"/>
         </scene>
         <!--Add Card First View Controller-->
         <scene sceneID="CWR-jT-wgc">
@@ -214,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvb-ht-puU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="443"/>
+            <point key="canvasLocation" x="1330" y="-191"/>
         </scene>
         <!--Add Card Second View Controller-->
         <scene sceneID="giI-Ys-A7D">
@@ -263,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nI-mO-eiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="443"/>
+            <point key="canvasLocation" x="952" y="-191"/>
         </scene>
         <!--Withdrew Main View Controller-->
         <scene sceneID="vvW-HC-IKw">
@@ -319,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M97-Cg-JDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="1087"/>
+            <point key="canvasLocation" x="570" y="1093"/>
         </scene>
         <!--Withdrew Success View Controller-->
         <scene sceneID="uc8-Nv-1me">
@@ -364,6 +366,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zam-aO-dFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="952" y="1093"/>
+        </scene>
+        <!--Income Detail View Controller-->
+        <scene sceneID="bq7-Bl-7ad">
+            <objects>
+                <viewController storyboardIdentifier="IncomeDetailViewController" id="MRQ-09-XOQ" customClass="IncomeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iEf-Es-ID9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incomeDetailBackground" id="eIW-Nl-MOp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="pTF-Y4-kzc">
+                                <rect key="frame" x="0.0" y="420" width="320" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="tlA-Ja-egb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incomeDetailHeadImg" id="G0f-CL-Ate">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nyj-J6-Gde">
+                                                <rect key="frame" x="251" y="18" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="withdrewBtnClick:" destination="MRQ-09-XOQ" eventType="touchUpInside" id="pWs-jD-kcT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="xzC-8u-bjs">
+                                        <rect key="frame" x="0.0" y="98" width="320" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incomeDetail" id="lhZ-eR-QlA">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="delegate" destination="MRQ-09-XOQ" id="tct-iU-IpU"/>
+                                        </connections>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bWd-au-abf">
+                                <rect key="frame" x="10" y="11" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnClick:" destination="MRQ-09-XOQ" eventType="touchUpInside" id="DgF-hd-Hjk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="bWd-au-abf" id="6Kz-AG-AVN"/>
+                        <outlet property="backgroundImg" destination="eIW-Nl-MOp" id="C8f-9e-xPI"/>
+                        <outlet property="detailHeadView" destination="tlA-Ja-egb" id="Z3w-i2-2kb"/>
+                        <outlet property="detailHeadViewImg" destination="G0f-CL-Ate" id="oyI-7e-6wc"/>
+                        <outlet property="detailScrollImg" destination="lhZ-eR-QlA" id="DbZ-rb-fRH"/>
+                        <outlet property="detailScrollView" destination="xzC-8u-bjs" id="M1Z-yU-y4D"/>
+                        <outlet property="detailView" destination="pTF-Y4-kzc" id="Fe4-gi-Z7N"/>
+                        <outlet property="withdrewBtn" destination="nyj-J6-Gde" id="RdV-0B-ayR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3E2-77-37Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="443"/>
         </scene>
     </scenes>
     <resources>
@@ -373,6 +457,9 @@
         <image name="Income1" width="320" height="156"/>
         <image name="IncomeMainImg" width="320" height="568"/>
         <image name="MyBankCardMainImg" width="320" height="568"/>
+        <image name="incomeDetail" width="320" height="495"/>
+        <image name="incomeDetailBackground" width="320" height="568"/>
+        <image name="incomeDetailHeadImg" width="320" height="98"/>
         <image name="noIncome" width="320" height="156"/>
         <image name="withdrewMainImg" width="320" height="568"/>
         <image name="withdrewSuccessImg" width="320" height="568"/>

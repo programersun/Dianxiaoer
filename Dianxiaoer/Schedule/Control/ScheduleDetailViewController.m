@@ -35,6 +35,8 @@
     _isUpFirstReload = YES;
     _isButtomFirstReload = YES;
     
+    _mainTableView.scrollEnabled = NO;
+    
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomView];
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomLeftBtn];
     [self changeFrame:HEIGHTCHANGE withObjcet:_buttomRightBtn];
