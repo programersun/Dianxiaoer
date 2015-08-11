@@ -12,12 +12,12 @@
             <subviews>
                 <view alpha="0.89999999999999991" contentMode="scaleToFill" id="UQ4-sP-m03">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ApplySuccess" id="aa7-sp-KO1">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iaG-fd-jGc">
                     <rect key="frame" x="33" y="506" width="50" height="50"/>
@@ -43,6 +43,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="backgroundImg" destination="aa7-sp-KO1" id="yzm-cI-Igb"/>
+                <outlet property="backgroundView" destination="UQ4-sP-m03" id="van-XW-ED8"/>
                 <outlet property="submitBtn" destination="fIG-8A-vaa" id="jRS-ND-suf"/>
                 <outlet property="telBtn" destination="iaG-fd-jGc" id="blI-F3-34a"/>
             </connections>

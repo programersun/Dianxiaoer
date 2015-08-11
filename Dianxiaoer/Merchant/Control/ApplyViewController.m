@@ -73,6 +73,8 @@
 
     _applySuccessView.delegate = self;
     _applySuccessView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_applySuccessView.backgroundImg];
+    [self changeFrame:SCREENWIDTH/320 withObjcet:_applySuccessView.backgroundView];
     [self changeFrame:SCREENWIDTH/320 withObjcet:_applySuccessView.submitBtn];
     [self changeFrame:SCREENWIDTH/320 withObjcet:_applySuccessView.telBtn];
     [self.view addSubview:_applySuccessView];

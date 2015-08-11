@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *telBtn;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end
