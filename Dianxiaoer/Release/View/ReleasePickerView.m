@@ -196,9 +196,9 @@
                 break;
         }
     }
-    UILabel *pickLaber = view ? (UILabel *) view : [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH/num, 20.0f)];
+    UILabel *pickLaber = view ? (UILabel *) view : [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH/num, 25.0f * HEIGHTCHANGE)];
     pickLaber.text = title;
-    [pickLaber setFont:[UIFont systemFontOfSize: 15]];
+    [pickLaber setFont:[UIFont systemFontOfSize: 20 * HEIGHTCHANGE]];
     [pickLaber setTextColor:[UIColor whiteColor]];
     [pickLaber setTextAlignment:NSTextAlignmentCenter];
     pickLaber.backgroundColor = [UIColor clearColor];
