@@ -29,7 +29,7 @@
     _backgroundView.image = _backgroundImg;
     _mainScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     CGFloat heightChange = SCREENWIDTH  / _backgroundImg.size.width;
-    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange);
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH , _backgroundImg.size.height * heightChange - 1);
     
     [self changeFrame:heightChange withObjcet:_backgroundView];
     [self changeFrame:heightChange withObjcet:_backBtn];

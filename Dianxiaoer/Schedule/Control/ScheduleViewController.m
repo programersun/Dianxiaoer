@@ -18,6 +18,22 @@
 
 @interface ScheduleViewController () <UITableViewDataSource,UITableViewDelegate,ScheduleOtherHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
+
+@property (weak, nonatomic) IBOutlet UIView *tabBarView;
+@property (weak, nonatomic) IBOutlet UIView *tabBarAppearView;
+
+@property (weak, nonatomic) IBOutlet UIButton *mainTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *taskTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *purseTabBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewButtom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarAppearViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarViewButtom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarViewHeight;
+
+@property (assign, nonatomic) CGFloat oldcontentOffsetY;
+@property BOOL tabBarHidden;
+@property BOOL tabBarAppear;
 @property (strong, nonatomic) NSMutableArray *cellOpenArray;
 
 @end
@@ -27,7 +43,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _cellOpenArray = [[NSMutableArray alloc] initWithObjects:@"1",@"0",@"0",@"0",@"0",@"0",@"0",@"1",@"1",nil];
+    self.navigationController.navigationBar.hidden = YES;
+    [self changeTabBarImg];
+    _tabBarAppearViewHeight.constant = 20 * HEIGHTCHANGE;
+    _tabBarHidden = YES;
+    _tabBarAppear = YES;
+    _tabBarAppearView.hidden = YES;
+    _tabBarViewHeight.constant = 49 * HEIGHTCHANGE;
+    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
     // Do any additional setup after loading the view.
+}
+
+- (void)changeTabBarImg {
+    
+    [_mainTabBtn setImage:[UIImage imageNamed:@"mainTab"] forState:UIControlStateNormal];
+    [_taskTabBtn setImage:[UIImage imageNamed:@"taskTabSelect"] forState:UIControlStateNormal];
+    [_purseTabBtn setImage:[UIImage imageNamed:@"purseTab"] forState:UIControlStateNormal];
+}
+
+- (IBAction)tabBarAppearBtnClick:(id)sender {
+    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+    _tabBarViewButtom.constant = 0;
+}
+
+- (IBAction)mainTabBtnClick:(id)sender {
+    UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainNav"];
+    if (nav == nil) {
+        nav = [[UINavigationController alloc] init];
+    }
+    self.view.window.rootViewController = nav;
+    
+}
+
+- (IBAction)taskTabBtnClick:(id)sender {
+    
+}
+
+- (IBAction)purseTabBtnClick:(id)sender {
+    if ([self needLogin]) {
+        [self toLoginVC];
+    }
+    else {
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"IncomeNav"];
+        if (nav == nil) {
+            nav = [[UINavigationController alloc] init];
+        }
+        self.view.window.rootViewController = nav;
+    }
 }
 
 - (IBAction)backBtnClick:(id)sender {
@@ -44,10 +106,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section <= 6) {
-        return 100;
+        return 100 * HEIGHTCHANGE;
     }
     else {
-        return 224;
+        return 224 * HEIGHTCHANGE;
     }
 }
 
@@ -152,10 +214,10 @@
         return 0;
     }
     else if (section == 7 || section == 8) {
-        return 80;
+        return 79 * HEIGHTCHANGE;
     }
     else {
-        return 100;
+        return 99 * HEIGHTCHANGE;
     }
 }
 
@@ -374,6 +436,35 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _oldcontentOffsetY = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    _tabBarHidden = YES;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat newcontentOffsetY = scrollView.contentOffset.y;
+    CGFloat heightChange = newcontentOffsetY - _oldcontentOffsetY;
+    if (newcontentOffsetY > 0) {
+        if (heightChange > 0 && _tabBarHidden) {
+            _tableViewButtom.constant = 20 * HEIGHTCHANGE;
+            _tabBarViewButtom.constant = -49 * HEIGHTCHANGE ;
+            _tabBarHidden = NO;
+            _tabBarAppear = YES;
+            _tabBarAppearView.hidden = NO;
+        }
+        if (heightChange < 0 && _tabBarAppear) {
+            _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+            _tabBarViewButtom.constant = 0;
+            _tabBarAppear = NO;
+            _tabBarHidden = YES;
+            _tabBarAppearView.hidden = YES;
+        }
+    }
 }
 
 /*

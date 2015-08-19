@@ -22,6 +22,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *withdrewBtn;
 @property (weak, nonatomic) IBOutlet UIButton *incomeDetailBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *tabBarView;
+@property (weak, nonatomic) IBOutlet UIView *tabBarBackgroundView;
+@property (weak, nonatomic) IBOutlet UIImageView *tabBarViewLine;
+
+@property (weak, nonatomic) IBOutlet UIButton *mainTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *taskTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *purseTabBtn;
+
+
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableUp;
 @property (nonatomic, strong) UISwipeGestureRecognizer *tableDown;
 @property (assign, nonatomic) BOOL isUp;
@@ -32,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _incomeTableView.delegate = self;
     [self changeFrame:SCREENWIDTH/319 withObjcet:_incomeTableView];
@@ -42,9 +53,50 @@
     [self changeFrame:HEIGHTCHANGE withObjcet:_withdrewBtn];
     [self changeFrame:HEIGHTCHANGE withObjcet:_incomeDetailBtn];
     
+    [self changeFrame:HEIGHTCHANGE withObjcet:_tabBarView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_tabBarViewLine];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_tabBarBackgroundView];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_mainTabBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_taskTabBtn];
+    [self changeFrame:HEIGHTCHANGE withObjcet:_purseTabBtn];
+    
+    [self changeTabBarImg];
     [self setType];
     [self addSwipe];
     // Do any additional setup after loading the view.
+}
+
+- (void)changeTabBarImg {
+    
+    [_mainTabBtn setImage:[UIImage imageNamed:@"mainTab"] forState:UIControlStateNormal];
+    [_taskTabBtn setImage:[UIImage imageNamed:@"taskTab"] forState:UIControlStateNormal];
+    [_purseTabBtn setImage:[UIImage imageNamed:@"purseTabSelect"] forState:UIControlStateNormal];
+}
+
+- (IBAction)mainTabBtnClick:(id)sender {
+    UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainNav"];
+    if (nav == nil) {
+        nav = [[UINavigationController alloc] init];
+    }
+    self.view.window.rootViewController = nav;
+    
+}
+
+- (IBAction)taskTabBtnClick:(id)sender {
+    if ([self needLogin]) {
+        [self toLoginVC];
+    }
+    else {
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Schedule" bundle:nil] instantiateViewControllerWithIdentifier:@"ScheduleNav"];
+        if (nav == nil) {
+            nav = [[UINavigationController alloc] init];
+        }
+        self.view.window.rootViewController = nav;
+    }
+}
+
+- (IBAction)purseTabBtnClick:(id)sender {
+    
 }
 
 - (void)setType {
@@ -121,9 +173,9 @@
     if (_isUp) {
         _isUp = NO;
         [UIView animateWithDuration:0.5 animations:^{
-            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-            _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
+            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y - 156 * HEIGHTCHANGE, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
+            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y - 156 * HEIGHTCHANGE, _bellImg.frame.size.width , _bellImg.frame.size.height);
+            _incomeTableView.frame = CGRectMake(0, _incomeTableView.frame.origin.y - 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height * 2);
             
         }];
     }
@@ -134,9 +186,9 @@
     if (!_isUp) {
         _isUp = YES;
         [UIView animateWithDuration:0.5 animations:^{
-            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
-            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156, _bellImg.frame.size.width , _bellImg.frame.size.height);
-            _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y + 156, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
+            _nameLabel.frame = CGRectMake(_nameLabel.frame.origin.x, _nameLabel.frame.origin.y + 156 * HEIGHTCHANGE, _nameLabel.frame.size.width , _nameLabel.frame.size.height);
+            _bellImg.frame = CGRectMake(_bellImg.frame.origin.x, _bellImg.frame.origin.y + 156 * HEIGHTCHANGE, _bellImg.frame.size.width , _bellImg.frame.size.height);
+            _incomeTableView.frame = CGRectMake(0, _incomeTableView.frame.origin.y + 156 , _incomeTableView.frame.size.width , _incomeTableView.frame.size.height);
         }completion:^(BOOL finished) {
             _incomeTableView.frame = CGRectMake(_incomeTableView.frame.origin.x, _incomeTableView.frame.origin.y, _incomeTableView.frame.size.width , _incomeTableView.frame.size.height / 2);
         }];
@@ -147,7 +199,7 @@
 #pragma mark - UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 156 * SCREENWIDTH / 320;
+    return 156 * HEIGHTCHANGE;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

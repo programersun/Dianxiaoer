@@ -110,6 +110,7 @@
 		58F512431B578DBC00F887AB /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F512421B578DBC00F887AB /* MenuView.m */; };
 		58F512491B579F1200F887AB /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F512481B579F1200F887AB /* MyInfoViewController.m */; };
 		58F5124C1B57A7F900F887AB /* SkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F5124B1B57A7F900F887AB /* SkillViewController.m */; };
+		A421AF1D1B82CBE2002F2647 /* MainNewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A421AF1C1B82CBE2002F2647 /* MainNewTableViewCell.m */; };
 		A445AC061B68C62C0025D804 /* MySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A445AC051B68C62C0025D804 /* MySetting.storyboard */; };
 		A451A9C41B6F01D90094D21D /* MainMiddleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */; };
 		A451A9C71B6F5EC40094D21D /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A451A9C61B6F5EC40094D21D /* ApplyViewController.m */; };
@@ -127,6 +128,8 @@
 		A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A497C6391B6B0CFA00732744 /* ReleasePickerView.xib */; };
 		A497C63D1B6B0D0B00732744 /* ReleasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */; };
 		A497C6411B6B21A600732744 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A497C6401B6B21A600732744 /* area.plist */; };
+		A4A9FF3E1B82FF6A003307AE /* MainNewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A9FF3D1B82FF6A003307AE /* MainNewHeaderView.m */; };
+		A4A9FF401B82FF7F003307AE /* MainNewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A9FF3F1B82FF7F003307AE /* MainNewHeaderView.xib */; };
 		A4D71DF61B6A5D2F00241781 /* ReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */; };
 		A4E681F31B72F7310027BAA1 /* MyInfoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681F21B72F7310027BAA1 /* MyInfoMainViewController.m */; };
 		A4E681F61B7313980027BAA1 /* MyInfoMainTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E681F51B7313980027BAA1 /* MyInfoMainTopTableViewCell.m */; };
@@ -332,6 +335,8 @@
 		58F512481B579F1200F887AB /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		58F5124A1B57A7F900F887AB /* SkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillViewController.h; sourceTree = "<group>"; };
 		58F5124B1B57A7F900F887AB /* SkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillViewController.m; sourceTree = "<group>"; };
+		A421AF1B1B82CBE2002F2647 /* MainNewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNewTableViewCell.h; sourceTree = "<group>"; };
+		A421AF1C1B82CBE2002F2647 /* MainNewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNewTableViewCell.m; sourceTree = "<group>"; };
 		A445AC051B68C62C0025D804 /* MySetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySetting.storyboard; sourceTree = "<group>"; };
 		A451A9C21B6F01D90094D21D /* MainMiddleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMiddleTableViewCell.h; sourceTree = "<group>"; };
 		A451A9C31B6F01D90094D21D /* MainMiddleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMiddleTableViewCell.m; sourceTree = "<group>"; };
@@ -360,6 +365,9 @@
 		A497C63B1B6B0D0B00732744 /* ReleasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePickerView.h; sourceTree = "<group>"; };
 		A497C63C1B6B0D0B00732744 /* ReleasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleasePickerView.m; sourceTree = "<group>"; };
 		A497C6401B6B21A600732744 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		A4A9FF3C1B82FF6A003307AE /* MainNewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNewHeaderView.h; sourceTree = "<group>"; };
+		A4A9FF3D1B82FF6A003307AE /* MainNewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNewHeaderView.m; sourceTree = "<group>"; };
+		A4A9FF3F1B82FF7F003307AE /* MainNewHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNewHeaderView.xib; sourceTree = "<group>"; };
 		A4D71DF41B6A5D2F00241781 /* ReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseTableViewCell.h; sourceTree = "<group>"; };
 		A4D71DF51B6A5D2F00241781 /* ReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseTableViewCell.m; sourceTree = "<group>"; };
 		A4E681F11B72F7310027BAA1 /* MyInfoMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoMainViewController.h; sourceTree = "<group>"; };
@@ -460,6 +468,11 @@
 				A486301A1B67469A00EDD3CB /* mainTableViewFooterView.h */,
 				A486301B1B67469A00EDD3CB /* mainTableViewFooterView.m */,
 				A486301D1B6746B100EDD3CB /* mainTableViewFooterView.xib */,
+				A421AF1B1B82CBE2002F2647 /* MainNewTableViewCell.h */,
+				A421AF1C1B82CBE2002F2647 /* MainNewTableViewCell.m */,
+				A4A9FF3C1B82FF6A003307AE /* MainNewHeaderView.h */,
+				A4A9FF3D1B82FF6A003307AE /* MainNewHeaderView.m */,
+				A4A9FF3F1B82FF7F003307AE /* MainNewHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1100,6 +1113,7 @@
 				58E10DDB1B58E95800683069 /* PaySuccessAlertView.xib in Resources */,
 				5896EB881B5CB85700A6C294 /* ShareView.xib in Resources */,
 				58E55A3D1B647127008BAB03 /* ModifyView.xib in Resources */,
+				A4A9FF401B82FF7F003307AE /* MainNewHeaderView.xib in Resources */,
 				58E55A4A1B6484CC008BAB03 /* BidDetailHeaderView.xib in Resources */,
 				A497C63A1B6B0CFA00732744 /* ReleasePickerView.xib in Resources */,
 				5895601F1B622B7400A68B06 /* SubmitChooseDay.xib in Resources */,
@@ -1127,6 +1141,7 @@
 				584AB3471B568967008E84DE /* MainHeaderCellView.m in Sources */,
 				5892AB091B5F2DB300F2E873 /* ScheduleOtherHeaderView.m in Sources */,
 				58E10DD71B58E92100683069 /* PaySuccessAlertView.m in Sources */,
+				A421AF1D1B82CBE2002F2647 /* MainNewTableViewCell.m in Sources */,
 				589560181B622B3700A68B06 /* ChooseDay.m in Sources */,
 				5896EBA31B5CE39900A6C294 /* AssistantHeaderView.m in Sources */,
 				5892AB0C1B5F2DCF00F2E873 /* ScheduleMonthHeaderView.m in Sources */,
@@ -1143,6 +1158,7 @@
 				A4731F501B74463800A8C4C9 /* IncomeDetailViewController.m in Sources */,
 				58E10DCB1B58D55600683069 /* SR_UserInfoDetail.m in Sources */,
 				5896EBA81B5CEC5300A6C294 /* MorePostViewController.m in Sources */,
+				A4A9FF3E1B82FF6A003307AE /* MainNewHeaderView.m in Sources */,
 				58A7B9DC1B61413700728556 /* HWViewPager.m in Sources */,
 				A4D71DF61B6A5D2F00241781 /* ReleaseTableViewCell.m in Sources */,
 				58977F4F1B60AF80009508B1 /* AddCardFirstViewController.m in Sources */,

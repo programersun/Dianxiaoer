@@ -17,6 +17,12 @@
         vc = [[LoginViewController alloc] init];
     }
     [[self navigationController] pushViewController:vc animated:YES];
+//    self.view.window.rootViewController = vc;
+//    UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginNav"];
+//    if (nav == nil) {
+//        nav = [[UINavigationController alloc] init];
+//    }
+//    self.view.window.rootViewController = nav;
 }
 
 - (BOOL)needLogin {
@@ -45,6 +51,10 @@
 
 - (void)changeFrame:(CGFloat)heightChange withObjcet:(UIView * )sender {
     sender.frame = CGRectMake(sender.frame.origin.x * heightChange, sender.frame.origin.y * heightChange,sender.frame.size.width * heightChange, sender.frame.size.height * heightChange);
+}
+
+- (void)changeTabBarFrame:(CGFloat)heightChange withObjcet:(UIView * )sender {
+    sender.frame = CGRectMake(sender.frame.origin.x * heightChange, sender.frame.origin.y * heightChange,sender.frame.size.width * heightChange, sender.frame.size.height);
 }
 
 @end

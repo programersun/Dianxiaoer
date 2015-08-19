@@ -28,6 +28,8 @@
 #import "ScheduleViewController.h"
 #import "mainTableViewFooterView.h"
 #import "ReleaseViewController.h"
+#import "MainNewHeaderView.h"
+#import "MainNewTableViewCell.h"
 
 @interface MainViewController () <UITableViewDelegate,UITableViewDataSource ,UIGestureRecognizerDelegate,MainBannerTableViewCellDelegate ,MenuViewDelegate,SearchAlertDelegate,TodayTopViewDelegate>
 
@@ -45,6 +47,21 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuBtnHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuBtnWidth;
 
+@property (weak, nonatomic) IBOutlet UIButton *mainTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *taskTabBtn;
+@property (weak, nonatomic) IBOutlet UIButton *purseTabBtn;
+@property (weak, nonatomic) IBOutlet UIView *tabBarAppearView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewButtom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarAppearViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarViewButtom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabBarViewHeight;
+
+
+@property (weak, nonatomic) IBOutlet UIView *tabBarView;
+
+
+
 @property (nonatomic, strong) MenuView *menuView;
 @property (nonatomic, strong) SearchAlert *searchAlert;
 
@@ -55,6 +72,9 @@
 @property (assign, nonatomic) CGFloat screenWidth;
 @property (assign, nonatomic) CGFloat screenHeight;
 @property (assign, nonatomic) CGFloat oldcontentOffsetY;
+//@property NSArray *tabBarTypeArray;
+@property BOOL tabBarHidden;
+@property BOOL tabBarAppear;
 
 @end
 
@@ -65,19 +85,72 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     self.mainTableView.delegate = self;
     _screenWidth  = [UIScreen mainScreen].bounds.size.width;
     _screenHeight = [UIScreen mainScreen].bounds.size.height;
-    [self addDownPanToTopView];
+//    [self addDownPanToTopView];
     _topVIewTop.constant = 0;
-    _orderBtnTop.constant = -(_screenWidth/2 + 22);
+    _orderBtnTop.constant = -(_screenWidth/2 + 10 * HEIGHTCHANGE);
     _orderBtnWidth.constant = _orderBtnWidth.constant * HEIGHTCHANGE;
     _orderBtnHeight.constant = _orderBtnHeight.constant * HEIGHTCHANGE;
     
     _menuBtnWidth.constant = _menuBtnWidth.constant * HEIGHTCHANGE;
     _menuBtnHeight.constant = _menuBtnHeight.constant * HEIGHTCHANGE;
+    
+    _tabBarAppearViewHeight.constant = 20 * HEIGHTCHANGE;
+    
+    [self changeTabBarImg];
+    
+    _tabBarHidden = YES;
+    _tabBarAppear = YES;
+    _tabBarAppearView.hidden = YES;
+    _tabBarViewHeight.constant = 49 * HEIGHTCHANGE;
+    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)changeTabBarImg {
+    
+    [_mainTabBtn setImage:[UIImage imageNamed:@"mainTabSelect"] forState:UIControlStateNormal];
+    [_taskTabBtn setImage:[UIImage imageNamed:@"taskTab"] forState:UIControlStateNormal];
+    [_purseTabBtn setImage:[UIImage imageNamed:@"purseTab"] forState:UIControlStateNormal];
+}
+
+- (IBAction)tabBarAppearBtnClick:(id)sender {
+    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+    _tabBarViewButtom.constant = 0;
+}
+
+- (IBAction)mainTabBtnClick:(id)sender {
+    
+}
+
+- (IBAction)taskTabBtnClick:(id)sender {
+    if ([self needLogin]) {
+        [self toLoginVC];
+    }
+    else {
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Schedule" bundle:nil] instantiateViewControllerWithIdentifier:@"ScheduleNav"];
+        if (nav == nil) {
+            nav = [[UINavigationController alloc] init];
+        }
+        self.view.window.rootViewController = nav;
+    }
+}
+
+- (IBAction)purseTabBtnClick:(id)sender {
+    if ([self needLogin]) {
+        [self toLoginVC];
+    }
+    else {
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"IncomeNav"];
+        if (nav == nil) {
+            nav = [[UINavigationController alloc] init];
+        }
+        self.view.window.rootViewController = nav;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -264,12 +337,12 @@
         return [UIScreen mainScreen].bounds.size.width / 2;
     }
     else {
-        return 130 * HEIGHTCHANGE;
+        return 134 * HEIGHTCHANGE;
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -297,16 +370,19 @@
         return 1;
     }
     else {
-        return 5;
+        return 10;
     }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section > 0) {
-        UINib *nib = [UINib nibWithNibName:@"MainHeaderCellView" bundle:nil];
-        MainHeaderCellView *view = [nib instantiateWithOwner:nil options:nil][0];
-        view.headerMidImgHeight.constant = view.headerMidImgHeight.constant * HEIGHTCHANGE;
-        view.headerMidImgWidth.constant = view.headerMidImgWidth.constant * HEIGHTCHANGE;
+//        UINib *nib = [UINib nibWithNibName:@"MainHeaderCellView" bundle:nil];
+//        MainHeaderCellView *view = [nib instantiateWithOwner:nil options:nil][0];
+//        view.headerMidImgHeight.constant = view.headerMidImgHeight.constant * HEIGHTCHANGE;
+//        view.headerMidImgWidth.constant = view.headerMidImgWidth.constant * HEIGHTCHANGE;
+//        return view;
+        UINib *nib = [UINib nibWithNibName:@"MainNewHeaderView" bundle:nil];
+        MainNewHeaderView *view = [nib instantiateWithOwner:nil options:nil][0];
         return view;
     }
     else {
@@ -319,7 +395,8 @@
         return 0;
     }
     else {
-        return 70;
+//        return 70;
+        return 46 * HEIGHTCHANGE;
     }
 }
 
@@ -339,6 +416,19 @@
         return bannerCell;
     }
     else {
+        
+        MainNewTableViewCell *mainNewCell = [tableView dequeueReusableCellWithIdentifier:@"MainNewTableViewCell"];
+        if (mainNewCell == nil) {
+            mainNewCell = [[MainNewTableViewCell alloc] init];
+        }
+//        mainMiddleCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+//        mainMiddleCell.headImg.layer.cornerRadius = mainMiddleCell.headImg.frame.size.width / 1.5;
+//        mainMiddleCell.headImg.layer.masksToBounds = YES;
+//        [mainMiddleCell.headImg addGestureRecognizer:_headTouch];
+        [mainNewCell.mainNewCellHeadImg addGestureRecognizer:_headTouch];
+        mainNewCell.mainNewCellHeadImgLeft.constant = 51 * HEIGHTCHANGE;
+        return mainNewCell;
+        
 //        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
 //        if (mainLeftCell == nil) {
 //            mainLeftCell = [[MainLeftTableViewCell alloc] init];
@@ -348,15 +438,15 @@
 //        mainLeftCell.headImg.layer.masksToBounds = YES;
 //        [mainLeftCell.headImg addGestureRecognizer:_headTouch];
 //        return mainLeftCell;
-        MainMiddleTableViewCell *mainMiddleCell = [tableView dequeueReusableCellWithIdentifier:@"MainMiddleTableViewCell"];
-        if (mainMiddleCell == nil) {
-            mainMiddleCell = [[MainMiddleTableViewCell alloc] init];
-        }
-        mainMiddleCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
-        mainMiddleCell.headImg.layer.cornerRadius = mainMiddleCell.headImg.frame.size.width / 1.5;
-        mainMiddleCell.headImg.layer.masksToBounds = YES;
-        [mainMiddleCell.headImg addGestureRecognizer:_headTouch];
-        return mainMiddleCell;
+//        MainMiddleTableViewCell *mainMiddleCell = [tableView dequeueReusableCellWithIdentifier:@"MainMiddleTableViewCell"];
+//        if (mainMiddleCell == nil) {
+//            mainMiddleCell = [[MainMiddleTableViewCell alloc] init];
+//        }
+//        mainMiddleCell.headImg.image = [UIImage imageNamed:@"shopHeadImg"];
+//        mainMiddleCell.headImg.layer.cornerRadius = mainMiddleCell.headImg.frame.size.width / 1.5;
+//        mainMiddleCell.headImg.layer.masksToBounds = YES;
+//        [mainMiddleCell.headImg addGestureRecognizer:_headTouch];
+//        return mainMiddleCell;
     }
 //    else if (indexPath.row % 2 == 0) {
 //        MainLeftTableViewCell *mainLeftCell = [tableView dequeueReusableCellWithIdentifier:@"mainLeftCell"];
@@ -384,20 +474,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if ([self needLogin]) {
-//        [self toLoginVC];
-//    }
-//    else {
         MerchanBidMainViewController *vc = [[UIStoryboard storyboardWithName:@"Merchant" bundle:nil] instantiateViewControllerWithIdentifier:@"MerchanBidMainViewController"];
         if (vc == nil) {
             vc = [[MerchanBidMainViewController alloc] init];
         }
         [[self navigationController] pushViewController:vc animated:YES];
-//    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     _oldcontentOffsetY = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    _tabBarHidden = YES;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -414,6 +503,15 @@
                 else {
                     _topVIewTop.constant = -64;
                 }
+                
+                if (_tabBarHidden) {
+                    _tableViewButtom.constant = 20 * HEIGHTCHANGE;
+                    _tabBarViewButtom.constant = -49  * HEIGHTCHANGE;
+                    _tabBarHidden = NO;
+                    _tabBarAppear = YES;
+                    _tabBarAppearView.hidden = NO;
+                    
+                }
             }
             else {
                 if (_topView.frame.origin.y < 0 && _topView.frame.origin.y - heightChange <= 0) {
@@ -423,18 +521,30 @@
                     _topVIewTop.constant = 0;
                 }
                 
+                if (_tabBarAppear) {
+                    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+                    _tabBarViewButtom.constant = 0;
+                    _tabBarAppear = NO;
+                    _tabBarHidden = YES;
+                    _tabBarAppearView.hidden = YES;
+                }
+                
             }
         }
+        else {
+            _topVIewTop.constant = -64;
+        }
         if (newcontentOffsetY < _screenWidth / 2) {
-            _orderBtnTop.constant = -(_screenWidth / 2 + 22 - newcontentOffsetY);
+            _orderBtnTop.constant = -(_screenWidth / 2 + 10 * HEIGHTCHANGE - newcontentOffsetY);
         }
         else {
-            _orderBtnTop.constant = -22;
+            _orderBtnTop.constant = -10 * HEIGHTCHANGE;
         }
+        
     }
     else {
         _topVIewTop.constant = 0;
-        _orderBtnTop.constant = -(_screenWidth / 2 + 22 - newcontentOffsetY);
+        _orderBtnTop.constant = -(_screenWidth / 2 + 10 * HEIGHTCHANGE - newcontentOffsetY);
     }
 
     _oldcontentOffsetY = newcontentOffsetY;
