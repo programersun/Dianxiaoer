@@ -145,7 +145,7 @@
         [self toLoginVC];
     }
     else {
-        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"IncomeNav"];
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"NewInCome" bundle:nil] instantiateViewControllerWithIdentifier:@"NewInComeNav"];
         if (nav == nil) {
             nav = [[UINavigationController alloc] init];
         }

@@ -14,7 +14,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="wWE-g9-rNl" secondAttribute="bottom" id="0Hl-zV-C9a"/>
                 <constraint firstAttribute="trailing" secondItem="wWE-g9-rNl" secondAttribute="trailing" id="7Fp-oe-fa5"/>
@@ -26,6 +25,6 @@
         </view>
     </objects>
     <resources>
-        <image name="mainCellHeader" width="320" height="46"/>
+        <image name="mainCellHeader" width="320" height="48"/>
     </resources>
 </document>

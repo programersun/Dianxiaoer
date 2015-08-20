@@ -176,6 +176,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="5dO-Iw-uTF"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bankCardBtn" destination="rR0-FY-BVL" id="Qno-hh-w61"/>
                         <outlet property="bellImg" destination="v9o-zn-aPU" id="hec-dV-GyN"/>

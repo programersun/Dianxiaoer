@@ -49,6 +49,7 @@
     [SR_UserInfoDetail setLoginMark];
 //    [self toRootView];
     [self backBtnClick];
+    [self.delegate toBackVC];
 }
 
 - (void)didReceiveMemoryWarning {

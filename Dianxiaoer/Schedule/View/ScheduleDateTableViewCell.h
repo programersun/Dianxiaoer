@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ScheduleDateTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *cellImg;
 
 @end

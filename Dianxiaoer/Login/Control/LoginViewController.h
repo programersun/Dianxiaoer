@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@protocol  LoginViewControllerDelegate
 
+@optional
+- (void)toBackVC;
+
+@end
+
+@interface LoginViewController : UIViewController
+@property (nonatomic, assign) id <LoginViewControllerDelegate> delegate;
 @end

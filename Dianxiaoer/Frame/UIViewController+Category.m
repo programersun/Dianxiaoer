@@ -10,12 +10,18 @@
 #import "LoginViewController.h"
 #import "SR_UserInfoDetail.h"
 
+@interface UIViewController () <LoginViewControllerDelegate>
+
+@end
+
 @implementation UIViewController (Category)
 - (void)toLoginVC {
     LoginViewController *vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     if (vc == nil) {
         vc = [[LoginViewController alloc] init];
     }
+    vc.delegate = self;
+    
     [[self navigationController] pushViewController:vc animated:YES];
 //    self.view.window.rootViewController = vc;
 //    UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginNav"];

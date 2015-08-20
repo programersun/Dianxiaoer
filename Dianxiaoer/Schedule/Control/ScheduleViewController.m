@@ -19,6 +19,9 @@
 @interface ScheduleViewController () <UITableViewDataSource,UITableViewDelegate,ScheduleOtherHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *scheduleTableView;
 
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topVIewTop;
+
 @property (weak, nonatomic) IBOutlet UIView *tabBarView;
 @property (weak, nonatomic) IBOutlet UIView *tabBarAppearView;
 
@@ -45,6 +48,7 @@
     _cellOpenArray = [[NSMutableArray alloc] initWithObjects:@"1",@"0",@"0",@"0",@"0",@"0",@"0",@"1",@"1",nil];
     self.navigationController.navigationBar.hidden = YES;
     [self changeTabBarImg];
+    _topVIewTop.constant = 0;
     _tabBarAppearViewHeight.constant = 20 * HEIGHTCHANGE;
     _tabBarHidden = YES;
     _tabBarAppear = YES;
@@ -84,7 +88,7 @@
         [self toLoginVC];
     }
     else {
-        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"Income" bundle:nil] instantiateViewControllerWithIdentifier:@"IncomeNav"];
+        UINavigationController *nav = [[UIStoryboard storyboardWithName:@"NewInCome" bundle:nil] instantiateViewControllerWithIdentifier:@"NewInComeNav"];
         if (nav == nil) {
             nav = [[UINavigationController alloc] init];
         }
@@ -106,10 +110,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section <= 6) {
-        return 100 * HEIGHTCHANGE;
+        return 106 * HEIGHTCHANGE;
     }
     else {
-        return 224 * HEIGHTCHANGE;
+        return 290 * HEIGHTCHANGE;
     }
 }
 
@@ -122,22 +126,22 @@
         
         switch (section) {
             case 0:
-                return 4;
+                return 2;
                 break;
             case 1:
                 return 2;
                 break;
             case 2:
-                return 1;
+                return 3;
                 break;
             case 3:
-                return 1;
+                return 3;
                 break;
             case 4:
                 return 3;
                 break;
             case 5:
-                return 1;
+                return 3;
                 break;
             case 6:
                 return 3;
@@ -165,21 +169,29 @@
     scheduleOtherHeaderView.delegate = self;
     UINib *scheduleMonthHeaderViewNib = [UINib nibWithNibName:@"ScheduleMonthHeaderView" bundle:nil];
     ScheduleMonthHeaderView *scheduleMonthHeaderView = [scheduleMonthHeaderViewNib instantiateWithOwner:nil options:nil][0];
+    
+    
 
-    if (section == 0) {
-        return nil;
-    }
     if (section <= 6) {
-        NSString * otherHeaderImgName = [[NSString alloc] initWithFormat:@"Schedule0%ld",(long)section];
+        NSString * otherHeaderImgName;
+        if ([[_cellOpenArray objectAtIndex:section] isEqual: @"1"]) {
+            otherHeaderImgName = [[NSString alloc] initWithFormat:@"ScheduleOpen0%ld",(long)section];
+        }
+        else {
+            otherHeaderImgName = [[NSString alloc] initWithFormat:@"Schedule0%ld",(long)section];
+        }
+        
         scheduleOtherHeaderView.backBtn.tag = 100 + section;
         scheduleOtherHeaderView.backImg.image = [UIImage imageNamed:otherHeaderImgName];
     }
-    if (section == 7 || section == 8) {
+    if (section > 6) {
         NSString * monthHeaderImgName = [[NSString alloc] initWithFormat:@"ScheduleMonthHeader0%ld",(long)section];
         scheduleMonthHeaderView.backImg.image = [UIImage imageNamed:monthHeaderImgName];
     }
     
     switch (section) {
+        case 0:
+            return scheduleOtherHeaderView;
         case 1:
             return scheduleOtherHeaderView;
             break;
@@ -198,26 +210,30 @@
         case 6:
             return scheduleOtherHeaderView;
             break;
-        case 7:
-            return scheduleMonthHeaderView;
-            break;
-        case 8:
-            return scheduleMonthHeaderView;
-            break;
+//        case 7:
+//            return scheduleMonthHeaderView;
+//            break;
+//        case 8:
+//            return scheduleMonthHeaderView;
+//            break;
         default:
             return nil;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 0;
-    }
-    else if (section == 7 || section == 8) {
-        return 79 * HEIGHTCHANGE;
+    if (section <= 6 ) {
+//        if ([[_cellOpenArray objectAtIndex:section]  isEqual: @"1"])  {
+//            return 80 * HEIGHTCHANGE;
+//        }
+//        else {
+//            return 79 * HEIGHTCHANGE;
+//        }
+        return 80 * HEIGHTCHANGE;
     }
     else {
-        return 99 * HEIGHTCHANGE;
+//        return 65 * HEIGHTCHANGE;
+        return 0;
     }
 }
 
@@ -234,83 +250,91 @@
         if (noScheduleCell == nil) {
             noScheduleCell = [[NoScheduleTableViewCell alloc] init];
         }
+        return scheduleCell;
     }
-    else if (indexPath.section == 7 || indexPath.section == 8) {
+    else {
         if (scheduleDateCell == nil) {
             scheduleDateCell = [[ScheduleDateTableViewCell alloc] init];
         }
+        if (indexPath.section == 7) {
+            scheduleDateCell.cellImg.image = [UIImage imageNamed:@"ScheduleMonth01"];
+        }
+        if (indexPath.section == 8) {
+            scheduleDateCell.cellImg.image = [UIImage imageNamed:@"ScheduleMonth02"];
+        }
+        return scheduleDateCell;
     }
     
-    switch (indexPath.section) {
-        case 0:
-        {
-            if (indexPath.row == 3) {
-                return noScheduleCell;
-            }
-            else {
-                return scheduleCell;
-            }
-            break;
-        }
-        case 1:
-        {
-            if (indexPath.row == 1) {
-                return noScheduleCell;
-            }
-            else {
-                return scheduleCell;
-            }
-            break;
-        }
-        case 2:
-        {
-            return noScheduleCell;
-            break;
-        }
-        case 3:
-        {
-            return noScheduleCell;
-            break;
-        }
-        case 4:
-        {
-            if (indexPath.row == 2) {
-                return noScheduleCell;
-            }
-            else {
-                return scheduleCell;
-            }
-            break;
-        }
-        case 5:
-        {
-            return noScheduleCell;
-            break;
-        }
-        case 6:
-        {
-            if (indexPath.row == 2) {
-                return noScheduleCell;
-            }
-            else {
-                return scheduleCell;
-            }
-
-            break;
-        }
-        case 7:
-        {
-            return scheduleDateCell;
-            break;
-        }
-        case 8:
-        {
-            return scheduleDateCell;
-            break;
-        }
-        default:
-            return nil;
-    }
+//    switch (indexPath.section) {
+//        case 0:
+//        {
+//            if (indexPath.row == 3) {
+//                return noScheduleCell;
+//            }
+//            else {
+//                return scheduleCell;
+//            }
+//            break;
+//        }
+//        case 1:
+//        {
+//            if (indexPath.row == 1) {
+//                return noScheduleCell;
+//            }
+//            else {
+//                return scheduleCell;
+//            }
+//            break;
+//        }
+//        case 2:
+//        {
+//            return noScheduleCell;
+//            break;
+//        }
+//        case 3:
+//        {
+//            return noScheduleCell;
+//            break;
+//        }
+//        case 4:
+//        {
+//            if (indexPath.row == 2) {
+//                return noScheduleCell;
+//            }
+//            else {
+//                return scheduleCell;
+//            }
+//            break;
+//        }
+//        case 5:
+//        {
+//            return noScheduleCell;
+//            break;
+//        }
+//        case 6:
+//        {
+//            if (indexPath.row == 2) {
+//                return noScheduleCell;
+//            }
+//            else {
+//                return scheduleCell;
+//            }
+//
+//            break;
+//        }
+//        case 7:
+//        {
+//            return scheduleDateCell;
+//            break;
+//        }
+//        case 8:
+//        {
+//            return scheduleDateCell;
+//            break;
+//        }
+//        default:
+//            return nil;
+//    }
 }
 
 - (void)toScheduleDetailViewController {
@@ -401,12 +425,12 @@
         }
         case 7:
         {
-            [self toReleaseViewController];
+//            [self toReleaseViewController];
             break;
         }
         case 8:
         {
-            [self toReleaseViewController];
+//            [self toReleaseViewController];
             break;
         }
         default:
@@ -416,7 +440,7 @@
 
 #pragma mark - ScheduleOtherHeaderViewDelegate
 - (void)dayCellSelect:(UIButton *)sender {
-    for (int i = 1 ; i <= 6 ; i++) {
+    for (int i = 0 ; i <= 6 ; i++) {
         if (sender.tag == 100 + i && [[_cellOpenArray objectAtIndex:i] isEqualToString:@"0"]) {
             [_cellOpenArray replaceObjectAtIndex:i withObject:@"1"];
         }
@@ -449,23 +473,85 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat newcontentOffsetY = scrollView.contentOffset.y;
     CGFloat heightChange = newcontentOffsetY - _oldcontentOffsetY;
+    
     if (newcontentOffsetY > 0) {
-        if (heightChange > 0 && _tabBarHidden) {
-            _tableViewButtom.constant = 20 * HEIGHTCHANGE;
-            _tabBarViewButtom.constant = -49 * HEIGHTCHANGE ;
-            _tabBarHidden = NO;
-            _tabBarAppear = YES;
-            _tabBarAppearView.hidden = NO;
+        if (newcontentOffsetY + SCREENHEIGHT < scrollView.contentSize.height) {
+            if (heightChange > 0) {
+                
+                if (_topView.frame.origin.y > -64 && _topView.frame.origin.y - heightChange >= -64) {
+                    _topVIewTop.constant = _topVIewTop.constant - heightChange;
+                }
+                else {
+                    _topVIewTop.constant = -64;
+                }
+                
+                if (_tabBarHidden) {
+                    _tableViewButtom.constant = 20 * HEIGHTCHANGE;
+                    _tabBarViewButtom.constant = -49  * HEIGHTCHANGE;
+                    _tabBarHidden = NO;
+                    _tabBarAppear = YES;
+                    _tabBarAppearView.hidden = NO;
+                    
+                }
+            }
+            else {
+                if (_topView.frame.origin.y < 0 && _topView.frame.origin.y - heightChange <= 0) {
+                    _topVIewTop.constant = _topVIewTop.constant - heightChange;
+                }
+                else {
+                    _topVIewTop.constant = 0;
+                }
+                
+                if (_tabBarAppear) {
+                    _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+                    _tabBarViewButtom.constant = 0;
+                    _tabBarAppear = NO;
+                    _tabBarHidden = YES;
+                    _tabBarAppearView.hidden = YES;
+                }
+                
+            }
         }
-        if (heightChange < 0 && _tabBarAppear) {
-            _tableViewButtom.constant = 49 * HEIGHTCHANGE;
-            _tabBarViewButtom.constant = 0;
-            _tabBarAppear = NO;
-            _tabBarHidden = YES;
-            _tabBarAppearView.hidden = YES;
+        else {
+            _topVIewTop.constant = -64;
         }
+        
     }
+    else {
+        _topVIewTop.constant = 0;
+    }
+    
+    _oldcontentOffsetY = newcontentOffsetY;
 }
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    _oldcontentOffsetY = scrollView.contentOffset.y;
+//}
+//
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    _tabBarHidden = YES;
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat newcontentOffsetY = scrollView.contentOffset.y;
+//    CGFloat heightChange = newcontentOffsetY - _oldcontentOffsetY;
+//    if (newcontentOffsetY > 0) {
+//        if (heightChange > 0 && _tabBarHidden) {
+//            _tableViewButtom.constant = 20 * HEIGHTCHANGE;
+//            _tabBarViewButtom.constant = -49 * HEIGHTCHANGE ;
+//            _tabBarHidden = NO;
+//            _tabBarAppear = YES;
+//            _tabBarAppearView.hidden = NO;
+//        }
+//        if (heightChange < 0 && _tabBarAppear) {
+//            _tableViewButtom.constant = 49 * HEIGHTCHANGE;
+//            _tabBarViewButtom.constant = 0;
+//            _tabBarAppear = NO;
+//            _tabBarHidden = YES;
+//            _tabBarAppearView.hidden = YES;
+//        }
+//    }
+//}
 
 /*
 #pragma mark - Navigation

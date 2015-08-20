@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *backImg;
 @property (nonatomic, assign) id<ScheduleOtherHeaderViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headImgButtom;
 @end
